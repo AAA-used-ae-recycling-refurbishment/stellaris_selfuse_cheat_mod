@@ -1,0 +1,13 @@
+on_game_start_country = {
+	events = {
+		aiplus.1
+		cbjq_cheat_global.000
+		cbjq_cheat_global.001
+		cbjq_cheat_global.002
+	}
+}
+on_ship_disabled = {
+	events = {
+		aiplus.4
+	}
+}

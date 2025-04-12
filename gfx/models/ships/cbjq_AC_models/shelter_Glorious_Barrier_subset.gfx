@@ -1,0 +1,7 @@
+objectTypes = {
+	pdxmesh = {
+		name = "cbjq_Glorious_Barrier_subset_mesh"
+		file = "gfx/models/ships/cbjq_AC_models/cbjq_Glorious_Barrier_subset.mesh"
+		scale = 0.5
+	}
+}

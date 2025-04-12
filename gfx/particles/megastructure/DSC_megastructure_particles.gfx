@@ -1,0 +1,14 @@
+objectTypes = {
+    pdxparticle = {
+        name = "DSC_matde_platform_beam_effect"
+        type = "DSC_matde_platform_beam_effect"
+
+        scale = 0.5
+    }
+    pdxparticle = {
+        name = "DSC_hyper_relay_portal_effect"
+        type = "hyper_relay_portal_file"
+
+        scale = 0.25
+    }
+}

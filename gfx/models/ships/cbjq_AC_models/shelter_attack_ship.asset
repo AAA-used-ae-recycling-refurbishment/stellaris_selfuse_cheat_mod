@@ -1,0 +1,9 @@
+entity = {
+	name = "cbjq_attack_ship_entity"
+	pdxmesh = "cbjq_attack_ship_mesh"
+	locator = { name = "root" 	position = { 0 0 0 } }
+
+	game_data = {
+		emissive_recolor_crunch = 0
+	}
+}

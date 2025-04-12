@@ -1,0 +1,44 @@
+entity = {
+	name = "cbjq_Glorious_Barrier_subset_black_hole_entity"
+	pdxmesh = "black_hole_new_mesh"
+	
+	scale = 0.25
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+	}
+	locator = { name = "planet" }
+	attach = { "planet" = "black_hole_rings_entity" }
+	attach = { "planet" = "black_hole_grav_lens_entity" }
+
+	game_data = {
+		size = 1.0
+		bloom_factor = 5
+	}
+	cull_radius = 700
+}
+
+entity = {
+	name = "cbjq_Glorious_Barrier_subset_entity"
+	pdxmesh = "cbjq_Glorious_Barrier_subset_mesh"
+	locator = { name = "root" 	position = { 0 0 0 } }
+
+	game_data = {
+		emissive_recolor_crunch = 0
+	}
+
+	attach = { root = cbjq_Glorious_Barrier_subset_black_hole_entity }
+}
+entity = {
+	name = "cbjq_Glorious_Barrier_subset_entity2"
+	pdxmesh = "cbjq_Glorious_Barrier_subset_mesh"
+	locator = { name = "root" 	position = { 0 0 0 } }
+
+	game_data = {
+		emissive_recolor_crunch = 0
+	}
+
+	attach = { root = cbjq_Glorious_Barrier_subset_black_hole_entity }
+	scale = 0.4
+}

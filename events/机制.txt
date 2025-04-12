@@ -1,0 +1,3599 @@
+namespace = cbjq_cheat_global
+
+event = {
+    id = cbjq_cheat_global.001
+    hide_window = yes
+    is_triggered_only = yes
+	trigger = {
+	}
+    immediate = {
+        set_global_flag = global_cheat_reborn_off
+        set_global_flag = global_cheat_eventkill_off
+        set_global_flag = global_cheat_battlespawnship_off
+        set_global_flag = global_cheat_destoryspawnship_off
+        set_global_flag = global_cheat_eventkillx_off
+        set_global_flag = global_cheat_ctrlc_off
+        set_global_flag = global_cheat_planet_off
+        set_global_flag = global_cheat_planetfleet_off
+        set_global_flag = zhengqi_level
+        set_global_flag = global_cheat_ntr_off
+        set_global_flag = global_cheat_mia_off
+        set_global_flag = global_cheat_planetfleetai_off
+        set_global_flag = global_cheat_setlocation_off
+        set_global_flag = global_cheat_planetfleetaiplanet_off
+        remove_global_flag = global_cheat_setlocation_on
+        remove_global_flag = global_cheat_ntr_on
+        remove_global_flag = global_cheat_reborn_on
+        remove_global_flag = global_cheat_eventkill_on
+        remove_global_flag = global_cheat_battlespawnship_on
+        remove_global_flag = global_cheat_destoryspawnship_on
+        remove_global_flag = global_cheat_eventkillx_on
+        remove_global_flag = global_cheat_ctrlc_on
+        remove_global_flag = global_cheat_planet_on
+        remove_global_flag = global_cheat_planetfleet_on
+        remove_global_flag = global_cheat_mia_on
+        remove_global_flag = global_cheat_planetfleetai_on
+        remove_global_flag = global_cheat_planetfleetaiplanet_on
+        remove_global_flag = lv_lv
+        remove_global_flag = mv_lv
+        remove_global_flag = hv_lv
+        remove_global_flag = ev_lv
+        remove_global_flag = iv_lv
+        remove_global_flag = luv_lv
+        remove_global_flag = uv_lv
+        remove_global_flag = uhv_lv
+        remove_global_flag = uev_lv
+        remove_global_flag = uiv_lv
+        remove_global_flag = umv_lv
+        remove_global_flag = uxv_lv
+        remove_global_flag = max_lv
+        remove_global_flag = error_lv
+        set_variable = {
+            which = error_lv_zdyfleet_contrl
+            value = 1
+        }
+        set_variable = {
+            which = ctrlcaiship_value
+            value = 45
+        }
+        
+        every_country = {
+            limit = {
+                is_ai = no
+            }
+            capital_scope = {
+                save_event_target_as = player_country_catpital
+            }
+            save_global_event_target_as = player_country
+            add_modifier = {
+                modifier = zhengqi_level_modifier
+                days = -1
+            }
+        }
+    }
+}
+country_event = {
+    is_triggered_only = yes
+    id = cbjq_cheat_global.002
+	title = "cbjq_cheat_global.002.name"
+	desc = "cbjq_cheat_global.002.desc"
+	picture = GFX_evt_phenkka_quasar 
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_reborn_on
+        }
+        name = "cbjq_cheat_global.002.b"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_reborn_off
+            remove_global_flag = global_cheat_reborn_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_reborn_off
+        }
+        name = "cbjq_cheat_global.002.c"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_reborn_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_reborn_off
+            event_target:player_country = {
+                every_owned_ship = {
+                    set_disable_at_health = 0.1
+                }
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_eventkill_on
+        }
+        name = "cbjq_cheat_global.002.d"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_eventkill_off
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_eventkill_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_eventkill_off
+        }
+        name = "cbjq_cheat_global.002.e"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_eventkill_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_eventkill_off
+        }
+    }
+    #舰载风暴
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_destoryspawnship_on
+        }
+        name = "cbjq_cheat_global.002.f"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_destoryspawnship_off
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_destoryspawnship_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_destoryspawnship_off
+        }
+        name = "cbjq_cheat_global.002.g"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_destoryspawnship_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_destoryspawnship_off
+        }
+    }
+    #自动化
+    option = {
+        name = "cbjq_cheat_global.002.h"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+        }
+    }
+    
+    option = {
+        name = "cbjq_cheat_global.002.j"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        country_event = {
+            id = cbjq_cheat_global.29
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_eventkillx_on
+        }
+    
+    custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.002.n"
+        hidden_effect = {
+            set_global_flag = global_cheat_eventkillx_off
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_eventkillx_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_eventkillx_off
+        }
+        name = "cbjq_cheat_global.002.o"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_eventkillx_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_eventkillx_off
+    }
+}
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_ctrlc_on
+        }
+        name = "cbjq_cheat_global.002.p"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_ctrlc_off
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_ctrlc_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_ctrlc_off
+        }
+        name = "cbjq_cheat_global.002.q"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_ctrlc_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_ctrlc_off
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_ctrlc_on
+        }
+        name = "cbjq_cheat_global.002.v"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            subtract_variable = {
+                which = ctrlcaiship_value
+                value = -10
+            }
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_ctrlc_on
+        }
+        name = "cbjq_cheat_global.002.s"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            subtract_variable = {
+                which = ctrlcaiship_value
+                value = -1 
+            }
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_ctrlc_on
+        }
+        name = "cbjq_cheat_global.002.r"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_variable = {
+                which = ctrlcaiship_value
+                value = 1
+            }
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_ctrlc_on
+        }
+        name = "cbjq_cheat_global.002.t"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            subtract_variable = {
+                which = ctrlcaiship_value
+                value = 1 
+            }
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_ctrlc_on
+        }
+        name = "cbjq_cheat_global.002.w"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            subtract_variable = {
+                which = ctrlcaiship_value
+                value = 10 
+            }
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_mia_on
+        }
+        name = "cbjq_cheat_global.002.cc"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_mia_off
+            remove_global_flag = global_cheat_mia_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_mia_off
+        }
+        name = "cbjq_cheat_global.002.dd"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            set_global_flag = global_cheat_mia_on
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            remove_global_flag = global_cheat_mia_off
+        }
+    }
+    #急急急急急急我是超级魔怔人看我用动修卡死你们哈哈哈哈哈
+    option = {
+        name = "cbjq_cheat_global.002.u"
+
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            create_leader = {
+                class = admiral
+                species = ZXXL_species
+                name = "终焉"
+                event_leader = yes
+                gender = female
+                immortal = yes
+                skill = 20000		#这里是技能等级 默认为10级 以下的总督 科学家 陆军将领都一致
+                set_age = 2147483647		#这里是领袖年龄 默认为20岁 以下的总督 科学家 陆军将领都一致
+                custom_description = ""
+                background_ethic = ethic_materialist
+                skip_background_generation = yes
+                custom_catch_phrase = gray_catch_phrase
+                traits = {
+                    trait = leader_trait_dtxiuzheng_cbjq
+                }
+                effect = {
+                    change_leader_portrait = cbjq_leader_1		#这里是领袖的立绘 在gfx\portraits\portraits\DIY_portraits.txt中有详细说明
+                }
+            }
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.002.x"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        hidden_effect = {
+            create_leader = {
+                class = admiral
+                species = ZXXL_species
+                name = "DreamMasterXXL"
+                event_leader = yes
+                gender = female
+                immortal = yes
+                skill = 20000		#这里是技能等级 默认为10级 以下的总督 科学家 陆军将领都一致
+                set_age = 2147483647		#这里是领袖年龄 默认为20岁 以下的总督 科学家 陆军将领都一致
+                custom_description = ""
+                background_ethic = ethic_materialist
+                skip_background_generation = yes
+                custom_catch_phrase = gray_catch_phrase
+                traits = {
+                }
+                effect = {
+                    change_leader_portrait = dreammaster		#这里是领袖的立绘 在gfx\portraits\portraits\DIY_portraits.txt中有详细说明
+                    save_event_target_as = dreammasterxxl
+                }
+            
+            }
+            country_event = {
+                id = cbjq_cheat_global.002
+            }
+            create_fleet = {
+                name = 鸿蒙方舟
+                settings = {
+                    can_upgrade = yes
+                    is_ultra_boss = yes
+                    can_change_leader = no
+                }
+                effect = {
+                    set_owner = event_target:player_country
+                    create_ship = {
+                        random_existing_design = cbjq_primordial_ark_ship
+                        name = "DreamMasterXXL"
+                    }
+                    set_location = {
+                        target = cbjq_is_capital
+						distance = 5
+						angle = random
+                    }
+                    assign_leader = event_target:dreammasterxxl
+                }
+                
+            }
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.002.y"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        country_event = {
+            id = exam_cbjq_dreammaster.1
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.002.aaa"
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+        country_event = {
+            id = cbjq_cheat_global.44
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.002.a"
+    }
+}
+ship_event = {
+    id = cbjq_cheat_global.003
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        owner = {
+            is_ai = no
+        }
+        has_global_flag = global_cheat_reborn_on
+    }
+    immediate = {
+        repair_ship = yes
+        set_disabled = no
+    }
+}
+#当舰船被建造,升级时启用
+ship_event = {
+    id = cbjq_cheat_global.004
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        owner = {
+            is_ai = no 
+        }
+        has_global_flag = global_cheat_reborn_on
+    }
+    immediate = {
+        #在舰船剩余10%血量时设置禁用
+        set_disable_at_health = 0.1
+    }
+}
+fleet_event = {
+	id = cbjq_cheat_global.005
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+        owner = {
+            is_ai = no
+        }
+        has_global_flag = global_cheat_eventkill_on
+	}
+	immediate = {
+		from = {
+			every_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_military
+				}
+				destroy_ship = this
+			}
+		}
+	}
+}
+country_event = {
+	id = cbjq_cheat_global.006
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_global_flag = global_cheat_ctrlc_on
+		is_ai = no
+	}
+	immediate = {
+		fromfromfrom = {
+			random_owned_ship = {
+				save_event_target_as = bj_FTY_ship
+			}
+		}
+		fromfrom = {
+			while = {
+				count = owner.ctrlcaiship_value
+				create_ship = {
+					name = fty_bj_ship_name
+					design = event_target:bj_FTY_ship
+					graphical_culture = fallen_machine_empire_01
+				    effect = {
+					    set_ship_flag = FTY_JWDWD_ship #设置flag
+                        set_disable_at_health = 0.1
+					}
+					}
+				}
+			}
+		}
+	}
+    ship_event = {
+        id = cbjq_cheat_global.007
+        hide_window = yes
+        is_triggered_only = yes
+        trigger = {
+            has_global_flag = global_cheat_destoryspawnship_on
+            owner = {
+                is_ai = no
+            }
+        }
+        immediate = {
+            solar_system = { #检索之前的风暴，删除
+                every_cosmic_storm = {
+                    limit = { has_storm_flag = spth_cbjq_storm_flag@prevprev }
+                    destroy_cosmic_storm = yes
+                }
+                every_system = {
+                    limit = { has_star_flag = space_cbjq_system_star_flag } #检索之前的恒星移除flag
+                    remove_star_flag = space_cbjq_system_star_flag
+                    every_system_planet = { #检索之前的星球移除修正
+                        limit = { has_modifier = space_cbjq_planet_buff }
+                        remove_modifier = space_cbjq_planet_buff
+                    }
+                    every_system_ambient_object = {
+                        limit = {
+                           has_ambient_object_flag = cbjq_storm_event_storm_object
+                        }
+                        destroy_ambient_object = this
+                    }
+                }
+                set_star_flag = space_cbjq_system_star_flag #设置为混沌
+                every_system_planet = {
+                    limit = { 
+                        is_colony = yes
+                        owner = {
+                            is_ai = yes
+                        }
+                    } #设置修正
+                    add_modifier = { modifier = space_cbjq_planet_buff }
+                }
+                spawn_random_storm = {
+                    type = space_cbjq_storm
+                    cosmic_storm_start_position = this
+                    immediate = yes
+                }
+                
+                last_created_cosmic_storm = { set_storm_flag = spth_cbjq_storm_flag@prevprev }
+                
+            }
+        }
+    }
+    
+country_event = {
+	id = cbjq_cheat_global.008
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_global_flag = global_cheat_rebornspawnship_on_disabled #已经全局禁用
+		is_ai = no
+	}
+	immediate = {
+		fromfrom = {
+			while = {
+				count = 10
+				create_ship = {
+					name = fty_bj_ship_name
+					random_existing_design = flagship_spwan_cbjq
+					graphical_culture = fallen_machine_empire_01
+					}
+				}
+			}
+		}
+}
+country_event = {
+	id = cbjq_cheat_global.011
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_global_flag = global_cheat_destoryspawnship_on_disabled #已经全局禁用
+		is_ai = no
+	}
+	immediate = {
+		fromfrom = {
+			while = {
+				count = 100
+				create_ship = {
+					name = fty_bj_ship_name
+					random_existing_design = flagship_spwan_cbjq
+					graphical_culture = fallen_machine_empire_01
+					}
+				}
+			}
+		}
+}
+#global_cheat_antiblokkat_off
+ship_event = {
+    id = cbjq_cheat_global.009
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        has_global_flag = global_cheat_antiblokkat_on
+    }
+
+    immediate = {
+        set_global_flag = blokkat_mothership_shield_down
+        set_variable = { 
+            which = blokkat_mothership_life_count
+            value = 1
+        }
+        set_variable = { 
+            which = blokkat_harvester_life_count
+            value = 1
+        }
+        set_variable = { 
+            which = blokkat_obliterator_life_count
+            value = 1
+        }
+        set_variable = { 
+            which = blokkat_terminator_life_count
+            value = 1
+        }
+        event_target:blokkat_country = {
+            add_modifier = {
+				modifier = anti_blokkat_country_buff
+				days = -1
+			}
+            every_owned_fleet = { delete_fleet = THIS }
+        }
+        set_variable = {
+            which = blokkat_dismantler_max_count
+            value = 0
+        }
+        if = {
+			limit = {
+				check_variable = {
+					which = blokkat_dismantler_max_count
+					value > 0
+				}
+			}
+			set_variable = {
+				which = blokkat_dismantler_max_count
+				value = 0
+			
+    }
+}
+    }
+}
+#global_cheat_eventkillx_off
+country_event = {
+	id = cbjq_cheat_global.010
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+        has_global_flag = global_cheat_eventkillx_on
+	}
+	immediate = {
+		fromfrom = {
+			random_list = {
+				100 = { # 击杀司令
+					modifier = {
+						factor = 0
+						root.fromfromfrom = { fleet = { OR = {
+							has_fleet_flag = cbjq_killed_leader
+							NOT = { exists = leader }
+						} } }
+					}
+					root.fromfromfrom = {
+						fleet = {
+							if = {
+								limit = { exists = leader }
+								leader = { kill_leader = { show_notification = no } }
+							}
+							set_timed_fleet_flag = { flag = cbjq_killed_leader days = 1 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cbjq_cheat_global.014
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = {
+            owner = {
+                is_ai = no
+            }
+			leader = {
+				has_trait = leader_trait_dtxiuzheng_cbjq #要求交战舰队领袖持有动态修正特质
+			}
+		}
+	}
+	immediate = {
+		fromfrom = {
+			if = {
+				limit = { NOT = { has_fleet_flag = cbjq_fleet_resisted_weakening_buff } } #检测我方舰队动态修正标记
+				set_fleet_flag = cbjq_fleet_resisted_weakening_buff #添加我方舰队动态修正标记
+			}
+			fleet_event = { id = cbjq_cheat_global.012 }
+		}
+		fromfromfrom = {
+			if = {
+				limit = { NOT = { has_fleet_flag = cbjq_enemy_attenuation_buff } } #检测敌方舰队动态修正标记
+				set_fleet_flag = cbjq_enemy_attenuation_buff #添加敌方舰队动态修正标记
+			}
+			fleet_event = { id = cbjq_cheat_global.012 }
+		}
+	}
+}
+#开始执行动态修正
+fleet_event = {
+	id = cbjq_cheat_global.012
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = { 
+			has_fleet_flag = cbjq_fleet_resisted_weakening_buff 
+		    has_fleet_flag = cbjq_enemy_attenuation_buff 
+		}
+		is_in_combat = yes
+	}
+	immediate = {
+		set_update_modifiers_batch = begin
+		#对自身舰队进行动态修正，防止敌方压制，同时添加复活标记
+		if = {
+			limit = { has_fleet_flag = cbjq_fleet_resisted_weakening_buff owner = {  is_ai = no  } }
+			cbjq_battle_buff_correct_system = { Modifier = ship_armor_penetration_mult 	NUM = 1 	DAYS = -1 features = buff_temp }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_shield_penetration_mult 	NUM = 1 	DAYS = -1 features = buff_temp }
+			cbjq_battle_buff_correct_system = { Modifier = ship_shield_damage_mult       NUM = 5 	DAYS = -1 features = buff_temp }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_armor_damage_mult        NUM = 5 	DAYS = -1 features = buff_temp }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_hull_damage_mult         NUM = 5 	DAYS = -1 features = buff_temp }
+			cbjq_battle_buff_correct_system = { Modifier = ship_shield_reduction         NUM = 0 	DAYS = -1 features = buff_temp }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_armor_reduction          NUM = 0 	DAYS = -1 features = buff_temp }
+			every_owned_ship = { cbjq_bless_our_fleet = yes }
+		}
+		#对敌方舰队进行动态修正，每天检测一次，刷新修正
+		if = {
+			limit = { has_fleet_flag = cbjq_enemy_attenuation_buff }
+			cbjq_battle_buff_correct_system = { Modifier = ship_armor_penetration_mult 	NUM = -1 	DAYS = -1 features = debuff_stable }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_shield_penetration_mult 	NUM = -1 	DAYS = -1 features = debuff_stable }
+			cbjq_battle_buff_correct_system = { Modifier = ship_shield_damage_mult       NUM = -1 DAYS = -1 features = debuff_stable }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_armor_damage_mult        NUM = -1 DAYS = -1 features = debuff_stable }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_hull_damage_mult         NUM = -1 DAYS = -1 features = debuff_stable }
+			cbjq_battle_buff_correct_system = { Modifier = ship_shield_reduction         NUM = 1     DAYS = -1 features = debuff_stable }
+    		cbjq_battle_buff_correct_system = { Modifier = ship_armor_reduction          NUM = 1     DAYS = -1 features = debuff_stable }
+			every_owned_ship = { cbjq_curse_the_enemy_fleet = yes }
+		}
+		set_update_modifiers_batch = end
+		fleet_event = { id = cbjq_cheat_global.012 days = 1 }
+	    fleet_event = { id = cbjq_cheat_global.013 days = 2 }
+	}
+}
+
+# 清除压制修正
+fleet_event = {
+	id = cbjq_cheat_global.013
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_in_combat = no
+	}
+	immediate = {
+		# set_update_modifiers_batch = begin
+		# 修正批处理，在开始和结束之间不会重算，结束后将触发重算
+		# set_update_modifiers_batch = end
+		set_update_modifiers_batch = begin
+		cbjq_delete_ship_modifier = { buff_temp = buff_temp }
+		cbjq_delete_ship_modifier = { debuff_stable = debuff_stable }
+		every_owned_ship = {
+			cbjq_delete_ship_modifier = { buff_temp = buff_temp }
+			cbjq_delete_ship_modifier = { debuff_stable = debuff_stable }
+		}
+        set_update_modifiers_batch = end
+	}
+}
+country_event = {
+	id = cbjq_cheat_global.015
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+        no_scope = {
+            random_system = {
+                random_system_planet = {
+                    create_country = {
+                        name = weapon_target_country
+                        type = awakened_fallen_empire
+                        name_list = "AI"
+                        flag = {
+                            colors={
+                                "black"
+                                "red"
+                                "null"
+                                "null"
+                            }
+                        }
+                        effect = {
+                            save_global_event_target_as = weapon_target_country
+                        }
+                    }
+                }
+                save_global_event_target_as = weapon_target_country_ship
+            }
+            event_target:weapon_target_country = {
+                create_fleet = {
+                    name = weapon_target_country
+                    effect = {
+                        set_owner = event_target:weapon_target_country
+                        create_ship = {
+                            name = random
+                            design = "NAME_HELIUM_FLASH_ship_design"
+                        }
+                        set_location = {
+                            target = event_target:weapon_target_country_ship
+                            distance = 0
+                            angle = random
+                        }
+                        set_disable_at_health = 0.1
+                    }
+                    
+                }
+            }
+        }
+
+	}
+}
+country_event = {
+    id = cbjq_cheat_global.016
+	hide_window = yes
+	is_triggered_only = yes
+    trigger = {
+        
+    }
+    immediate = {
+        no_scope = {
+            event_target:weapon_target_country = {
+                destroy_country = yes
+            }
+        }
+
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.017
+	title = "cbjq_cheat_global.017.name"
+    desc = "cbjq_cheat_global.017.desc"
+    picture = GFX_evt_phenkka_quasar 
+	is_triggered_only = yes
+    trigger = {
+        is_ai = no
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planet_off
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.a"
+        hidden_effect = {
+            set_global_flag = global_cheat_planet_on
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planet_off
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planet_on
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.b"
+        hidden_effect = {
+            set_global_flag = global_cheat_planet_off
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planet_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetfleet_off
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.c"
+        hidden_effect = {
+            set_global_flag = global_cheat_planetfleet_on
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetfleet_off
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetfleet_on
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.d"
+        hidden_effect = {
+            set_global_flag = global_cheat_planetfleet_off
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetfleet_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetfleetai_on
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.h"
+        hidden_effect = {
+            set_global_flag = global_cheat_planetfleetai_off
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetfleetai_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetfleetai_off
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.i"
+        hidden_effect = {
+            set_global_flag = global_cheat_planetfleetai_on
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetfleetai_off
+        }
+    }
+    #global_cheat_planetfleetaiplanet_on
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetfleetaiplanet_on
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.j"
+        hidden_effect = {
+            set_global_flag = lobal_cheat_planetfleetaiplanet_off
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetfleetaiplanet_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetfleetaiplanet_off
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.017.k"
+        hidden_effect = {
+            set_global_flag = global_cheat_planetfleetaiplanet_on
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetfleetaiplanet_off
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetsave_on
+        }
+        name = "cbjq_cheat_global.017.l"
+        hidden_effect = {
+            set_global_flag = global_cheat_planetsave_off
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetsave_on
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_planetsave_off
+        }
+        name = "cbjq_cheat_global.017.m"
+        hidden_effect = {
+            set_global_flag = global_cheat_planetsave_on
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            remove_global_flag = global_cheat_planetsave_off
+        }
+    }
+    option = {
+        allow = {
+            has_global_flag = error_lv
+            custom_tooltip_fail = {
+                text = cbjq_zdhfleet_end
+            }
+        }
+        name = "cbjq_cheat_global.017.n"
+        custom_tooltip = cbjq_zdhfleet_end_shadow
+        hidden_effect = {
+            country_event = {
+                id = cbjq_cheat_global.017
+            }
+            every_system = {
+                limit = {
+                    NOR = {
+                        owner = {
+                            is_ai = yes
+                        }
+                        has_star_flag = cbjq_zdhfleet_comed
+                        any_ship_in_system = {
+                            OR = {
+                                is_ship_size = FTY_ship2
+                                owner = {
+                                    is_ai = yes
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                solar_system = {
+                    create_fleet = {
+                        name = cbjq_jail_fleetname
+                        settings = {
+                            can_upgrade = no
+                            can_change_composition = no
+                            can_change_leader = yes
+                            uses_naval_capacity = no
+                            spawn_debris = no
+                            is_ultra_boss = yes
+                        }
+                        effect = {  
+                            set_owner = event_target:player_country
+                            while = {
+                                count = 10
+                                create_ship = {
+                                    name = The_END
+                                    design = "NAME_ZDH"
+                                    effect = {
+                                        set_disable_at_health = 0.1
+                                    }
+                                }
+                            }
+                            set_fleet_stance = aggressive
+                            set_aggro_range_measure_from = self
+                            set_aggro_range = 500
+                            queue_actions = {
+                                repeat = {
+                                    find_closest_system = {
+                                        trigger = {
+                                            id = cbjq_zdh.10002
+                                            NOT = {
+                                                has_star_flag = cbjq_zdhfleet_comed
+                                            }
+                                            has_global_flag = global_cheat_planetfleetai_on
+                                        }
+                                        found_system = {
+                                            effect = {
+                                                id = cbjq_zdh.10001
+                                                set_owner = event_target:player_country
+                                                set_star_flag = cbjq_zdhfleet_comed
+                                                set_star_class = sc_cbjq_star_class
+                                                create_starbase = {
+                                                    size = starbase_citadel
+                                                    module = shipyard
+                                                    module = cbjq_super_shipyard
+                                                    module = cbjq_starbase_eoh
+                                                    module = cbjq_starbase_eoh
+                                                    module = cbjq_starbase_eoh
+                                                    module = cbjq_starbase_eoh
+                                                    building = dreadnaught_yards
+                                                    building = grand_yards
+                                                    building = titan_yards
+                                                    building = colossus_yards
+                                                    owner = event_target:player_country
+                                                    effect = {
+                                                        set_disable_at_health = 0.1
+                                                    }
+                                                }
+                                                every_system_planet = {
+                                                    limit = {
+                                                        is_colony = yes
+                                                        owner = {
+                                                            is_ai = yes
+                                                        }
+                                                    }
+                                                    set_owner = event_target:player_country
+                                                    set_name = cbjq_jail_fleetname
+                                                    planet_event = {
+                                                        id = cbjq_cheat_global.018
+                                                    }
+                                                    
+                                                }
+                                                every_system_planet = {
+                                                    limit = {
+                                                        is_star = yes
+                                                    }
+                                                    change_pc = pc_quasar_XXYS
+                                                    set_name = cbjq_hostile_fleet_injail
+                                                }
+                                                every_system_planet = {
+                                                    limit = {
+                                                        is_star = no
+                                                        is_colony = no
+                                                    }
+                                                    change_pc = pc_city
+                                                    planet_event = {
+                                                        id = cbjq_cheat_global.023
+                                                    }
+                                                }
+                                                subtract_variable = {
+                                                    which = cbjq_zdhfleet_comed_count
+                                                    value = -1
+                                                }
+                                            }
+                                            move_to = this
+                                            wait = 5
+                                                }
+                                                failed = {
+                                                    find_closest_fleet = {
+                                                        trigger = {
+                                                            id = cbjq_zdh.10005
+                                                            solar_system = {
+                                                                NOT = {
+                                                                    has_star_flag = cbjq_zdhfleet_comed
+                                                                }
+                                                            }
+                                                        }
+                                                        found_fleet = {
+                                                            move_to = this
+                                                            wait = 5
+                                                        }
+                                                    }    
+                                                }
+                                                
+                                         }
+                                         
+                                            
+                                         }
+                                    }
+                                }
+                            }
+                }
+            }
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.017.e"
+        country_event = {
+            id = cbjq_cheat_global.002
+        }
+    }
+}
+planet_event = {
+	id = cbjq_cheat_global.018
+	is_triggered_only = yes
+	diplomatic = yes
+	hide_window = yes
+	force_open = yes	
+	trigger = {
+		owner = {
+			is_ai = no
+		}
+        has_global_flag = global_cheat_planet_on
+	}
+	immediate = {
+		#读取星球大小
+		set_variable = {
+			which = cbjq_planet_zidonghua
+			value = trigger:planet_size
+		}
+		set_planet_flag = cbjq_global_zidonghua_planet
+		set_planet_flag = cbjq_global_zidonghua_fleet
+		    #destroy_colony = yes
+			remove_all_buildings = yes
+            while = {
+                count = 200
+                add_building = building_cbjq_groundmega2
+                add_district = district_cbjq_groundmega2
+            }
+			set_owner = event_target:player_country
+        planet_event = { 
+            id = cbjq_cheat_global.019
+            }
+	}
+}
+planet_event = {
+	id = cbjq_cheat_global.019
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_planet_flag = cbjq_global_zidonghua_planet
+		has_planet_flag = cbjq_global_zidonghua_fleet #要求必须拥有生成舰队的星球标识
+		owner = {
+			is_ai = no
+		}
+        has_global_flag = global_cheat_planetfleet_on
+	}
+
+	immediate = {
+		save_event_target_as = cbjq_zidonghua_fleet_spawn
+        planet_event = { 
+            id = cbjq_cheat_global.019
+            days = 30
+        }
+        planet_event = { 
+            id = cbjq_cheat_global.020
+            days = 30
+        }
+			owner = {
+                if = {
+                    limit = {
+                        has_global_flag = global_cheat_planetfleetai_on
+                }
+                while = {
+                    count = 1
+                    create_fleet = {
+                        name = automated_fleet_cbjq
+                        settings = {
+                            can_upgrade = no
+                            can_change_composition = no
+                            can_change_leader = yes
+                            uses_naval_capacity = no
+                            spawn_debris = no
+                            is_ultra_boss = yes
+                        }
+                        effect = {  
+                            set_owner = prev
+                            while = {
+                                count = 5
+                                create_ship = {
+                                    name = The_END
+                                    design = "NAME_ZDH"
+                                    effect = {
+                                        set_disable_at_health = 0.1
+                                    }
+                                }
+                            }
+                            set_location = {
+                                target = event_target:cbjq_zidonghua_fleet_spawn
+                                distance = 5
+                                angle = random
+                            }
+                            set_fleet_stance = aggressive
+                            set_aggro_range_measure_from = self
+                            set_aggro_range = 500
+                            queue_actions = {
+                                repeat = {
+                                    find_closest_system = {
+                                        trigger = {
+                                            id = cbjq_zdh.10002
+                                            NOT = {
+                                                has_star_flag = cbjq_zdhfleet_comed
+                                            }
+                                            has_global_flag = global_cheat_planetfleetai_on
+                                        }
+                                        found_system = {
+                                            effect = {
+                                                id = cbjq_zdh.10001
+                                                set_owner = event_target:player_country
+                                                set_star_flag = cbjq_zdhfleet_comed
+                                                set_star_class = sc_cbjq_star_class
+                                                add_modifier = {
+                                                    modifier = cbjq_zdhfleet_comed
+                                                }
+                                                create_starbase = {
+                                                    size = starbase_citadel
+                                                    module = shipyard
+                                                    module = cbjq_super_shipyard
+                                                    module = cbjq_starbase_eoh
+                                                    module = cbjq_starbase_eoh
+                                                    module = cbjq_starbase_eoh
+                                                    module = cbjq_starbase_eoh
+                                                    building = dreadnaught_yards
+                                                    building = grand_yards
+                                                    building = titan_yards
+                                                    building = colossus_yards
+                                                    owner = event_target:player_country
+                                                    effect = {
+                                                        set_disable_at_health = 0.1
+                                                    }
+                                                }
+                                                every_system_planet = {
+                                                    limit = {
+                                                        is_colony = yes
+                                                        owner = {
+                                                            is_ai = yes
+                                                        }
+                                                    }
+                                                    set_owner = event_target:player_country
+                                                    planet_event = {
+                                                        id = cbjq_cheat_global.018
+                                                    }
+                                                    
+                                                }
+                                                every_system_planet = {
+                                                    limit = {
+                                                        is_star = yes
+                                                    }
+                                                    change_pc = pc_quasar_XXYS
+                                                }
+                                                every_system_planet = {
+                                                    limit = {
+                                                        is_star = no
+                                                        is_colony = no
+                                                    }
+                                                    change_pc = pc_city
+                                                    planet_event = {
+                                                        id = cbjq_cheat_global.023
+                                                    }
+                                                }
+                                                subtract_variable = {
+                                                    which = cbjq_zdhfleet_comed_count
+                                                    value = -1
+                                                }
+                                            }
+                                            move_to = this
+                                            wait = 5
+                                                }
+                                                failed = {
+                                                    find_closest_fleet = {
+                                                        trigger = {
+                                                            id = cbjq_zdh.10005
+                                                            solar_system = {
+                                                                NOT = {
+                                                                    has_star_flag = cbjq_zdhfleet_comed
+                                                                }
+                                                            }
+                                                        }
+                                                        found_fleet = {
+                                                            move_to = this
+                                                            wait = 5
+                                                        }
+                                                    }    
+                                                }
+                                                
+                                         }
+                                         
+                                            
+                                         }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else = {
+                    while = {
+                        count = 1
+                        create_fleet = {
+                            name = automated_fleet_cbjq
+                            settings = {
+                                can_upgrade = no
+                                can_change_composition = no
+                                can_change_leader = yes
+                                uses_naval_capacity = no
+                                spawn_debris = no
+                                is_ultra_boss = yes
+                            }
+                            effect = {  
+                                set_owner = prev
+                                while = {
+                                    count = 9
+                                    create_ship = {
+                                        name = The_END
+                                        design = "NAME_ZDH"
+                                        effect = {
+                                            set_disable_at_health = 0.1
+                                        }
+                                    }
+                                }
+                                create_ship = {
+                                    name = The_Aura
+                                    design = "NAME_GH"
+                                    effect = {
+                                        set_disable_at_health = 0.1
+                                    }
+                                }
+                                set_location = {
+                                    target = event_target:cbjq_zidonghua_fleet_spawn
+                                    distance = 5
+                                    angle = random
+                                }
+                                set_fleet_stance = aggressive
+                                set_aggro_range_measure_from = self
+                                set_aggro_range = 500
+        
+                            }
+                        }
+                    }
+                }
+                }
+                
+                    
+
+        
+    }
+planet_event = {
+	id = cbjq_cheat_global.020
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_planet_flag = cbjq_global_zidonghua_planet
+		has_planet_flag = cbjq_global_zidonghua_fleet #要求必须拥有生成舰队的星球标识
+		owner = {
+			is_ai = no
+		}
+        has_global_flag = global_cheat_planetfleet_on
+        has_global_flag = error_lv
+	}
+
+	immediate = {
+		save_event_target_as = cbjq_zidonghua_fleet_spawn
+			owner = {
+                    while = {
+                        count = this.error_lv_zdyfleet_contrl
+                        create_fleet = {
+                            name = automated_fleet_cbjq
+                            settings = {
+                                can_upgrade = no
+                                can_change_composition = no
+                                can_change_leader = yes
+                                uses_naval_capacity = no
+                                spawn_debris = no
+                                is_ultra_boss = yes
+                            }
+                            effect = {  
+                                set_owner = prev
+                                while = {
+                                    count = 9
+                                    create_ship = {
+                                        name = The_END
+                                        design = "NAME_ZDH"
+                                        effect = {
+                                            set_disable_at_health = 0.1
+                                        }
+                                    }
+                                }
+                                create_ship = {
+                                    name = The_Aura
+                                    design = "NAME_GH"
+                                    effect = {
+                                        set_disable_at_health = 0.1
+                                    }
+                                }
+                                set_location = {
+                                    target = event_target:cbjq_zidonghua_fleet_spawn
+                                    distance = 5
+                                    angle = random
+                                }
+                                set_fleet_stance = aggressive
+                                set_aggro_range_measure_from = self
+                                set_aggro_range = 500
+                                
+                            }
+                        }
+                    }
+                }
+
+                
+
+
+	        }
+
+    }
+#global_cheat_ntr 已删除
+country_event = {
+	id = cbjq_cheat_global.020
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = global_cheat_ntr_on
+	}
+	immediate = {
+		fromfrom = {
+			set_owner = event_target:player_country
+		}
+	}
+}
+#global cheat mia
+country_event = {
+	id = cbjq_cheat_global.021
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+        fromfrom = {
+            owner = {
+                is_ai = no
+            }
+        }
+        has_global_flag = global_cheat_mia_on
+	}
+	immediate = {
+		fromfromfrom = {
+                set_mia = mia_return_home
+                set_mia_return_delay = 2000000000
+                add_modifier = {
+                    modifier = global_cheat_mia_time_plus_cbjq
+                    days = -1
+                }
+			}
+		}
+	}
+
+planet_event = {
+	id = cbjq_cheat_global.023
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+        has_global_flag = global_cheat_planetfleetaiplanet_on
+	}
+	immediate = {
+		#读取星球大小
+		set_variable = {
+			which = cbjq_planet_zidonghua
+			value = trigger:planet_size
+		}
+		set_planet_flag = cbjq_global_zidonghua_planet
+		set_planet_flag = cbjq_global_zidonghua_fleet
+        create_colony = {
+            owner = event_target:player_country
+        }
+		    #destroy_colony = yes
+			remove_all_buildings = yes
+            while = {
+                count = 200
+                add_building = building_cbjq_groundmega2
+                add_district = district_cbjq_groundmega2
+            }
+			set_owner = event_target:player_country
+        planet_event = { 
+            id = cbjq_cheat_global.019
+            }
+	}
+}
+
+#AE系统
+country_event = {
+    id = cbjq_cheat_global.028
+    is_triggered_only = yes
+    picture = GFX_evt_phenkka_quasar 
+    title = "cbjq_cheat_global.028.name"
+    desc = "cbjq_cheat_global.028.desc"
+    trigger = {
+        is_ai = no
+    }
+    option = {
+        name = "cbjq_cheat_global.028.b"
+        country_event = {
+            id = CVB_HXYS.001
+        }
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+    }
+    option = {
+        name = "cbjq_cheat_global.028.c"
+        country_event = {
+            id = CVB_OT.001
+        }
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+    }
+    option = {
+        name = "cbjq_cheat_global.028.d"
+        country_event = {
+            id = CVB_bls.001
+        }
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+    }
+    option = {
+        name = "cbjq_cheat_global.028.e"
+        country_event = {
+            id = cbjq_cheat_global.032
+        }
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+    }
+    option = {
+        trigger = {
+            always = no
+        }
+        name = "cbjq_cheat_global.028.f"
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        event_target:player_country = {
+            capital_scope = {
+                create_fleet = {
+                    name = "NAME_HELIUM_FLASH_ship"
+                    settings = {
+                        spawn_debris = no
+                        is_boss = yes
+                    }
+                    effect = {
+                        set_owner = root
+                        create_ship = {
+                            name = "NAME_HELIUM_FLASH_ship"
+                            design = "NAME_HELIUM_FLASH_ship_design"
+                            upgradable = no
+                            effect = {
+                                set_disable_at_health = 0.01
+                                starbase = {
+                                    set_ship_construction_type = starbase_shipyard
+                                }
+                            }
+                        }
+                        set_location = {
+                            target = prev
+                            distance = 45
+                            angle = random
+                        }
+                        set_fleet_stance = passive
+                        set_fleet_flag = EXECUTER_zero_fleet
+                    }
+                }
+            }
+        }
+        
+    }
+    option = {
+        trigger = {
+            always = no
+        }
+        name = "cbjq_cheat_global.028.g"
+        country_event = {
+            id = cbjq_cheat_global.033
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_global_flag = cbjqgraygoo
+            }
+        }
+        name = "cbjq_cheat_global.028.h"
+        country_event = {
+            id = graygoo.401
+        }
+        country_event = {
+            id = cbjq_cheat_global.028
+        }
+        set_global_flag = cbjqgraygoo
+    }
+    option = {
+        name = "cbjq_cheat_global.028.a"
+        country_event = {
+            id = cbjq_cheat_global.002
+        }
+    }
+}
+country_event = {
+    is_triggered_only = yes
+    hide_window = yes
+    id = cbjq_cheat_global.032
+    trigger = {
+        is_ai = no
+    }
+    immediate = {
+        change_variable = { which = num_YHTT value = 1 }
+        capital_scope = {
+            create_fleet = {
+                name = YHTT
+                settings = { spawn_debris = no }
+                effect = {
+                    add_modifier = { modifier = add_fleet_mia_time }
+                    set_owner = event_target:player_country
+                    create_ship = {
+                        name = YHTT
+                        random_existing_design = YHTT
+                        effect = {
+                            set_disable_at_health = 0.01
+                            ship_event = {
+                               id = xxys_set.30
+                            }
+                            set_ship_flag = YHTT_ship_for_wudi@THIS
+                            XXYS_add_modifier_for_warship = yes
+                        }
+                    }
+                    set_location = {
+                        target = event_target:Planetary_Fortress1_planet
+                        distance = 0.5
+                        angle = 0
+                    }
+                    set_fleet_flag = YHTT_fleet_for_wudi
+                    set_global_flag = YHTT_fleet_for_wudi
+                    set_global_flag = YHTT_fleet
+                }
+            }
+        }
+    }
+}
+country_event = {
+    is_triggered_only = yes
+    hide_window = yes
+    id = cbjq_cheat_global.033
+    trigger = {
+        is_ai = no
+    }
+    immediate = {
+        capital_scope = {
+            create_ship = {
+                name = "NAME_SANCTUM_SHIP"
+                random_existing_design = sphereship
+                effect = {
+                    set_name = "NAME_SANCTUM_SHIP"
+                    set_disable_at_health = 0.01
+                    save_global_event_target_as = et_sphereship
+                    add_modifier = {
+                        modifier = Sanctum_modifier_incremental_pos
+                        days = -1
+                        multiplier = event_target:et_sphereship_owner.ssm_var_sphereship_mod_level
+                    }
+                    add_modifier = {
+                        modifier = Sanctum_modifier
+                        days = -1
+                    }
+                    set_variable = {
+                        which = Sanctum_Life_Count
+                        value = 9999999
+                    }
+    
+                }
+                
+            }
+        }
+        
+    }
+}
+#29 30 31
+#机制控制菜单二型
+country_event = {
+    id = cbjq_cheat_global.29
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.29_name"
+    desc = "cbjq_cheat_global.29_desc"
+    trigger = {
+        is_ai = no
+    }
+    option = {
+        name = "cbjq_cheat_global.29.a"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_setlocation_on
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.29.f"
+        hidden_effect = {
+            set_global_flag = global_cheat_setlocation_off
+            remove_global_flag = global_cheat_setlocation_on
+            country_event = {
+                id = cbjq_cheat_global.29
+            }
+        }
+    }
+    option = {
+        trigger = {
+            has_global_flag = global_cheat_setlocation_off
+        }
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        name = "cbjq_cheat_global.29.g"
+        hidden_effect = {
+            set_global_flag = global_cheat_setlocation_on
+            country_event = {
+                id = cbjq_cheat_global.29
+            }
+            remove_global_flag = global_cheat_setlocation_off
+            
+            no_scope = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_global_flag = global_cheat_jail
+                        }
+                    }
+                    spawn_system = {
+                        min_distance = 500
+                        max_distance = 500
+                        min_orientation_angle = 45
+                        max_orientation_angle = 45
+                        initializer = cbjq_jail_init
+                        hyperlane = no
+                        effect = {
+                            set_star_flag = cbjq_zdhfleet_comed
+                            save_global_event_target_as = cbjq_jail
+                            add_modifier = {
+                                modifier = cbjq_jail_system
+                            }
+                        }
+                    }
+                    no_scope = {
+                        change_variable = {
+                            which = cbjq_jailfleet_count
+                            value = 1
+                        }
+                        create_fleet = {
+                            name = cbjq_jail_fleetname
+                            settings = {
+                                can_upgrade = no
+                                can_change_composition = no
+                                can_change_leader = yes
+                                uses_naval_capacity = no
+                                spawn_debris = no
+                                is_ultra_boss = yes
+                            }
+                            effect = {  
+                                fleet_event = {
+                                    id = cbjq_cheat_global.49
+                                    days = 10
+                                }
+                                set_owner = event_target:player_country
+                                while = {
+                                    count = 10
+                                    create_ship = {
+                                        name = The_END
+                                        design = "NAME_ZDH"
+                                        effect = {
+                                            set_disable_at_health = 0.1
+                                        }
+                                    }
+                                }
+                                set_location = {
+                                    target = event_target:cbjq_jail
+                                    distance = 5
+                                    angle = random
+                                }
+                                
+                                set_fleet_stance = aggressive
+                                set_aggro_range_measure_from = self
+                                set_aggro_range = 500
+                                
+                            }
+                        }
+                    }
+                }
+                set_global_flag = global_cheat_jail
+            }
+        }
+    }
+    option = {
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        trigger = {
+            NOT = {
+                has_global_flag = busizhan_finished
+            }
+            check_variable = {
+                which = cbjq_gtnh_material_3
+                value > 50
+            }
+            check_variable = {
+                which = cbjq_gtnh_material_5
+                value > 50
+            }
+        }
+        name = "cbjq_cheat_global.29.b"
+        set_global_flag = busizhan_finished
+        subtract_variable = {
+            which = cbjq_gtnh_material_3
+            value = 1000
+        }
+        subtract_variable = {
+            which = cbjq_gtnh_material_5
+            value = 1000
+        }
+        country_event = {
+            id = cbjq_cheat_global.29
+        }
+    }
+    option = {
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        trigger = {
+            has_global_flag = busizhan_finished
+        }
+        name = "cbjq_cheat_global.29.c"
+        country_event = {
+            id = cbjq_cheat_global.29
+        }
+        no_scope = {
+            every_country = {
+                    limit = {
+                        is_ai = yes
+                    }
+                every_owned_ship = {
+                    set_disable_at_health = -1
+                }
+            }
+        }
+    }
+    option = {
+        custom_tooltip = cbjq_kexuegeming_xiaohua
+        trigger = {
+            NOT = {
+                has_global_flag = cbjq_xingtuan_ready
+            }
+        }
+        name = "cbjq_cheat_global.29.e"
+        country_event = {
+            id = cbjq_cheat_global.46
+        }
+        set_global_flag = cbjq_xingtuan_ready
+    }
+    option = {
+        name = "cbjq_cheat_global.29.d"
+        country_event = {
+            id = cbjq_cheat_global.002
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.30
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.30.name"
+    desc = "cbjq_cheat_global.30.desc"
+    trigger = {
+        is_ai = no
+    }
+    option = {
+        name = "cbjq_cheat_global.30.a"
+        country_event = {
+            id = cbjq_cheat_global.31
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.b"
+        country_event = {
+            id = cbjq_cheat_global.42
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.c"
+        country_event = {
+            id = cbjq_cheat_global.43
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.d"
+        country_event = {
+            id = cbjq_cheat_global.34
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.e"
+        country_event = {
+            id = cbjq_cheat_global.35
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.f"
+        country_event = {
+            id = cbjq_cheat_global.36
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.g"
+        country_event = {
+            id = cbjq_cheat_global.37
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.h"
+        country_event = {
+            id = cbjq_cheat_global.38
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.i"
+        country_event = {
+            id = cbjq_cheat_global.39
+        }
+    }
+    option = {
+        name = "cbjq_cheat_global.30.j"
+        country_event = {
+            id = cbjq_cheat_global.29
+        }
+    }
+   
+}
+country_event = {
+    id = cbjq_cheat_global.31
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.31.name"
+    desc = "cbjq_cheat_global.31.desc"
+    option = {
+        name = "cbjq_cheat_global.31.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.42
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.32.name"
+    desc = "cbjq_cheat_global.32.desc"
+    option = {
+        name = "cbjq_cheat_global.32.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.43
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.33.name"
+    desc = "cbjq_cheat_global.33.desc"
+    option = {
+        name = "cbjq_cheat_global.33.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.34
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.34.name"
+    desc = "cbjq_cheat_global.34.desc"
+    option = {
+        name = "cbjq_cheat_global.34.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.35
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.35.name"
+    desc = "cbjq_cheat_global.35.desc"
+    option = {
+        name = "cbjq_cheat_global.35.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.36
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.36.name"
+    desc = "cbjq_cheat_global.36.desc"
+    option = {
+        name = "cbjq_cheat_global.36.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.37
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.37.name"
+    desc = "cbjq_cheat_global.37.desc"
+    option = {
+        name = "cbjq_cheat_global.37.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.38
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.38.name"
+    desc = "cbjq_cheat_global.38.desc"
+    option = {
+        name = "cbjq_cheat_global.38.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+country_event = {
+    id = cbjq_cheat_global.39
+    is_triggered_only = yes
+    title = "cbjq_cheat_global.39.name"
+    desc = "cbjq_cheat_global.39.desc"
+    option = {
+        name = "cbjq_cheat_global.39.back"
+        country_event = {
+            id = cbjq_cheat_global.30
+        }
+    }
+}
+
+#时空
+country_event = {
+    id = cbjq_cheat_global.024
+	is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        subtract_variable = {
+            which = cbjq_gtnh_material_1
+            value = -1
+        }
+        country_event = {
+            id = cbjq_cheat_global.024
+            days = 29
+        }
+    }
+}
+#永恒
+country_event = {
+    id = cbjq_cheat_global.025
+	is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        subtract_variable = {
+            which = cbjq_gtnh_material_2
+            value = -1
+        }
+        country_event = {
+            id = cbjq_cheat_global.025
+            days = 29
+        }
+    }
+}
+#中子素态尘埃
+planet_event = {
+    id = cbjq_cheat_global.026
+	is_triggered_only = yes
+	hide_window = yes
+    trigger = {
+        OR = {
+            is_planet_class = pc_neutron_star
+            is_planet_class = pc_pulsar
+        }
+        
+    }
+    immediate = {
+        event_target:player_country = {   
+            set_variable = {
+                which = cbjq_eoh_count_neutron_dust
+                value = 1
+            }
+            change_variable = {
+                which = cbjq_eoh_count_neutron_dust
+                value = cbjq_eoh_count
+            }
+            change_variable = {
+                which = cbjq_gtnh_material_3
+                value = cbjq_eoh_count_neutron_dust
+            }
+        }
+        planet_event = {
+            id = cbjq_cheat_global.026
+            days = 29
+        }
+    }
+}
+#无尽锭
+country_event = {
+    id = cbjq_cheat_global.027
+	is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        subtract_variable = {
+            which = cbjq_gtnh_material_4
+            value = -1
+        }
+        country_event = {
+            id = cbjq_cheat_global.027
+            days = 29
+        }
+    }
+}
+#血
+country_event = {
+    id = cbjq_cheat_global.40
+	is_triggered_only = yes
+	hide_window = yes
+    trigger = {
+    }
+    immediate = {
+        change_variable = {
+            which = cbjq_gtnh_material_5
+            value = 2
+        }
+    }
+}
+#血-减人口
+planet_event = {
+    id = cbjq_cheat_global.41
+	is_triggered_only = yes
+	hide_window = yes
+    trigger = {
+    }
+    immediate = {
+        if = {
+            limit = {
+                num_pops > 2
+            }
+            random_pop_faction = {
+                kill_pop = yes
+            }
+            planet_event = {
+                id = cbjq_cheat_global.41
+                days = 29
+            }
+            event_target:player_country = {
+                country_event = {
+                    id = cbjq_cheat_global.40
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                num_pops < 2
+            }
+            planet_event = {
+                id = cbjq_cheat_global.41
+                days = 29
+            }
+        }
+
+    }
+}
+event = {
+    id = cbjq_cheat_global.000
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        set_variable = {
+            which = cbjq_gtnh_material_1
+            value = 0
+        }
+        set_variable = {
+            which = cbjq_gtnh_material_2
+            value = 0
+        }
+        set_variable = {
+            which = cbjq_gtnh_material_3
+            value = 0
+        }
+        set_variable = {
+            which = cbjq_gtnh_material_4
+            value = 0
+        }
+        set_variable = {
+            which = cbjq_gtnh_material_5
+            value = 0
+        }
+        set_variable = {
+            which = cbjq_jailfleet_count
+            value = 0
+        }
+            
+    }
+
+}
+#二阶祭坛(类星体上建造)
+planet_event = {
+    id = cbjq_cheat_global.45
+	is_triggered_only = yes
+	hide_window = yes
+    trigger = {
+    }
+    immediate = {
+        if = {
+            limit = {
+                solar_system = {
+                    count_system_colony = {
+                       count > 5
+                    }
+                    
+                }
+            }
+            planet_event = {
+                id = cbjq_cheat_global.42
+                days = 29
+            }
+            event_target:player_country = {
+                change_variable = {
+                    which = cbjq_gtnh_material_5
+                    value = 10
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                solar_system = {
+                    any_system_colony = {
+                        count_pop_faction = {
+                            count > 100
+                        }
+                    }
+                }
+             }
+             planet_event = {
+                id = cbjq_cheat_global.42
+                days = 29
+            }
+            event_target:player_country = {
+                change_variable = {
+                    which = cbjq_gtnh_material_5
+                    value = 10
+                }
+            }
+
+        }
+        else = {
+            planet_event = {
+                id = cbjq_cheat_global.42
+                days = 29
+            }
+        }
+
+    }
+}
+#id46 星团 ，启动!
+country_event = {
+    id = cbjq_cheat_global.46
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        no_scope = {
+            spawn_system = {
+                min_distance = 50
+                max_distance = 50
+                min_orientation_angle = 270
+                max_orientation_angle = 270
+                initializer = cbjq_super_initializer
+                hyperlane = no
+                effect = {
+                    save_global_event_target_as = cbjq_super_initializer_center
+                    save_global_event_target_as = cbjq_capital_two
+                    set_star_flag = cbjq_zdhfleet_comed
+                    create_starbase = {
+                            
+                        size = starbase_citadel
+                        module = shipyard
+                        module = cbjq_starbase_eoh
+                        module = cbjq_starbase_eoh
+                        module = cbjq_starbase_eoh
+                        module = cbjq_starbase_eoh
+                        module = cbjq_super_shipyard
+                        building = colossus_yards
+                        building = grand_yards
+                        building = titan_yards
+                        building = cbjq_super_resource_silo
+                        
+                        effect = {
+                            set_owner = event_target:player_country
+                            set_disable_at_health = 0.01
+                        }
+                    }
+                }
+                
+            }
+            event_target:cbjq_super_initializer_center = {
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 45
+                    max_orientation_angle = 45
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        save_global_event_target_as = cbjq_near_center_ring_1
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 135
+                    max_orientation_angle = 135
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        save_global_event_target_as = cbjq_near_center_ring_2
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_1
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 225
+                    max_orientation_angle = 225
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        save_global_event_target_as = cbjq_near_center_ring_3
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_2
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 315
+                    max_orientation_angle = 315
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        save_global_event_target_as = cbjq_near_center_ring_4
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_3
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                        
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 90
+                    max_orientation_angle = 90
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_4
+                        }
+                        save_global_event_target_as = cbjq_near_center_ring_5
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 180
+                    max_orientation_angle = 180
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_5
+                        }
+                        save_global_event_target_as = cbjq_near_center_ring_6
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 270
+                    max_orientation_angle = 270
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_6
+                        }
+                        save_global_event_target_as = cbjq_near_center_ring_7
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 10
+                    max_distance = 10
+                    min_orientation_angle = 360
+                    max_orientation_angle = 360
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    
+                    effect = {
+                        save_global_event_target_as = cbjq_near_center_ring_8
+                        set_star_flag = cbjq_zdhfleet_comed
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_7
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_1
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 45
+                    max_orientation_angle = 45
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        save_global_event_target_as = cbjq_secend_ring_first_system
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_1
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_eighth_system
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 135
+                    max_orientation_angle = 135
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        save_global_event_target_as = cbjq_secend_ring_secend_system
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_2
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_first_system
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 225
+                    max_orientation_angle = 225
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        save_global_event_target_as = :cbjq_secend_ring_third_system
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_3
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_secend_system
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 315
+                    max_orientation_angle = 315
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        save_global_event_target_as = cbjq_secend_ring_forth_system
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_4
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_third_system
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                        
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 90
+                    max_orientation_angle = 90
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        save_global_event_target_as = cbjq_secend_ring_fifth_system
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_5
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_forth_system
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 180
+                    max_orientation_angle = 180
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = cbjq_secend_ring_sixth_system
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_6
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_fifth_system
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 270
+                    max_orientation_angle = 270
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = cbjq_secend_ring_seventh_system
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_7
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_sixth_system
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 20
+                    min_orientation_angle = 360
+                    max_orientation_angle = 360
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = cbjq_secend_ring_eighth_system
+                        set_star_flag = cbjq_zdhfleet_comed
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                        
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_secend_ring_seventh_system
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_near_center_ring_8
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 45
+                    max_orientation_angle = 45
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 135
+                    max_orientation_angle = 135
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 225
+                    max_orientation_angle = 225
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 315
+                    max_orientation_angle = 315
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                        
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 90
+                    max_orientation_angle = 90
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 180
+                    max_orientation_angle = 180
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 270
+                    max_orientation_angle = 270
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance = 30
+                    max_distance = 30
+                    min_orientation_angle = 360
+                    max_orientation_angle = 360
+                    initializer = cbjq_super_initializer
+                    hyperlane = no
+                    
+                    effect = {
+                        set_star_flag = cbjq_zdhfleet_comed
+                        create_starbase = {
+                            
+                            size = starbase_citadel
+                            module = shipyard
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_starbase_eoh
+                            module = cbjq_super_shipyard
+                            building = colossus_yards
+                            building = grand_yards
+                            building = titan_yards
+                            building = cbjq_super_resource_silo
+                            
+                            effect = {
+                                set_owner = event_target:player_country
+                                set_disable_at_health = 0.01
+                            }
+                        }
+                        add_hyperlane = {
+                            from = THIS
+                            to = event_target:cbjq_super_initializer_center
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+#中子素态尘埃
+country_event = {
+    id = cbjq_cheat_global.47
+	is_triggered_only = yes
+	hide_window = yes
+    trigger = {
+        OR = {
+            is_planet_class = pc_neutron_star
+            is_planet_class = pc_pulsar
+        }
+        
+    }
+    immediate = {
+        event_target:player_country = {   
+            change_variable = {
+                which = cbjq_gtnh_material_3
+                value = 10
+            }
+        }
+        country_event = {
+            id = cbjq_cheat_global.47
+            days = 29
+        }
+    }
+}
+#global_cheat_setlocation_on
+planet_event = {
+	id = cbjq_cheat_global.48
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+        has_global_flag = global_cheat_setlocation_on
+        has_planet_flag = cbjq_player_colony
+	}
+	immediate = {
+        change_pc = pc_city
+        create_colony = {
+            owner = event_target:player_country
+        }
+        
+        event_target:cbjq_jail = {
+            solar_system = {
+                spawn_random_storm = { #创建风暴
+                    type = space_cbjq_storm2
+                    cosmic_storm_start_position = this
+                    immediate = yes
+                }
+            }
+            
+        }
+        no_scope = {
+            change_variable = {
+                which = cbjq_jailfleet_count
+                value = 1
+            }
+            create_fleet = {
+                name = cbjq_jail_fleetname
+                settings = {
+                    can_upgrade = no
+                    can_change_composition = no
+                    can_change_leader = yes
+                    uses_naval_capacity = no
+                    spawn_debris = no
+                    is_ultra_boss = yes
+                }
+                effect = {  
+                    fleet_event = {
+                        id = cbjq_cheat_global.49
+                        days = 10
+                    }
+                    set_owner = event_target:player_country
+                    while = {
+                        count = 10
+                        create_ship = {
+                            name = The_END
+                            design = "NAME_ZDH"
+                            effect = {
+                                set_disable_at_health = 0.2
+                            }
+                        }
+                    }
+                    set_location = {
+                        target = event_target:cbjq_jail
+                        distance = 5
+                        angle = random
+                    }
+                    
+                    set_fleet_stance = aggressive
+                    set_aggro_range_measure_from = self
+                    set_aggro_range = 500
+                    
+                }
+            }
+        }
+        solar_system = {
+            every_ship_in_system = {
+                reduce_hp_percent = 99
+                set_location = {
+                    target = event_target:cbjq_jail
+                    distance = 5
+                    angle = random
+                }
+            }
+        }
+        }
+    }
+
+fleet_event = {
+    id = cbjq_cheat_global.49
+	hide_window = yes
+	is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+        if = {
+            limit = {
+                check_variable = {
+                    which = cbjq_jailfleet_count
+                    value > 10
+                }
+            }
+            destroy_fleet = this
+        }
+        else = {
+            fleet_event = {
+                id = cbjq_cheat_global.49
+                days = 60
+            }
+        }
+    }
+}
+planet_event = {
+	id = cbjq_cheat_global.50
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		owner = {
+			is_ai = no
+		}
+	}
+	immediate = {
+        set_planet_flag = cbjq_player_colony
+	}
+}
+event = {
+	id = cbjq_cheat_global.51
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+        has_global_flag = all_disable_event_on
+        THIS = {
+            is_ai = no
+        }
+	}
+	immediate = {
+        fromfromfrom = {
+            solar_system = {
+                create_fleet = {
+                    name = cbjq_spawn_ship_name1
+                    settings = {
+                        can_upgrade = no
+                        can_change_composition = no
+                        can_change_leader = yes
+                        uses_naval_capacity = no
+                        spawn_debris = no
+                        is_ultra_boss = yes
+                    }
+                    effect = {  
+                        set_owner = event_target:player_country
+                        while = {
+                            count = 10
+                            create_ship = {
+                                name = The_END
+                                design = "NAME_ZDH"
+                                effect = {
+                                    set_disable_at_health = 0.1
+                                }
+                            }
+                        }
+                        set_disable_at_health = 0.1
+                        set_fleet_stance = aggressive
+                        set_aggro_range_measure_from = self
+                        set_aggro_range = 500
+                    }
+                }
+                every_ship_in_system = {
+                    limit = {
+                        owner = {
+                            is_ai = yes
+                        }
+                    }
+                    add_modifier = {
+                        modifier = cbjq_zdhfleet_enemy_buff
+                        days = 10
+                    }
+                }
+            }
+        }
+	}
+}
+ship_event = {
+    id = cbjq_cheat_global.052
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        NOT = {
+            has_global_flag = global_cheat_destoryspawnship_on
+        }
+        
+        owner = {
+            is_ai = no
+        }
+    }
+    immediate = {
+        solar_system = { #检索之前的风暴，删除
+            every_cosmic_storm = {
+                limit = { has_storm_flag = spth_cbjq_storm_flag@prevprev }
+                destroy_cosmic_storm = yes
+            }
+            every_system = {
+                limit = { has_star_flag = space_cbjq_system_star_flag } #检索之前的恒星移除flag
+                remove_star_flag = space_cbjq_system_star_flag
+                every_system_planet = { #检索之前的星球移除修正
+                    limit = { has_modifier = space_cbjq_planet_buff }
+                    remove_modifier = space_cbjq_planet_buff
+                }
+                every_system_ambient_object = {
+                    limit = {
+                       has_ambient_object_flag = cbjq_storm_event_storm_object
+                    }
+                    destroy_ambient_object = this
+                }
+            }
+            
+        }
+    }
+}

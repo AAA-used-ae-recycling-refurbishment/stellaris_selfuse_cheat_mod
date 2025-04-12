@@ -1,0 +1,37 @@
+objectTypes = {
+    pdxmesh = {
+        name = "DSC_galactic_center_system_Eternal_system_effect_1_mesh"
+        file = "gfx/models/effects/crisis/contingency_crisis_system_effect_5.mesh"
+
+        meshsettings = {
+            index = 0
+            shader = "PdxMeshAlphaAdditiveAnimateUVErosion"
+            texture_diffuse = "DSC_galactic_center_system_Eternal.dds"
+            texture_normal = "nonormal.dds"
+            texture_specular = "nospec.dds"		}
+    }
+
+    pdxmesh = {
+        name = "DSC_galactic_center_system_Eternal_system_effect_2_mesh"
+        file = "gfx/models/effects/crisis/contingency_crisis_system_effect_6.mesh"
+
+        meshsettings = {
+            index = 0
+            shader = "PdxMeshAlphaAdditiveAnimateUVErosion"
+            texture_diffuse = "DSC_galactic_center_system_Eternal.dds"
+            texture_normal = "nonormal.dds"
+            texture_specular = "nospec.dds"		}
+    }
+
+    pdxmesh = {
+        name = "DSC_galactic_center_system_Eternal_system_effect_3_mesh"
+        file = "gfx/models/effects/crisis/contingency_crisis_system_effect_7.mesh"
+
+        meshsettings = {
+            index = 0
+            shader = "PdxMeshAlphaAdditiveAnimateUVErosion"
+            texture_diffuse = "DSC_galactic_center_system_Eternal.dds"
+            texture_normal = "nonormal.dds"
+            texture_specular = "nospec.dds"		}
+    }
+}

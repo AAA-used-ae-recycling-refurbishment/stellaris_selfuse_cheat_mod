@@ -1,0 +1,193 @@
+space_cbjq_storm = {
+    description = "space_cbjq_strom_desc"
+    custom_tooltip = "space_cbjq_strom_toolip"
+    inline_script = {
+		script = "cosmic_storms/StormConfig"
+		MIN_RADIUS = 150
+		MAX_RADIUS = 150
+		MIN_RANGE = 150
+		MAX_RANGE = 150
+		STORM_SPEED = 0
+		ACTIVATION_PERIOD_IN_MONTHS = 1
+		MONTHLY_ADDED_DEVASTATION = 100
+	}
+    affect_hp_regen = no
+    affect_armor_regen = no
+    affect_shield_regen = no
+    spawn_weight = {
+		base = 0
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+
+    triggered_fleet_modifier = {
+        potential = { 
+            owner = { 
+               is_ai = yes
+            }
+        }
+        ship_disengage_chance_reduction = 10000000
+			ship_armor_reduction = 10000000
+			ship_shield_reduction = 10000000
+			ship_emergency_ftl_min_days_mult = 10000000
+			ship_armor_penetration_mult = -10000000
+			ship_shield_penetration_mult = -10000000
+			ship_weapon_damage = -10000000
+			ship_evasion_mult = -10000000
+			ship_tracking_mult = -10000000
+			ship_accuracy_mult = -10000000
+			ship_base_speed_mult = -10000000
+			ship_armor_damage_mult = -10000000
+			ship_shield_damage_mult = -10000000
+			ship_hull_damage_mult = -10000000
+			ship_fire_rate_mult = -10000000
+			ship_weapon_range_mult = -10000000
+			ship_windup_mult = 10000000
+			ship_winddown_mult = 10000000
+			ship_interstellar_speed_mult = -10000000
+			ship_emergency_ftl_mult = 10000000
+			ship_jumpdrive_cooldown_mult = 10000000
+			ship_ftl_jumpdrive_range_mult = -10000000
+			ship_landing_time_mult = -10000000
+            ship_shield_regen_add_static = -2147483648
+            ship_armor_regen_add_static = -2147483648
+            ship_hull_regen_add_static = -2147483648
+            custom_tooltip = "space_cbjq_strom_toolip"
+            show_only_custom_tooltip = no
+        }
+    
+
+    on_start = {
+        every_system_within_storm = {
+            cbjq_create_strom = yes
+        }
+    }
+    on_moved = {
+        every_system_added_to_storm = {
+            unset_cosmic_storm = yes
+            cbjq_storm_event_storm_add_storm_remove = yes
+        }
+
+        every_system_removed_from_storm = {
+            unset_cosmic_storm = yes
+            cbjq_storm_event_storm_add_storm_remove = yes
+        }
+    }
+    on_finished = {
+        every_system_within_storm = {
+            unset_cosmic_storm = yes
+            cbjq_storm_event_storm_add_storm_remove = yes
+        }
+    }
+    show_notification = { always = no }
+    cosmic_storm_texture_path = "gfx/map/storms/NebulaOpacity.dds"
+    cosmic_storm_texture_color_path = "gfx/map/storms/cbjq_storm_color.dds"
+    cosmic_storm_event_sprite = "GFX_shroud_storm"
+    icon = GFX_planetview_storm_shroud_modifier_frame
+    cosmic_storm_texture_lightning_paths = {
+        "gfx/map/storms/lightning/lightning_big_storm_01.dds"
+        "gfx/map/storms/lightning/lightning_big_storm_02.dds"
+        "gfx/map/storms/lightning/lightning_mid_storm_01.dds"
+        "gfx/map/storms/lightning/lightning_mid_storm_02.dds"
+    }
+    cosmic_storm_galaxy_lightning_time = 5.0
+    cosmic_storm_galaxy_max_opacity = 0.4
+}
+
+space_cbjq_storm2 = {
+    description = "space_cbjq_storm2_desc"
+    custom_tooltip = "space_cbjq_storm2_toolip"
+    inline_script = {
+		script = "cosmic_storms/StormConfig"
+		MIN_RADIUS = 25
+		MAX_RADIUS = 25
+		MIN_RANGE = 25
+		MAX_RANGE = 25
+		STORM_SPEED = 0
+		ACTIVATION_PERIOD_IN_MONTHS = 1
+		MONTHLY_ADDED_DEVASTATION = 100
+	}
+    affect_hp_regen = no
+    affect_armor_regen = no
+    affect_shield_regen = no
+    spawn_weight = {
+		base = 0
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+
+    triggered_fleet_modifier = {
+        potential = { 
+            owner = { 
+               is_ai = yes
+            }
+        }
+			ship_weapon_damage = -10000000
+			ship_evasion_mult = -10000000
+			ship_tracking_mult = -10000000
+			ship_accuracy_mult = -10000000
+			ship_armor_damage_mult = -10000000
+			ship_shield_damage_mult = -10000000
+			ship_hull_damage_mult = -10000000
+			ship_fire_rate_mult = -10000000
+			ship_weapon_range_mult = -10000000
+			ship_windup_mult = 10000000
+			ship_winddown_mult = 100000000000
+            custom_tooltip = "space_cbjq_strom_toolip"
+            show_only_custom_tooltip = no
+        }
+        triggered_fleet_modifier = {
+            potential = { 
+                owner = { 
+                   is_ai = no
+                }
+            }
+                ship_weapon_damage = 10
+                ship_evasion_mult = 100
+                ship_tracking_mult = 100
+                ship_accuracy_mult = 100
+                custom_tooltip = "space_cbjq_strom_toolip"
+                show_only_custom_tooltip = no
+            }
+
+    on_start = {
+        every_system_within_storm = {
+            set_cosmic_storm = { cosmic_storm = prev }
+            scarlet_weather_event_storm_add = { type = event_common }
+        }
+    }
+    on_moved = {
+        every_system_added_to_storm = {
+            set_cosmic_storm = { cosmic_storm = prev }
+            scarlet_weather_event_storm_add = { type = event_common }
+        }
+
+        every_system_removed_from_storm = {
+            unset_cosmic_storm = yes
+            scarlet_weather_event_storm_remove = { type = event_common }
+        }
+    }
+    on_finished = {
+        every_system_within_storm = {
+            unset_cosmic_storm = yes
+            scarlet_weather_event_storm_remove = { type = event_common }
+        }
+    }
+    show_notification = { always = no }
+    cosmic_storm_texture_path = "gfx/map/storms/NebulaOpacity.dds"
+    cosmic_storm_texture_color_path = "gfx/map/storms/cbjq_storm_color.dds"
+    cosmic_storm_event_sprite = "GFX_shroud_storm"
+    icon = GFX_planetview_storm_shroud_modifier_frame
+    cosmic_storm_texture_lightning_paths = {
+        "gfx/map/storms/lightning/lightning_big_storm_01.dds"
+        "gfx/map/storms/lightning/lightning_big_storm_02.dds"
+        "gfx/map/storms/lightning/lightning_mid_storm_01.dds"
+        "gfx/map/storms/lightning/lightning_mid_storm_02.dds"
+    }
+    cosmic_storm_galaxy_lightning_time = 5.0
+    cosmic_storm_galaxy_max_opacity = 0.4
+}

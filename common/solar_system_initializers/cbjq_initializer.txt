@@ -1,0 +1,653 @@
+cbjq_super_initializer = {
+	name = "cbjq_initializer"
+
+	class = "sc_cbjq_star_class"
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_shelter_XXYS"
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 250
+		has_ring = no
+		entity = "shelter_XXYS_black_hole_big_entity"
+		deposit_blockers = none
+		modifiers = none
+	}
+
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 150
+		orbit_angle = 0
+		size = 2
+		has_ring = no
+		entity = "frozen_planet"
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 2
+		has_ring = no
+		entity = "frozen_planet"
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 2
+		has_ring = no
+		entity = "frozen_planet"
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 2
+		has_ring = no
+		entity = "frozen_planet"
+		deposit_blockers = none
+		modifiers = none
+	}
+
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = pc_city
+		orbit_distance = 40
+		orbit_angle = 0
+		size = 25
+		has_ring = no
+		entity = "shelter_city_planet_entity"
+		deposit_blockers = none
+		modifiers = none
+		flags = { cbjq_init_planet_name_flag }
+		init_effect = {
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			save_global_event_target_as = cbjq_init_planet_name_planet
+			create_colony = {
+				owner = event_target:player_country
+			}
+			while = {
+				count = 10
+				create_pop = {
+					species = from
+				}
+			}
+			clear_blockers = yes
+			remove_all_buildings = yes
+			clear_planet_modifiers = yes
+			add_building = building_cbjq_groundmega
+			change_pc = pc_city
+			set_planet_entity = {
+				entity = "shelter_city_planet_entity"
+			}
+			set_planet_size = 25
+			while = {
+				count = 200
+				add_district = district_cbjq_groundmega2
+			}
+			every_owned_pop = {
+				limit = {
+					is_unemployed = yes
+				}
+				kill_pop = yes
+			}
+			set_planet_name = "cbjq_init_planet_name"
+		}
+
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 10
+			orbit_distance = 20
+			orbit_angle = 180
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 10
+			orbit_distance = 0
+			orbit_angle = 180
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = pc_city
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 25
+		has_ring = no
+		entity = "shelter_city_planet_entity"
+		deposit_blockers = none
+		modifiers = none
+		flags = { cbjq_init_planet_name_flag }
+		init_effect = {
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			save_global_event_target_as = cbjq_init_planet_name_planet
+			create_colony = {
+				owner = event_target:player_country
+			}
+			while = {
+				count = 10
+				create_pop = {
+					species = from
+				}
+			}
+			clear_blockers = yes
+			remove_all_buildings = yes
+			clear_planet_modifiers = yes
+			add_building = building_cbjq_groundmega
+			change_pc = pc_city
+			set_planet_entity = {
+				entity = "shelter_city_planet_entity"
+			}
+			set_planet_size = 25
+			while = {
+				count = 200
+				add_district = district_cbjq_groundmega2
+			}
+			every_owned_pop = {
+				limit = {
+					is_unemployed = yes
+				}
+				kill_pop = yes
+			}
+			set_planet_name = "cbjq_init_planet_name"
+		}
+
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 10
+			orbit_distance = 20
+			orbit_angle = 90
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 10
+			orbit_distance = 0
+			orbit_angle = 180
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = pc_city
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 25
+		has_ring = no
+		entity = "shelter_city_planet_entity"
+		deposit_blockers = none
+		modifiers = none
+		flags = { cbjq_init_planet_name_flag }
+		init_effect = {
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			save_global_event_target_as = cbjq_init_planet_name_planet
+			create_colony = {
+				owner = event_target:player_country
+			}
+			while = {
+				count = 10
+				create_pop = {
+					species = from
+				}
+			}
+			clear_blockers = yes
+			remove_all_buildings = yes
+			clear_planet_modifiers = yes
+			add_building = building_cbjq_groundmega
+			change_pc = pc_city
+			set_planet_entity = {
+				entity = "shelter_city_planet_entity"
+			}
+			set_planet_size = 25
+			while = {
+				count = 200
+				add_district = district_cbjq_groundmega2
+			}
+			every_owned_pop = {
+				limit = {
+					is_unemployed = yes
+				}
+				kill_pop = yes
+			}
+			set_planet_name = "cbjq_init_planet_name"
+		}
+
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 10
+			orbit_distance = 20
+			orbit_angle = 180
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 10
+			orbit_distance = 0
+			orbit_angle = 180
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = pc_city
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 25
+		starting_planet = no
+		has_ring = no
+		entity = "shelter_city_planet_entity"
+		deposit_blockers = none
+		modifiers = none
+		flags = { cbjq_init_planet_name_flag }
+		init_effect = {
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			add_deposit = d_tempestous_mountain
+			add_deposit = d_dust_desert
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+			add_deposit = d_submerged_ore_veins
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_tropical_island
+			add_deposit = d_teeming_reef
+			add_deposit = d_black_soil
+			add_deposit = d_betharian_deposit
+			add_deposit = d_alien_pets_deposit
+			add_deposit = d_buzzing_plains
+			add_deposit = d_mineral_striations
+			add_deposit = d_natural_farmland
+			save_global_event_target_as = cbjq_init_planet_name_planet
+			create_colony = {
+				owner = event_target:player_country
+			}
+			while = {
+				count = 10
+				create_pop = {
+					species = from
+				}
+			}
+			clear_blockers = yes
+			remove_all_buildings = yes
+			clear_planet_modifiers = yes
+			add_building = building_cbjq_groundmega
+			change_pc = pc_city
+			set_planet_entity = {
+				entity = "shelter_city_planet_entity"
+			}
+			set_planet_size = 25
+			while = {
+				count = 200
+				add_district = district_cbjq_groundmega2
+			}
+			every_owned_pop = {
+				limit = {
+					is_unemployed = yes
+				}
+				kill_pop = yes
+			}
+			set_planet_name = "cbjq_init_planet_name"
+		}
+
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 50
+			orbit_distance = 20
+			orbit_angle = 270
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+		moon = {
+			name = "cbjq_init_planet_name"
+			class = pc_city
+			size = 50
+			orbit_distance = 0
+			orbit_angle = 180
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_neutron_star"
+		orbit_distance = 50
+		orbit_angle = 135
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_neutron_star"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_neutron_star"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_neutron_star"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 25
+		has_ring = no
+	}
+
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 40
+		orbit_angle = 45
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			save_global_event_target_as = cbjq_init_planet_name_planet
+		}
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			save_global_event_target_as = cbjq_init_planet_name_planet
+		}
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			save_global_event_target_as = cbjq_init_planet_name_planet
+		}
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = noneack_hole
+		init_effect = {
+			save_global_event_target_as = cbjq_init_planet_name_planet
+		}
+	}
+
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 60
+		orbit_angle = 90
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_XXYS"
+		orbit_distance = 0
+		orbit_angle = 90
+		size = 4
+		has_ring = yes
+		entity = "gas_giant"
+		deposit_blockers = none
+		modifiers = none
+	}
+
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 60
+		orbit_angle = 112
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 25
+		has_ring = no
+	}
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 45
+		size = 25
+		has_ring = no
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = shelter_apocalyptic_pointer_system
+		}
+		spawn_megastructure = {
+			type = cbjq_mega1
+		}
+		save_global_event_target_as = cbjq_init_planet_name
+	}
+}
+cbjq_jail_init = {
+	name = "cbjq_jail_initializer"
+	
+	class = "sc_jail_cbjq_star_class"
+	planet = {
+		name = "cbjq_init_planet_name"
+		class = "pc_quasar_shelter_XXYS"
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 250
+		has_ring = no
+		entity = "shelter_XXYS_black_hole_big_entity"
+		deposit_blockers = none
+		modifiers = none
+	}
+}

@@ -1,0 +1,42 @@
+namespace = cbjq_dmc_ships
+#定装船
+country_event = {
+	id = cbjq_dmc_ships
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		event_target:player_country_catpital = {
+			create_fleet = {
+				name = cbjq_spawn_ship_name2
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = yes
+					uses_naval_capacity = no
+					spawn_debris = no
+					is_ultra_boss = yes
+				}
+				effect = {  
+					set_owner = event_target:player_country
+					while = {
+						count = 1
+						create_ship = {
+							name =  cbjq_spawn_ship_name2
+							design = "NAME_END"
+							effect = {
+								set_disable_at_health = 0.1
+							}
+						}
+					}
+					set_disable_at_health = 0.1
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
+        		}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+objectTypes = {
+
+    pdxmesh = {
+        name = "DSC_star_shipyard_mesh"
+        file = gfx/models/ships/DSC_star_shipyard/DSC_star_shipyard.mesh
+        scale = 0.5
+    }
+    pdxmesh = {
+        name = "DSC_star_shipyard_ruined_mesh"
+        file = gfx/models/ships/DSC_star_shipyard/DSC_star_shipyard_ruined.mesh
+        scale = 0.5
+    }
+    pdxmesh = {
+        name = "DSC_star_shipyard_stage_1_mesh"
+        file = gfx/models/ships/DSC_star_shipyard/DSC_star_shipyard_stage_1.mesh
+        scale = 0.5
+    }
+    pdxmesh = {
+        name = "DSC_star_shipyard_stage_2_mesh"
+        file = gfx/models/ships/DSC_star_shipyard/DSC_star_shipyard_stage_2.mesh
+        scale = 0.5
+    }
+    pdxmesh = {
+        name = "DSC_star_shipyard_stage_3_mesh"
+        file = gfx/models/ships/DSC_star_shipyard/DSC_star_shipyard_stage_3.mesh
+        scale = 0.5
+    }
+
+}

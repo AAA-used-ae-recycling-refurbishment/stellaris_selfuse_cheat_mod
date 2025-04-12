@@ -1,0 +1,9 @@
+on_destroy_planet_with_cbjq_pk2 = {
+	events = {
+		cbjq_planet_killer.1
+	}
+}
+on_destroy_planet_with_cbjq_pk2_queued = {
+}
+on_destroy_planet_with_cbjq_pk2_unqueued = {
+}

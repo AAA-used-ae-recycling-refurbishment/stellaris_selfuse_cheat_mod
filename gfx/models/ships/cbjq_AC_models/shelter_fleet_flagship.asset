@@ -1,0 +1,29 @@
+entity = {
+	name = "cbjq_fleet_flagship_ship_entity"
+	pdxmesh = "cbjq_fleet_flagship_ship_mesh"
+	locator = { name = "root" 	position = { 0 0 0 } }
+
+	game_data = {
+		emissive_recolor_crunch = 0
+	}
+
+	attach = { root_l1 = cbjq_star_destroyer_ship_entity }
+	attach = { root_l2 = cbjq_star_destroyer_ship_entity }
+	attach = { root_r1 = cbjq_star_destroyer_ship_entity }
+	attach = { root_r2 = cbjq_star_destroyer_ship_entity }
+}
+entity = {
+	name = "cbjq_fleet_flagship_ship_entity2"
+	pdxmesh = "cbjq_fleet_flagship_ship_mesh"
+	locator = { name = "root" 	position = { 0 0 0 } }
+
+	game_data = {
+		emissive_recolor_crunch = 0
+	}
+
+	attach = { root_l1 = cbjq_star_destroyer_ship_entity }
+	attach = { root_l2 = cbjq_star_destroyer_ship_entity }
+	attach = { root_r1 = cbjq_star_destroyer_ship_entity }
+	attach = { root_r2 = cbjq_star_destroyer_ship_entity }
+	scale = 0.3
+}

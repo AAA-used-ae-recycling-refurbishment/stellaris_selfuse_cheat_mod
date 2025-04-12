@@ -1,0 +1,33 @@
+# See wg_example.txt for an explanation
+
+wg_cbjq_crisis = {
+	casus_belli = cb_cbjq_crisis
+
+	#hide_if_no_cb = yes
+	total_war = yes
+
+	potential = {
+		is_country_type = cbjq_crises_type
+	}
+
+	set_defender_wargoal = wg_colossus
+
+	allowed_peace_offers = {
+		# status_quo
+		# surrender
+		# demand_surrender
+	}
+
+	on_wargoal_set = {
+		every_system_within_border = {
+			limit = {
+				NOT = { from = { has_claim = prev } }
+			}
+			add_claims = { who = from }
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

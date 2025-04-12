@@ -1,0 +1,1482 @@
+XXYS_asteriod_war_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = asteriod_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 100                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 500           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 32         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 50000           #船体值
+    modifier = {
+        ship_armor_add = 40000
+        ship_shield_add = 40000
+        ship_piracy_suppression_add = 16
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 1
+    }
+    base_buildtime = 600            #建造时间
+    size_multiplier = 16            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 16     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 16            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_the_idea_of_weaponizing_celestial_bodies }    #前置科技
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = asteriod_warship
+            ship_size = XXYS_asteriod_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 10000
+        }
+        upkeep = {
+            energy = 70
+            alloys = 25
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_asteriod_war_ship_AI = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = yes      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = asteriod_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 100                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 500           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 32         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 50000           #船体值
+    modifier = {
+        ship_armor_add = 40000
+        ship_shield_add = 40000
+        ship_piracy_suppression_add = 16
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 1
+    }
+    base_buildtime = 600            #建造时间
+    size_multiplier = 16            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 16     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 16            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_the_idea_of_weaponizing_celestial_bodies }    #前置科技
+    potential_country = {
+        is_ai = yes
+    }
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = asteriod_warship
+            ship_size = XXYS_asteriod_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 10000
+        }
+        upkeep = {
+            energy = 70
+            alloys = 25
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_moon_war_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = moon_war_ship_entity
+    #entity = 17_XXYS_Star_class_ship_entity
+
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 95                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 1000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 40         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 200000           #船体值
+    modifier = {
+        ship_armor_add = 150000
+        ship_shield_add = 100000
+        ship_piracy_suppression_add = 32
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 2
+    }
+    base_buildtime = 1000            #建造时间
+    size_multiplier = 32            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 32     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 32            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Planetary_scale_transition_driven }    #前置科技
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = moon_warship
+            ship_size = XXYS_moon_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 45000
+        }
+        upkeep = {
+            energy = 120
+            alloys = 70
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_moon_war_ship_AI = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = yes      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = moon_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 95                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 1000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 40         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 200000           #船体值
+    modifier = {
+        ship_armor_add = 150000
+        ship_shield_add = 100000
+        ship_piracy_suppression_add = 32
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 2
+    }
+    base_buildtime = 1000            #建造时间
+    size_multiplier = 32            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 32     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 32            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Planetary_scale_transition_driven }    #前置科技
+    potential_country = {
+        is_ai = yes
+    }
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = moon_warship
+            ship_size = XXYS_moon_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 45000
+        }
+        upkeep = {
+            energy = 120
+            alloys = 70
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_blackhole_war_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 4         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = "blackhole_war_ship_entity"
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+        "g" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+
+    max_speed = 60                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 20000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 65         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 100000000        #船体值
+    modifier = {
+        ship_armor_add = 70000000
+        ship_shield_add = 40000000
+        ship_piracy_suppression_add = 500
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 8
+    }
+    base_buildtime = 15000            #建造时间
+    size_multiplier = 416            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 416     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 416            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Cyclic_space_time_metric }    #前置科技
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = blackhole_warship
+            ship_size = XXYS_blackhole_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 10000000
+            rare_crystals = 90000
+            exotic_gases = 66000
+            volatile_motes = 73000
+            sr_dark_matter = 16700
+        }
+        upkeep = {
+            energy = 28000
+            alloys = 17000
+            rare_crystals = 512
+            exotic_gases = 380
+            volatile_motes = 422
+            sr_dark_matter = 36
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+        produces = {
+            engineering_research = 5000
+            society_research = 5000
+            physics_research = 5000
+        }
+    }
+}
+XXYS_blackhole_war_ship_AI = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 4         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = yes      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = "blackhole_war_ship_entity"
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+        "g" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+
+    max_speed = 60                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 20000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 65         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 100000000        #船体值
+    modifier = {
+        ship_armor_add = 70000000
+        ship_shield_add = 40000000
+        ship_piracy_suppression_add = 500
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 8
+    }
+    base_buildtime = 15000            #建造时间
+    size_multiplier = 416            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 416     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 416            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Cyclic_space_time_metric }    #前置科技
+    potential_country = {
+        is_ai = yes
+    }
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = blackhole_warship
+            ship_size = XXYS_blackhole_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 10000000
+            rare_crystals = 90000
+            exotic_gases = 66000
+            volatile_motes = 73000
+            sr_dark_matter = 16700
+        }
+        upkeep = {
+            energy = 28000
+            alloys = 17000
+            rare_crystals = 512
+            exotic_gases = 380
+            volatile_motes = 422
+            sr_dark_matter = 36
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+        produces = {
+            engineering_research = 5000
+            society_research = 5000
+            physics_research = 5000
+        }
+    }
+}
+XXYS_neutron_war_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = neutron_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+        "g" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+
+    max_speed = 70                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 20000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 60         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 60000000        #船体值
+    modifier = {
+        ship_armor_add = 37000000
+        ship_shield_add = 25000000
+        ship_piracy_suppression_add = 120
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 6
+    }
+    base_buildtime = 8000            #建造时间
+    size_multiplier = 256            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 256     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 256            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Study_of_degenerate_matter }    #前置科技
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = neutron_warship
+            ship_size = XXYS_neutron_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 5000000
+            rare_crystals = 57000
+            exotic_gases = 32000
+            volatile_motes = 43000
+            sr_dark_matter = 8700
+        }
+        upkeep = {
+            energy = 7000
+            alloys = 10000
+            rare_crystals = 300
+            exotic_gases = 190
+            volatile_motes = 170
+            sr_dark_matter = 7.6
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_neutron_war_ship_AI = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = yes      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = neutron_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+        "g" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+
+    max_speed = 70                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 20000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 60         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 60000000        #船体值
+    modifier = {
+        ship_armor_add = 37000000
+        ship_shield_add = 25000000
+        ship_piracy_suppression_add = 120
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 6
+    }
+    base_buildtime = 8000            #建造时间
+    size_multiplier = 256            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 256     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 256            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Study_of_degenerate_matter }    #前置科技
+    potential_country = {
+        is_ai = yes
+    }
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = neutron_warship
+            ship_size = XXYS_neutron_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 5000000
+            rare_crystals = 20000
+            exotic_gases = 12000
+            volatile_motes = 13000
+            sr_dark_matter = 8000
+        }
+        upkeep = {
+            energy = 15000
+            alloys = 10000
+            rare_crystals = 340
+            exotic_gases = 290
+            volatile_motes = 270
+            sr_dark_matter = 14
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_planet_war_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 4         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = planet_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 90                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 5000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 45         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 1000000           #船体值
+    modifier = {
+        ship_armor_add = 800000
+        ship_shield_add = 600000
+        ship_piracy_suppression_add = 40
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 3
+    }
+    base_buildtime = 2000            #建造时间
+    size_multiplier = 64            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 64     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 64            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Earth_like_warship_assembly }    #前置科技
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = planet_warship
+            ship_size = XXYS_planet_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 90000
+            rare_crystals = 50
+            exotic_gases = 50
+            volatile_motes = 50
+        }
+        upkeep = {
+            energy = 210
+            alloys = 150
+            rare_crystals = 5
+            exotic_gases = 5
+            volatile_motes = 5
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_planet_war_ship_AI = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 4         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = yes      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = planet_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 90                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 5000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 45         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 1000000           #船体值
+    modifier = {
+        ship_armor_add = 800000
+        ship_shield_add = 600000
+        ship_piracy_suppression_add = 40
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 3
+    }
+    base_buildtime = 2000            #建造时间
+    size_multiplier = 64            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 64     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 64            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Earth_like_warship_assembly }    #前置科技
+    potential_country = {
+        is_ai = yes
+    }
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = planet_warship
+            ship_size = XXYS_planet_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 90000
+            rare_crystals = 50
+            exotic_gases = 50
+            volatile_motes = 50
+        }
+        upkeep = {
+            energy = 210
+            alloys = 150
+            rare_crystals = 5
+            exotic_gases = 5
+            volatile_motes = 5
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_gasplanet_war_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = gasplanet_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 85                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 5000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 50         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 5000000           #船体值
+    modifier = {
+        ship_armor_add = 3000000
+        ship_shield_add = 2000000
+        ship_piracy_suppression_add = 52
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 4
+    }
+    base_buildtime = 3000            #建造时间
+    size_multiplier = 96            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 96     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 96            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Stable_giant_planet }    #前置科技
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = gasplanet_warship
+            ship_size = XXYS_gasplanet_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 200000
+            rare_crystals = 200
+            exotic_gases = 200
+            volatile_motes = 200
+        }
+        upkeep = {
+            energy = 400
+            alloys = 270
+            rare_crystals = 20
+            exotic_gases = 20
+            volatile_motes = 20
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_gasplanet_war_ship_AI = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = yes      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = gasplanet_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 85                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 5000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 50         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 5000000           #船体值
+    modifier = {
+        ship_armor_add = 3000000
+        ship_shield_add = 2000000
+        ship_piracy_suppression_add = 52
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 4
+    }
+    base_buildtime = 3000            #建造时间
+    size_multiplier = 96            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 96     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 96            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Stable_giant_planet }    #前置科技
+    potential_country = {
+        is_ai = yes
+    }
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = gasplanet_warship
+            ship_size = XXYS_gasplanet_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 200000
+            rare_crystals = 200
+            exotic_gases = 200
+            volatile_motes = 200
+        }
+        upkeep = {
+            energy = 400
+            alloys = 270
+            rare_crystals = 20
+            exotic_gases = 20
+            volatile_motes = 20
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_star_war_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = general_star_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+        "g" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+    required_component_set = "ship_aura_components"
+
+    max_speed = 80                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 10000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 55         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 30000000        #船体值
+    modifier = {
+        ship_armor_add = 25000000
+        ship_shield_add = 20000000
+        ship_piracy_suppression_add = 80
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 5
+    }
+    base_buildtime = 5000            #建造时间
+    size_multiplier = 160            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 160     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 160            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_High_energy_vacuum_field }    #前置科技
+    potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = star_warship
+            ship_size = XXYS_star_war_ship
+        }
+    }
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 2000000
+            rare_crystals = 5000
+            exotic_gases = 3000
+            volatile_motes = 3700
+            sr_dark_matter = 500
+        }
+        upkeep = {
+            energy = 7500
+            alloys = 5000
+            rare_crystals = 200
+            exotic_gases = 130
+            volatile_motes = 270
+            sr_dark_matter = 5
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+XXYS_star_war_ship_AI = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = yes      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = general_star_war_ship_entity
+    section_slots = {               #区段
+        "a" = { locator = "part1" }
+        "b" = { locator = "part1" }
+        "c" = { locator = "part1" }
+        "d" = { locator = "part1" }
+        "e" = { locator = "part1" }
+        "f" = { locator = "part1" }
+        "g" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+    required_component_set = "ship_aura_components"
+
+    max_speed = 80                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 10000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 55         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 30000000        #船体值
+    modifier = {
+        ship_armor_add = 25000000
+        ship_shield_add = 20000000
+        ship_piracy_suppression_add = 80
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 5
+    }
+    base_buildtime = 5000            #建造时间
+    size_multiplier = 160            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 160     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 160            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_High_energy_vacuum_field }    #前置科技
+    potential_country = {
+        is_ai = yes
+    }
+    possible_construction = {
+        XXYS_AP_build_trigger = {
+            KEY = star_warship
+            ship_size = XXYS_star_war_ship
+        }
+    }
+	potential_construction = {
+		custom_tooltip = {
+            fail_text = starbase_citadel_trigger
+            AND = {
+                cbjq_replace_XXYS_ships = yes
+            }
+        }
+	}
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            alloys = 2000000
+            rare_crystals = 5000
+            exotic_gases = 3000
+            volatile_motes = 3700
+            sr_dark_matter = 500
+        }
+        upkeep = {
+            energy = 7500
+            alloys = 5000
+            rare_crystals = 200
+            exotic_gases = 130
+            volatile_motes = 270
+            sr_dark_matter = 5
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+    }
+}
+YHTT = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    default_behavior = artillery    #确定自动生成的设计在选择战斗计算机组件时应尝试选择的默认飞船行为
+    ship_roles = { artillery gunship }
+    num_target_locators = 0         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes             #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = no #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = "YHTT_entity"
+    section_slots = {               #区段
+        "Y" = { locator = "part1" }
+        "H" = { locator = "part1" }
+        "T" = { locator = "part1" }
+        "A" = { locator = "part1" }
+        "C" = { locator = "part1" }
+        "L" = { locator = "part1" }
+        "E" = { locator = "part1" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+    required_component_set = "ship_aura_components"
+
+    max_speed = 50                 #基本速度
+    acceleration = 0.2              #加速度
+    rotation_speed = 0.15           #旋转速度
+    collision_radius = 20000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 70         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 100000000        #船体值
+    modifier = {
+        ship_armor_add = 100000000
+        ship_shield_add = 100000000
+        ship_accuracy_add = 1000
+        ship_hull_regen_add_static = 100000000
+        ship_armor_regen_add_static = 100000000
+        ship_shield_regen_add_static = 100000000
+        ship_piracy_suppression_add = 1000
+    }
+    ship_modifier = {
+        ship_ftl_jumpdrive_range_mult = 10
+    }
+    base_buildtime = 100            #建造时间
+    size_multiplier = 1            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 1     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 1000            #这决定了这种船型在舰队中出现的顺序
+
+
+    prerequisites = { tech_Eternal_Sky_Tower }    #前置科技
+    possible_construction = {
+        always = yes
+    }
+	potential_construction = {
+		custom_tooltip = {
+            fail_text = cbjq_YYHT_custom_toolip
+            AND = {
+                cbjq_replace_YYHT = yes
+            }
+        }
+	}
+
+
+    resources = {
+        category = celestial_ships
+        cost = {
+            time = 100
+        }
+        upkeep = {
+            alloys = 100000
+            rare_crystals = 977
+            exotic_gases = 779
+            volatile_motes = 890
+            sr_dark_matter = 173
+            multiplier = value:XXYS_common_vaue_control|PLAYER|event_target:global_event_country.xxys_player_ship_upkeep_var|AI|event_target:global_event_country.xxys_ai_ship_upkeep_var|
+        }
+        produces = {
+            engineering_research = 10000
+            society_research = 10000
+            physics_research = 10000
+        }
+    }
+}
+agx_quasarcraft = {
+	graphical_culture = no
+	entity = "qsc_01_ship_entity"
+	max_speed = 250
+	acceleration = 100
+	rotation_speed = 100
+	collision_radius = 256
+	formation_priority = 256
+	combat_disengage_chance = -42.69
+	modifier = {
+		ship_hull_regen_add_static = 45000000
+		ship_armor_regen_add_static = 45000000
+		ship_shield_regen_add_static = 45000000
+		# ship_hull_regen_add_perc = 50
+		# ship_armor_regen_add_perc = 50
+		# ship_shield_regen_add_perc = 50
+		ship_evasion_mult = -0.9
+		ship_armor_add = 200000000
+		ship_shield_add = 200000000
+		ship_starting_experience_add = 5000
+	}
+	max_hitpoints = 200000000
+	size_multiplier = 1
+	fleet_slot_size = 1
+	section_slots = {
+		"main1" =			    { locator = "root" }
+		"main2" =				{ locator = "root" }
+		"halo1" =				{ locator = "root" }
+		"halo2" =			    { locator = "root" }
+		"jupiters" =			{ locator = "root" }
+		"celfab" =	            { locator = "root" }
+	}
+	num_target_locators = 0
+	icon = ship_size_atk_system
+	ship_class_icon_frame = 28
+	prerequisites = { "agx_tech_quasarcraft_6" }
+	enable_default_design = yes
+	class = shipclass_military
+	can_disable = yes
+	can_have_federation_design = no
+	possible_construction = { always = yes }
+
+	is_civilian = no
+	is_designable = yes
+	components_add_to_cost = no
+    possible_construction = {
+        always = yes
+        has_global_flag = XXYS_qsc_on
+        has_global_flag = qsc_down_touying_allowed
+    }
+	potential_construction = {
+		custom_tooltip = {
+            fail_text = cbjq_YYHT_custom_toolip
+            AND = {
+                cbjq_replace_YYHT = yes
+            }
+        }
+	}
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "ship_aura_components"
+	required_component_set = "ship_aura_components"
+	required_component_set = "ship_aura_components"
+
+	resources = {
+		category = ships
+		produces = {
+			sr_solar_energy = 25
+			sr_magical_neutronium = 50
+			energy = 125000
+		}
+		upkeep = {
+			alloys = 1200000
+
+		}
+	}
+}

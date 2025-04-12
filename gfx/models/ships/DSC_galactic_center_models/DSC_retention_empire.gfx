@@ -1,0 +1,69 @@
+objectTypes = {
+    #战列
+    pdxmesh = {
+        name = DSC_retention_empire_battleship_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_battleship.mesh
+    }
+    pdxmesh = {
+        name = DSC_retention_empire_battleship_section_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_battleship_section.mesh
+    }
+    #主宰
+    pdxmesh = {
+        name = DSC_retention_empire_juggernaut_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_juggernaut.mesh
+    }
+    pdxmesh = {
+        name = DSC_retention_empire_juggernaut_section_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_juggernaut_section.mesh
+    }
+    #光环
+    pdxmesh = {
+        name = DSC_retention_empire_aura_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_aura.mesh
+    }
+    #行星战舰
+    pdxmesh = {
+        name = DSC_retention_empire_planet_war_ship_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_planet_war_ship.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = DSC_retention_empire_planet_war_ship_section_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_planet_war_ship_section.mesh
+        scale = 1
+    }
+    #宏大型行星战舰
+    pdxmesh = {
+        name = DSC_retention_empire_large_planet_war_ship_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_large_planet_war_ship.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = DSC_retention_empire_large_planet_war_ship_section_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_large_planet_war_ship_section.mesh
+        scale = 1
+    }
+    #镭射舰
+    pdxmesh = {
+        name = DSC_retention_empire_laser_ship_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_laser_ship.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = DSC_retention_empire_laser_ship_section_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_laser_ship_section.mesh
+        scale = 1
+    }
+    #恒星舰
+    pdxmesh = {
+        name = DSC_retention_empire_star_war_ship_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_star_war_ship.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = DSC_retention_empire_star_war_ship_section_mesh
+        file = gfx/models/ships/DSC_galactic_center_models/XXYS_crisis_star_war_ship_section.mesh
+        scale = 1
+    }
+}

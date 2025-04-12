@@ -1,0 +1,59 @@
+cbjq_ship = {
+    auto_upgrade = no               #确定该船尺寸的设计是否应根据最新技术自动升级。(管不了手动升级)
+    graphical_culture = no
+    num_target_locators = 4         #受击点位
+    combat_disengage_chance = 0     #紧急跃迁能跳出的概率修正
+    construction_type = starbase_shipyard   #建造方式，是通过工程船还是船坞等方式建造，防御平台用starbase_defenses，其它都用（包括主宰）starbase_shipyard，恒星基地不用
+    icon = ship_size_military_32    #确定共享图标文件中此船舶大小的图标的索引。
+    is_space_station = no           #是否是空间站
+    is_designable = yes          #确定此船舶尺寸是否可在船舶设计器中设计。
+    enable_default_design = no      #自动生成设计（会瞎几把装配件还没法删掉没法关掉，每月一号刷新，艹）
+    can_have_federation_design = yes #是否能成为联邦舰船
+    components_add_to_cost = yes    #确定船舶建造成本和船舶维护是否应考虑船舶部件和船舶部分。
+    can_disable = no                #恒星基地防止摧毁，一般用不到
+    flip_control_on_disable = no    #恒星基地被捕获，一般用不到
+    #min_upgrade_cost = { energy = 0 }   #升级这艘船所需的最低成本。用于通过从一个组件转移到另一个成本完全相同的组件来防止零成本升级。
+    class = shipclass_military  #舰船类型，民用，军用，恒星基地，巨像等
+    #use_shipnames_from = colossus  #继承其他船只名字
+
+    entity = corvette_entity
+	prerequisites = { "cbjq_tech2" }
+    section_slots = {               #区段
+        "core" = { locator = "core" }
+    }
+    #需要具有组件集的核心组件。允许多个。当由船舶设计师设计时，这些将显示在右侧。
+    required_component_set = "power_core"
+    required_component_set = "thruster_components"
+    required_component_set = "ftl_components"
+    required_component_set = "sensor_components"
+    required_component_set = "combat_computers"
+
+    max_speed = 100                 #基本速度
+    acceleration = 2              #加速度
+    rotation_speed = 1          #旋转速度
+    collision_radius = 21000           #其他船只将尽量避免碰撞的半径。
+    formation_priority = 70         #具有更高编队优先级趋势的舰艇将领先于舰队的其他部分。
+    max_hitpoints = 100000      #船体值
+    modifier = {
+        ship_armor_add = 100000
+        ship_shield_add = 100000
+        weapon_type_kinetic_weapon_damage_mult = 10
+        weapon_type_explosive_weapon_damage_mult = 10
+    }
+    base_buildtime = 90            #建造时间
+    size_multiplier = 10            #舰队战斗AI应该考虑这艘船的规模。确定船舶在造船厂建造窗口内的位置.这也决定了将此舰船设计添加到舰队所需的指挥点数量。
+    combat_size_multiplier = 10     #舰队战斗AI应该考虑这艘船的规模
+    fleet_slot_size = 50            #这决定了这种船型在舰队中出现的顺序
+
+
+
+    resources = {
+        category = ships
+        cost = {
+            alloys = 800
+        }
+        upkeep = {
+            energy = 50
+        }
+    }
+}

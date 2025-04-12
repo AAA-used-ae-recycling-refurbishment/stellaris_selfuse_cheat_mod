@@ -1,0 +1,1495 @@
+ship_design = {
+	name = "NAME_END"
+	ship_size = HELIUM_FLASH_ship
+	is_event_design = yes
+
+	section = {
+		template = "HELIUM_FLASH_ship_core"
+		slot = "core"
+
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "cbjq_pk2"
+
+		}
+		component = {
+			slot = "TITANIC_1"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_2"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_3"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_4"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_5"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_6"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_7"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_8"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_9"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_10"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_11"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_12"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_13"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_14"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_15"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_16"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_17"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_18"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_19"
+			template = "cbjq_TC"
+
+		}
+		component = {
+			slot = "TITANIC_20"
+			template = "cbjq_TC"
+
+		}
+
+		component = {
+			slot = "EXTRA_LARGE_1"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_2"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_3"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_4"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_5"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_6"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_7"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_8"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_9"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_10"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_11"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_12"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_13"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_14"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_15"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_16"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_17"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_18"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_19"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_20"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_21"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_22"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_23"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_24"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_25"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_26"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_27"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_28"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_29"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_30"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_31"
+			template = "cbjq_XC"
+
+		}
+		component = {
+			slot = "EXTRA_LARGE_32"
+			template = "cbjq_XC"
+
+		}
+
+		component = {
+			slot = "LARGE_GUN_1"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_2"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_3"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_4"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_5"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_6"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_7"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_8"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_9"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_13"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_14"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_15"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_16"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_17"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_18"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_19"
+			template = "cbjq_LC"
+
+		}
+		component = {
+			slot = "LARGE_GUN_20"
+			template = "cbjq_LC"
+
+		}
+
+		component = {
+			slot = "STRIKE_CRAFT_1"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_2"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_3"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_4"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_5"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_6"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_7"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_8"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_9"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_11"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_12"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_13"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_14"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_15"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_16"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_17"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_18"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_19"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_20"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_21"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_22"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_23"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_24"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_25"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_26"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_27"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_28"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_29"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_30"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_31"
+			template = "cbjq_HC"
+
+		}
+		component = {
+			slot = "STRIKE_CRAFT_32"
+			template = "cbjq_HC"
+
+		}
+
+		component = {
+			slot = "TORPEDO_1"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_2"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_3"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_4"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_5"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_6"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_7"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_8"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_9"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_10"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_11"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_12"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_13"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_14"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_15"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_16"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_17"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_18"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_19"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_20"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_21"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_22"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_23"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_24"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_25"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_26"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_27"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_28"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_29"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_30"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_31"
+			template = "cbjq_GC"
+
+		}
+		component = {
+			slot = "TORPEDO_32"
+			template = "cbjq_GC"
+
+		}
+
+		component = {
+			slot = "PD_1"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_2"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_3"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_4"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_5"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_6"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_7"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_8"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_9"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_10"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_11"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_12"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_13"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_14"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_15"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_16"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_17"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_18"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_19"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_20"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_21"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_22"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_23"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_24"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_25"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_26"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_27"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_28"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_29"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_30"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_31"
+			template = "cbjq_PC"
+
+		}
+		component = {
+			slot = "PD_32"
+			template = "cbjq_PC"
+
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "cbjq_AURAA"
+		}
+	}
+
+	required_component = "cbjq_components_c"
+	required_component = "cbjq_components_a"
+	required_component = "cbjq_components_b"
+	required_component = "cbjq_components_d"
+	required_component = "cbjq_components_e"
+}
+ship_design = {
+	name = "NAME_CBJQ_BATLLESHIP"
+	ship_size = battleship
+	is_event_design = yes
+	required_component = "cbjq_components_c"
+	required_component = "cbjq_components_a"
+	required_component = "cbjq_components_b"
+	required_component = "cbjq_components_d"
+	required_component = "cbjq_components_e"
+	section = {
+		slot = bow
+		template = zhanlie_sec
+		component = {
+			slot = "TORPEDO_01"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_06"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_07"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_08"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_09"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_10"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_11"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_12"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_13"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_14"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_15"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_16"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_17"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_18"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_19"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_20"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_21"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_22"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_23"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_24"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_25"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_26"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_27"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_28"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_29"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_30"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_31"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_32"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_33"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_34"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_35"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_36"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_37"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_38"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_39"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_40"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_41"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_42"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_43"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_44"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_45"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_46"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_47"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_48"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_49"
+			template = "cbjq_T2"
+		}
+		component = {
+			slot = "TORPEDO_50"
+			template = "cbjq_T2"
+		}
+		
+	}
+	section = {
+			slot = mid
+			template = zhanlie_sec2
+			component = {
+				slot = "TORPEDO_01"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_02"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_03"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_04"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_05"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_06"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_07"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_08"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_09"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_10"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_11"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_12"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_13"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_14"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_15"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_16"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_17"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_18"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_19"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_20"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_21"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_22"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_23"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_24"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_25"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_26"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_27"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_28"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_29"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_30"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_31"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_32"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_33"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_34"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_35"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_36"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_37"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_38"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_39"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_40"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_41"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_42"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_43"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_44"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_45"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_46"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_47"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_48"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_49"
+				template = "cbjq_T"
+			}
+			component = {
+				slot = "TORPEDO_50"
+				template = "cbjq_T"
+			}
+		}
+		section = {
+			slot = stern
+			template = zhanlie_sec3
+			component = {
+				slot = "TORPEDO_01"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_02"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_03"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_04"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_05"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_06"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_07"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_08"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_09"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_10"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_11"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_12"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_13"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_14"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_15"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_16"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_17"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_18"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_19"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_20"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_21"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_22"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_23"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_24"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_25"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_26"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_27"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_28"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_29"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_30"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_31"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_32"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_33"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_34"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_35"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_36"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_37"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_38"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_39"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_40"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_41"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_42"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_43"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_44"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_45"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_46"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_47"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_48"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_49"
+				template = "cbjq_T3"
+			}
+			component = {
+				slot = "TORPEDO_50"
+				template = "cbjq_T3"
+			}
+		}
+}

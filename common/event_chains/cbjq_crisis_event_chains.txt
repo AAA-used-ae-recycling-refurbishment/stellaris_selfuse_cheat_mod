@@ -1,0 +1,6 @@
+cbjq_crisis_chain = {
+    picture = "GFX_XXYS_crisis_01"
+    icon = "gfx/interface/icons/situation_log/situation_log_combat.dds"
+    counter = {
+    }
+}

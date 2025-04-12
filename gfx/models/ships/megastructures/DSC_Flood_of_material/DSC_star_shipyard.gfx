@@ -1,0 +1,69 @@
+objectTypes = {
+
+    pdxmesh = {
+        name = "DSC_Flood_of_material_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material.mesh
+        scale = 1
+    }
+
+
+
+    pdxmesh = {
+        name = "DSC_Flood_of_material_stage_01_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_stage_01.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = "DSC_Flood_of_material_stage_02_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_stage_02.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = "DSC_Flood_of_material_stage_03_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_stage_03.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = "DSC_Flood_of_material_stage_04_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_stage_04.mesh
+        scale = 1
+    }
+    pdxmesh = {
+        name = "DSC_Flood_of_material_stage_05_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_stage_05.mesh
+        scale = 1
+    }
+
+    #发射环
+    pdxmesh = {
+        name = "DSC_Flood_of_material_small_fire_ring_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_small_fire_ring.mesh
+        scale = 1
+        animation = { id = DSC_Flood_of_material_small_fire_ring type = DSC_Flood_of_material_small_fire_ring }
+    }
+    #主体
+    pdxmesh = {
+        name = "DSC_Flood_of_material_body_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_body.mesh
+        scale = 1
+    }
+    #大型发射环
+    pdxmesh = {
+        name = "DSC_Flood_of_material_large_fire_ring_1_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_large_fire_ring_1.mesh
+        scale = 1
+        animation = { id = DSC_Flood_of_material_large_fire_ring_1 type = DSC_Flood_of_material_large_fire_ring_1 }
+    }
+    pdxmesh = {
+        name = "DSC_Flood_of_material_large_fire_ring_2_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_large_fire_ring_2.mesh
+        scale = 1
+        animation = { id = DSC_Flood_of_material_large_fire_ring_2 type = DSC_Flood_of_material_large_fire_ring_2 }
+    }
+    pdxmesh = {
+        name = "DSC_Flood_of_material_large_fire_ring_3_mesh"
+        file = gfx/models/ships/megastructures/DSC_Flood_of_material/DSC_Flood_of_material_large_fire_ring_3.mesh
+        scale = 1
+        animation = { id = DSC_Flood_of_material_large_fire_ring_3 type = DSC_Flood_of_material_large_fire_ring_3 }
+    }
+}

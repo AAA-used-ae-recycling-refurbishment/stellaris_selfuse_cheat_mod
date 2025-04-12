@@ -1,0 +1,228 @@
+cbjq_gtnh_machine_DTPF = {
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_mega }
+	build_time = 20
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 1000000
+		}
+		produces = {
+			energy = 100000000
+			minerals = 100000000
+			consumer_goods = 100000000
+			alloys = 100000000
+			food = 100000000
+			influence = 100000000
+			unity = 100000000
+			volatile_motes = 100000000
+			exotic_gases = 100000000
+			rare_crystals = 100000000
+			sr_living_metal = 100000000
+			sr_zro = 100000000
+			sr_dark_matter = 100000000
+			nanites = 100000000
+			minor_artifacts = 100000000
+			astral_threads = 100000000
+			physics_research = 100000000
+			society_research = 100000000
+			engineering_research = 100000000
+			menace = 100000000
+			advanced_logic = 100000000
+		}
+	}
+
+	country_modifier = {
+		country_resource_max_add = 200000000
+	}
+
+	potential = {
+		has_technology = cbjq_player_cheat
+		check_variable = {
+			which = x
+			value = x
+		}
+	}
+
+
+	ai_weight = { factor = 0 }
+
+		}
+cbjq_gtnh_machine_ZZSTYSJ = {
+	entity = "quantum_catapult_stage_3_entity"
+	construction_entity = "quantum_catapult_stage_3_entity"
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_mega }
+	build_time = 20
+	potential = {
+		has_global_flag = morethan_uv_lv
+	}
+	placement_rules = {
+        planet_possible = {
+            custom_tooltip = {
+                fail_text = "must_build_around_a_neutron_star"
+                OR = {
+                    is_planet_class = pc_neutron_star
+                    is_planet_class = pc_pulsar
+                }
+            }
+        }
+    }
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 1000000
+		}
+		upkeep = {
+			alloys = 100000000
+			energy = 100000000
+		}
+	}
+	on_build_complete = {
+		fromfrom.planet = {
+			planet_event = {
+				id = cbjq_cheat_global.026
+			}
+		}
+	}
+}
+cbjq_gtnh_machine_XZJTT1 = {
+	entity = "quantum_catapult_stage_3_entity"
+	construction_entity = "quantum_catapult_stage_3_entity"
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_mega }
+	build_time = 20
+	potential = {
+		has_global_flag = morethan_uv_lv
+	}
+	placement_rules = {
+        planet_possible = {
+            custom_tooltip = {
+                fail_text = "must_build_around_a_neutron_star"
+                OR = {
+                    is_colony = yes
+					num_pops > 2
+                }
+            }
+        }
+    }
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 1000000
+		}
+		upkeep = {
+			alloys = 100000000
+			energy = 100000000
+			astral_threads = 10000000
+		}
+	}
+	on_build_complete = {
+		fromfrom.planet = {
+			planet_event = {
+				id = cbjq_cheat_global.41
+			}
+		}
+	}
+}
+cbjq_gtnh_machine_compressor_1 = {
+	entity = "quantum_catapult_stage_3_entity"
+	construction_entity = "quantum_catapult_stage_3_entity"
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_mega }
+	build_time = 20
+	potential = {
+		always = no
+	}
+	possible = {
+		always = no
+	}
+	resources = {
+		category = megastructures
+		cost = {
+		}
+		upkeep = {
+			alloys = 100000000
+			energy = 100000000
+		}
+	}
+}
+cbjq_gtnh_machine_compressor_2 = {
+	entity = "quantum_catapult_stage_3_entity"
+	construction_entity = "quantum_catapult_stage_3_entity"
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_mega }
+	upgrade_from = {
+		cbjq_gtnh_machine_compressor_1
+	}
+	build_time = 20
+	resources = {
+		category = megastructures
+		cost = {
+			cbjq_resouse_fn = 100
+		}
+		upkeep = {
+			alloys = 100000000
+			energy = 100000000
+		}
+	}
+}
+cbjq_gtnh_machine_XZJTT2 = {
+	entity = "quantum_catapult_stage_3_entity"
+	construction_entity = "quantum_catapult_stage_3_entity"
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_mega }
+	build_time = 20
+	placement_rules = {
+        planet_possible = {
+            custom_tooltip = {
+                fail_text = must_build_around_cbjq_XZJTT2
+                AND = {
+					is_star = yes
+					OR = {
+						solar_system = {
+							count_system_colony = {
+								count > 5
+							}
+							any_system_colony = {
+								count_pop_faction = {
+									count > 100
+								}
+							}
+						}
+                        
+                    }
+				}
+            }
+        }
+    }
+	potential = {
+		custom_tooltip = cbjq_material3_must_more_than100
+		check_variable = {
+			which = cbjq_gtnh_material_3
+			value > 100
+		}
+		has_global_flag = morethan_uv_lv
+	}
+	possible = {
+		always = no
+		
+	}
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 1000000
+		}
+		upkeep = {
+			alloys = 100000000
+			energy = 100000000
+		}
+	}
+	on_build_complete = {
+		fromfrom.planet = {
+			planet_event = {
+				id = cbjq_cheat_global.45
+			}
+		}
+	}
+}

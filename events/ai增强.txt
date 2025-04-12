@@ -1,0 +1,180 @@
+namespace = aiplus
+country_event = {
+	id = aiplus.1
+    title = aiplus.1.name
+    desc = aiplus.1.desc
+	picture = GFX_evt_phenkka_quasar
+	is_triggered_only = yes
+
+	trigger = {
+        is_ai = no
+	}
+    option = {
+        name = aiplus.1.aa
+        no_scope = {
+            every_country = {
+                limit = {
+                    is_ai = yes
+                }
+                give_technology = { tech = cbjq_tech }
+                give_technology = { tech = cbjq_tech2 }
+                add_modifier = {
+                    modifier = zhengqi_level_modifier
+                    days = -1
+                }
+                country_event = {
+                    id = aiplus.2
+                }
+            }
+        }
+    }
+    option = {
+        name = aiplus.1.bb
+        no_scope = {
+            every_country = {
+                limit = {
+                    is_ai = no
+                }
+                give_technology = { tech = cbjq_tech }
+                give_technology = { tech = cbjq_tech2 }
+            }
+        }
+    }
+}
+country_event = {
+    id = aiplus.2
+    hide_window = yes
+	is_triggered_only = yes
+    
+    immediate = {
+        no_scope = {
+            every_country = {
+                limit = {
+                    is_ai = yes
+                    NOR = {
+                        has_technology = cbjq_tech
+                        has_technology = cbjq_tech2
+                        has_modifier = zhengqi_level_modifier
+                    }
+                }
+                give_technology = { tech = cbjq_tech }
+                give_technology = { tech = cbjq_tech2 }
+                add_modifier = {
+                    modifier = zhengqi_level_modifier
+                    days = -1
+                }
+                country_event = {
+                id = aiplus.3
+            }
+            }
+            
+        }
+    }
+}
+country_event = {
+    id = aiplus.3
+    hide_window = yes
+	is_triggered_only = yes
+    
+    immediate = {
+        no_scope = {
+            every_country = {
+                limit = {
+                    is_ai = yes
+                }
+                create_ship_design = {
+                    design = "NAME_CBJQ_BATLLESHIP"
+                }
+                capital_scope = {
+                    while = {
+                        count = 5
+                        create_fleet = {
+                            effect = {
+                                while = {
+                                    count = 10
+                                    create_ship = {
+                                    name = The_END
+                                    design = "NAME_CBJQ_BATLLESHIP"
+                                    effect = {
+                                        set_disable_at_health = 0.1
+                                        set_ship_flag = cbjq_reborn_flaged
+                                        set_variable = {
+                                            which = cbjq_aiship_life_count
+                                            value = 100
+                                        }
+                                    }
+                                    }
+                                }
+                                queue_actions = {
+                                    repeat = {
+                                        find_closest_system = {
+                                            found_system = {
+                                                move_to = this
+                                                wait = 20
+                                                effect = {
+                                                    id = cbjq_ai_findway.1
+                                                    create_starbase = {
+                                                        size = starbase_outpost
+                                                        effect = {
+                                                            set_owner = prevprevprevprev
+                                                        }
+                                                    }
+                                                    set_owner = prevprevprevprev
+                                                }
+                                            }
+                                            
+                                        }
+                                        find_closest_planet = {
+                                            trigger = {
+                                                    id = cbjq_ai_findway.2
+                                                    is_colony = yes
+                                                }
+                                            found_planet = { 
+                                                move_to = this
+                                                wait = 20
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+ship_event = {
+    id = aiplus.4
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_ship_flag = cbjq_reborn_flaged
+    }
+    immediate = {
+        if = {
+            limit = {
+                check_variable = {
+                    which = cbjq_aiship_life_count
+                    value > 1
+                }
+                
+            }
+            repair_ship = yes
+            set_disabled = no
+        }
+        else_if = {
+            limit = {
+                check_variable = {
+                    which = cbjq_aiship_life_count
+                    value < 1
+                }
+            }
+            remove_ship_flag = cbjq_reborn_flaged
+            set_disable_at_health = -1
+            destroy_ship = this
+            delete_ship = yes
+        }
+    }
+}

@@ -1,0 +1,85 @@
+component_set = {
+    key = "cbjq_TC"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_XC"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_LC"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_AsC"
+	icon = "GFX_cbjqa"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_AmC"
+	icon = "GFX_cbjqa"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_AlC"
+	icon = "GFX_cbjqa"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_HC"
+	icon = "GFX_cbjqh"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_HC2"
+	icon = "GFX_cbjqh"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_GC"
+	icon = "GFX_XXYS_PHANTOM_ENERGY_WEAPON_504"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_PC"
+	icon = "GFX_XXYS_PHANTOM_ENERGY_WEAPON_304"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_aura"
+	icon = "GFX_cbjqaura"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_pk1"
+	icon = "GFX_cbjqcores"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_pk2"
+	icon = "GFX_cbjqcores"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_SC"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_MC"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_AM1E"
+	icon = "GFX_cbjqa"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_AURAA"
+	icon = "GFX_cbjqaura"
+    icon_frame = 1
+}

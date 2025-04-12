@@ -1,0 +1,317 @@
+starchanges = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	ai_weight = { factor = 0 }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+			volatile_motes = 100000
+			exotic_gases = 100000
+			rare_crystals = 100000
+		}
+		upkeep = {
+			alloys = 50000
+			energy = 10000
+		}
+		produces = { sr_magical_neutronium = 10 }
+	}
+
+	potential = {
+		is_ai = no
+	}
+
+	on_build_complete = {
+	}
+}
+leixingti = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { starchanges }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+			volatile_motes = 100000
+			exotic_gases = 100000
+			rare_crystals = 100000
+		}
+		upkeep = {
+			alloys = 50000
+			energy = 10000
+		}
+		produces = { sr_magical_neutronium = 10 }
+	}
+
+	on_build_complete = {
+		star = { change_pc = pc_quasar_XXYS }
+		set_star_class = pc_quasar_XXYS
+	}
+}
+
+quasar = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { leixingti }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+			volatile_motes = 100000
+			exotic_gases = 100000
+			rare_crystals = 100000
+            ehof_sr_negative_mass = 100000
+		}
+		upkeep = {
+			alloys = 50000
+			energy = 10000
+		}
+		produces = { sr_magical_neutronium = 10 }
+	}
+
+	on_build_complete = {
+		star = { change_pc = pc_core_quasar }
+		set_star_class = pc_core_quasar
+	}
+}
+
+
+blackhole = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { quasar }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+			volatile_motes = 100000
+			exotic_gases = 100000
+			rare_crystals = 100000
+            ehof_sr_negative_mass = 100000
+		}
+		upkeep = {
+			alloys = 50000
+			energy = 10000
+		}
+		produces = { sr_magical_neutronium = 10 }
+	}
+
+	on_build_complete = {
+		star = { change_pc = pc_core_black_hole }
+		set_star_class = pc_core_black_hole
+		remove_megastructure = fromfrom
+		spawn_megastructure = {
+			type = starchanges
+			owner = ROOT.from
+		}
+	}
+}
+delmega = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { 
+		starchanges
+		create_cbjq_main_fleet
+		create_cbjq_flag_fleet
+		create_cbjq_station_fleet
+ 	}
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+		}
+		upkeep = {
+			alloys = 5
+		}
+		produces = { sr_magical_neutronium = 1 }
+	}
+
+	on_build_complete = {
+		remove_megastructure = fromfrom
+	}
+}
+delmega2 = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { leixingti }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+		}
+		upkeep = {
+			alloys = 5
+		}
+		produces = { sr_magical_neutronium = 1 }
+	}
+
+	on_build_complete = {
+		remove_megastructure = fromfrom
+	}
+}
+delmega3 = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { quasar }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+		}
+		upkeep = {
+			alloys = 5
+		}
+		produces = { sr_magical_neutronium = 1 }
+	}
+
+	on_build_complete = {
+		remove_megastructure = fromfrom
+	}
+}
+delmega4 = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { blackhole }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+		}
+		upkeep = {
+			alloys = 5
+		}
+		produces = { sr_magical_neutronium = 1 }
+	}
+
+	on_build_complete = {
+		remove_megastructure = fromfrom
+	}
+}
+rtg_blackhole_cmega = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { leixingti }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+			volatile_motes = 100000
+			exotic_gases = 100000
+			rare_crystals = 100000
+            ehof_sr_negative_mass = 100000
+		}
+		upkeep = {
+			alloys = 50000
+			energy = 10000
+		}
+		produces = { sr_magical_neutronium = 10 }
+	}
+
+	on_build_complete = {
+		star = { change_pc = pc_super_black_hole }
+		set_star_class = pc_super_black_hole
+	}
+}
+rtg_quasar_cmega = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { rtg_blackhole_cmega }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+			volatile_motes = 100000
+			exotic_gases = 100000
+			rare_crystals = 100000
+            ehof_sr_negative_mass = 100000
+		}
+		upkeep = {
+			alloys = 50000
+			energy = 10000
+		}
+		produces = { sr_magical_neutronium = 10 }
+	}
+
+	on_build_complete = {
+		star = { change_pc = pc_hyper_quasar }
+		set_star_class = pc_hyper_quasar
+		spawn_megastructure = {
+			type = starchanges
+			owner = ROOT.from
+		}
+	}
+}
+delmega5 = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { rtg_blackhole_cmega }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+		}
+		upkeep = {
+			alloys = 5
+		}
+		produces = { sr_magical_neutronium = 1 }
+	}
+
+	on_build_complete = {
+		remove_megastructure = fromfrom
+	}
+}
+delmega6 = {
+	entity = "quasarcraft_0_entity"
+	construction_entity = "quasarcraft_0_construction_entity"
+	portrait = "GFX_mega_qsc_bg"
+	upgrade_from = { rtg_quasar_cmega }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000000
+		}
+		upkeep = {
+			alloys = 5
+		}
+		produces = { sr_magical_neutronium = 1 }
+	}
+
+	on_build_complete = {
+		remove_megastructure = fromfrom
+	}
+}

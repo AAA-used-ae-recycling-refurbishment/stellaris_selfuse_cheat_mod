@@ -1,0 +1,113 @@
+namespace = reborn_mozheng
+ship_event = {
+    id = reborn_mozheng.101
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		owner = {
+			has_ascension_perk = ap_cbjq
+		}
+    }
+
+    immediate = {
+            repair_ship = yes
+            set_disabled = no
+	}
+}
+ship_event = {
+    id = reborn_mozheng.102
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		owner = {
+			has_ascension_perk = ap_cbjq
+		}
+    }
+
+    immediate = {
+		set_disable_at_health = 0.5
+	}
+}
+ship_event = {
+    id = reborn_mozheng.103
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		owner = {
+			has_ascension_perk = ap_cbjq
+		}
+    }
+
+    immediate = {
+		set_disable_at_health = 0.5
+	}
+}
+#月检是否有虚烛,有虚烛则删除所有虚烛舰船
+#country_event = {
+#    id = reborn_mozheng.104
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		has_civic = civic_CVBcivics
+#		has_country_flag = anti_xuzhu
+#    }
+#
+# 	  immediate = {
+#		every_owned_ship = {
+#			limit = { 
+#				is_ship_size = CVB_zlj
+#				is_ship_size = CVB_titan
+#				is_ship_size = CVB_ZHUZAI
+#				is_ship_size = ZXZXJ
+#				is_ship_size = ZXMB_QJ
+#				is_ship_size = ST_ship #TSB_ship
+#				is_ship_size = TSB_ship
+#				is_ship_size = CVB_HGYX
+#				is_ship_size = HXYS
+#				is_ship_size = LK_the_executor_dreadnaught_ship
+#				is_ship_size = LK_chapter_of_God_s_fall_ship
+#				is_ship_size = Eod
+#				is_ship_size = SXSG
+#				is_ship_size = ZX_CRISIS_titan
+#				is_ship_size = ZX_CRISIS_juggernaut
+#			}
+#			destroy_ship = this
+#		}
+#	}
+#}
+#月检是否有虚烛天灾,有虚烛天灾则结束天灾
+country_event = {
+    id = reborn_mozheng.105
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		  has_global_flag = CVB_crisis_cuowu
+    }
+
+    immediate = {
+		country_event = { id = CVB_crisis_1.12 }
+	}
+}
+country_event = {
+    id = reborn_mozheng.106
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		  is_ai = no
+    }
+
+    immediate = {
+        capital_scope = {
+            save_event_target_as = cbjq_is_capital
+        }
+        country_event = {
+          id = FTY_JWDWD.001
+        }
+	}
+}

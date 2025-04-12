@@ -1,0 +1,114 @@
+# possible section models:
+# SHIPYARD_STARBASE_SECTION
+# REFINERY_STARBASE_SECTION
+# SCIENCE_STARBASE_SECTION
+# HANGAR_STARBASE_SECTION
+# ASSEMBLYYARD_STARBASE_SECTION
+#Remember to update operation_sabotage_starbase if you add any new modules.
+# You will need to update the description, espionage_sabotage_starbase_module, and remove_sabotage_starbase_flag
+
+cbjq_super_shipyard = {
+	icon = "GFX_starbase_shipyard"
+	section = "ASSEMBLYYARD_STARBASE_SECTION"
+	construction_days = 1
+	initial = yes
+
+	potential = {
+		is_normal_starbase = yes
+	}
+
+	possible = {
+		has_starbase_module = shipyard
+		owner = {
+			is_ai = no
+			has_ascension_perk = ap_cbjq
+			has_technology = cbjq_player_cheat
+		}
+	}
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 1
+		}
+
+		upkeep = {
+			energy = 0
+		}
+	}
+
+	station_modifier = {
+		starbase_shipyard_capacity_add = 999999
+		starbase_shipyard_build_time_mult = -1000000
+		starbase_shipyard_build_cost_mult = -1000000
+	}
+
+	ai_weight = {
+		weight = 0 #use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			owner = {
+				has_country_flag = country_shelter_flag
+			}
+			weight = 10000
+		}
+	}
+}
+cbjq_starbase_eoh = {
+	icon = "GFX_starbase_shipyard"
+	section = "ASSEMBLYYARD_STARBASE_SECTION"
+	construction_days = 1
+	initial = yes
+	potential = {
+		is_normal_starbase = yes
+	}
+
+	possible = {
+		owner = {
+			is_ai = no
+			has_ascension_perk = ap_cbjq
+			has_technology = cbjq_player_cheat
+		}
+	}
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 1
+		}
+
+		upkeep = {
+			energy = -10000
+			minerals = -10000
+			consumer_goods = -10000
+			alloys = -10000
+			food = -10000
+			influence = -10000
+			unity = -10000
+			volatile_motes = -10000
+			exotic_gases = -10000
+			rare_crystals = -10000
+			sr_living_metal = -10000
+			sr_zro = -10000
+			sr_dark_matter = -10000
+			nanites = -10000
+			minor_artifacts = -10000
+			astral_threads = -10000
+			physics_research = -10000
+			society_research = -10000
+			engineering_research = -10000
+			menace = -10000
+		}
+		
+	}
+
+
+	ai_weight = {
+		weight = 0 #use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			owner = {
+				has_country_flag = country_shelter_flag
+			}
+			weight = 10000
+		}
+	}
+}

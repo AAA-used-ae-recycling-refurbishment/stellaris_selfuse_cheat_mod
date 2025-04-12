@@ -1,0 +1,5 @@
+portraits = { 
+	cbjq_leader_1 = { texturefile = "gfx/models/portraits/cbjq_leader1.dds"  }
+	dreammaster = { texturefile = "gfx/Models/portraits/dreammaster.dds"}
+
+}

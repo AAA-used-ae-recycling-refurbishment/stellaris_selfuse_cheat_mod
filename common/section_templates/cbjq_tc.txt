@@ -1,0 +1,221 @@
+ship_section_template = {
+    key = "cbjq_ship_core"   # ID,不能重复
+    ship_size = cbjq_ship         # 所属类别
+	fits_on_slot = core             # 是哪个区段？
+    should_draw_components = yes
+	entity = "attack_ship_entity" # 区段模型
+    icon = "GFX_ship_part_core_bow"         # 图标
+    component_slot = {
+		name = "TITANIC_1"
+		template = "invisible_titanic_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "TITANIC_2"
+		template = "invisible_titanic_turret"
+		locatorname = "root"
+	}
+    component_slot = {
+		name = "TITANIC_3"
+		template = "invisible_titanic_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_1"
+		template = "extra_large_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_2"
+		template = "extra_large_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_3"
+		template = "extra_large_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_4"
+		template = "extra_large_turret"
+		locatorname = "root"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_1"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_2"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+
+	component_slot = {
+		name = "TORPEDO_1"
+		template = "missile_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "TORPEDO_2"
+		template = "missile_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "TORPEDO_3"
+		template = "missile_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "TORPEDO_4"
+		template = "missile_turret"
+		locatorname = "root"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_1"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_2"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_3"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_4"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_5"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_6"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_7"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_8"
+		template = "stealth_small_turret"
+		locatorname = "root"
+	}
+
+	component_slot = {
+		name = "PD_1"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_2"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_3"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_4"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_5"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_6"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_7"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_8"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_9"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_10"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_11"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_12"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_13"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_14"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_15"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_16"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+
+	small_utility_slots = 0
+	medium_utility_slots = 0
+	large_utility_slots = 30
+	aux_utility_slots = 2
+
+	prerequisites = {
+	}
+
+	resources = {
+		category = ships
+		cost = {
+			energy = 0
+
+		}
+		upkeep = {
+			energy = 0
+
+		}
+	}
+
+	ai_weight = {
+		weight = 114514
+	}
+}

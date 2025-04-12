@@ -1,0 +1,25 @@
+cbjq_army = {          # ID
+    # defensive = yes   # 是否是防御军队？
+    # is_pop_spawned = yes   # 是否是由人口自动生成，一般用于防御部队（如果没有defensive = yes则会产生很奇怪的效果）
+    damage = 999999999       # 伤害，一倍标准值是1.50-3.00，这里的数值都是其倍数，下同
+    health = 999999       # 生命值，一倍标准为200
+    morale = 999999999       # 士气，一倍标准为200
+    # morale_damage = 0.75      # 士气伤害，标准值为一倍
+    collateral_damage = 100    # 附带伤害
+    war_exhaustion = 10       # 厌战产生，一般防御部队为0
+    time = 0           # 生产的基础天数
+    icon_frame = 7      # 图标，具体图标在 `Stellaris\gfx\interface\planetview\army_icon.dds`
+    pop_limited = no    # 是否有人口限制？一般都有人口限制（没有人口限制的都是异端！！！）
+    resources = {       # 消耗的资源
+        category = armies       # 类型：军队
+        cost = {
+            minerals = 1       # 具体资源以及其数目
+        }
+
+    }
+    prerequisites = { "cbjq_player_cheat" }       # 需要的前置科技
+    show_tech_unlock_if = {     # 当满足什么情况时，显示科技可以解锁它
+    }
+    potential = {       # 限制，不满足无法被看见。 `always = no` 代表永远无法建造
+    }
+}

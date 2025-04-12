@@ -1,0 +1,493 @@
+namespace = exam_cbjq_dreammaster
+
+country_event = {
+	id = exam_cbjq_dreammaster.1
+	title = "exam_cbjq_dreammaster.name"
+	desc = "exam_cbjq_dreammaster.desc"
+	picture = GFX_evt_phenkka_quasar 
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		trigger = {
+			has_global_flag = zhengqi_level
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.a"
+		set_global_flag = lv_lv
+		remove_modifier = zhengqi_level_modifier
+		add_modifier = {
+			modifier = diya_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = zhengqi_level
+	}
+	option = {
+		trigger = {
+			has_global_flag = lv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.b"
+		set_global_flag = mv_lv
+		remove_modifier = diya_level_modifier
+		add_modifier = {
+			modifier = zhongya_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = lv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = mv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.c"
+		set_global_flag = hv_lv
+		remove_modifier = zhongya_level_modifier
+		add_modifier = {
+			modifier = gaoya_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = mv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = hv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.d"
+		set_global_flag = ev_lv
+		remove_modifier = gaoya_level_modifier
+		add_modifier = {
+			modifier = ev_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = hv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = ev_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.e"
+		set_global_flag = iv_lv
+		remove_modifier = ev_level_modifier
+		add_modifier = {
+			modifier = iv_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = ev_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = iv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.f"
+		set_global_flag = luv_lv
+		remove_modifier = iv_level_modifier
+		add_modifier = {
+			modifier = luv_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = iv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = luv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.g"
+		set_global_flag = uv_lv
+		set_global_flag = morethan_uv_lv
+		remove_modifier = luv_level_modifier
+		add_modifier = {
+			modifier = uv_level_modifier
+			days = -1
+		}
+		no_scope = {
+			every_country = {
+				limit = {
+					is_ai = yes
+				}
+				add_modifier = {
+					modifier = morethanuv_level_modifier_aiweiya
+					days = -1
+				}
+			}
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = luv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = uv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.h"
+		set_global_flag = uhv_lv
+		remove_modifier = uv_level_modifier
+		add_modifier = {
+			modifier = uhv_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = uv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = uhv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.i"
+		set_global_flag = uev_lv
+		remove_modifier = uhv_level_modifier
+		add_modifier = {
+			modifier = uev_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = uhv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = uev_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.j"
+		set_global_flag = uiv_lv
+		remove_modifier = uev_level_modifier
+		add_modifier = {
+			modifier = uiv_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = uev_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = uiv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.k"
+		set_global_flag = umv_lv
+		remove_modifier = uiv_level_modifier
+		add_modifier = {
+			modifier = umv_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = uiv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = umv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.l"
+		set_global_flag = uxv_lv
+		remove_modifier = umv_level_modifier
+		add_modifier = {
+			modifier = uxv_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = umv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = uxv_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.m"
+		set_global_flag = max_lv
+		remove_modifier = uxv_level_modifier
+		add_modifier = {
+			modifier = max_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = uxv_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = max_lv
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 10000000 }
+			resource_stockpile_compare = { resource = alloys value >= 5000000 }
+			resource_stockpile_compare = { resource = astral_threads value >= 100 }
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 10000000 }
+			resource_stockpile_compare = { resource = sr_living_metal value >= 10000000 }
+		}
+		add_resource = {
+            energy = -10000000
+            alloys = -5000000
+            astral_threads = -100
+			sr_dark_matter = -10000000 #暗物质
+			sr_living_metal = -10000000 #活体金属
+        }
+		name = "exam_cbjq_dreammaster.1.n"
+		set_global_flag = error_lv
+		remove_modifier = max_level_modifier
+		add_modifier = {
+			modifier = error_level_modifier
+			days = -1
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+		remove_global_flag = max_lv
+	}
+	option = {
+		trigger = {
+			has_global_flag = morethan_uv_lv
+
+		}
+		name = "exam_cbjq_dreammaster.1.p"
+		no_scope = {
+			every_country = {
+				limit = {
+					is_ai = yes
+				}
+				remove_modifier = morethanuv_level_modifier_aiweiya
+			}
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+	}
+	option = {
+		trigger = {
+			has_global_flag = morethan_uv_lv
+		}
+		name = "exam_cbjq_dreammaster.1.o"
+		no_scope = {
+			every_country = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_country_flag = cbjq_cirses_high_diffculy
+					}
+				}
+				remove_modifier = morethanuv_level_modifier_aiweiya
+				add_modifier = {
+					modifier = morethanuv_level_modifier_aiweiya
+					days = -1
+				}
+			}
+			
+		}
+		country_event = {
+			id = exam_cbjq_dreammaster.1
+		}
+	}
+	option = {
+		name = "exam_cbjq_dreammaster.1.q"
+		country_event = {
+			id = cbjq_cheat_global.002
+		}
+	}
+}

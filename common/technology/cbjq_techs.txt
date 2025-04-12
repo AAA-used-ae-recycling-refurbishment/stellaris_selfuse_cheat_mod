@@ -1,0 +1,28 @@
+cbjq_tech = {
+	cost = 9000
+	area = physics
+	tier = 10
+	category = { military_theory }
+	is_rare = yes
+	weight = 0
+	is_reverse_engineerable = no
+    prereqfor_desc = {
+ship = {
+title = "cbjq_tech"
+desc = "cbjq_tech_DESC"
+}}
+}
+cbjq_tech2 = {
+	cost = 9000
+	area = physics
+	tier = 10
+	category = { military_theory }
+	is_rare = yes
+	weight = 0
+	is_reverse_engineerable = no
+    prereqfor_desc = {
+ship = {
+title = "cbjq_tech2"
+desc = "cbjq_tech2_DESC"
+}}
+}

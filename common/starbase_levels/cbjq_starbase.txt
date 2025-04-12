@@ -1,0 +1,7 @@
+starbase_level_cbjq_super_starbase = {
+	ship_size = flagship_spwan_cbjq
+	show_in_outliner = no
+	level_weight = 10
+	collects_trade = yes
+	potential_home_base = yes
+}

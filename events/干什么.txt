@@ -1,0 +1,83 @@
+namespace = FTY_JWDWD
+#召唤舰船
+country_event = {
+    id = FTY_JWDWD.001
+    hide_window = yes
+    is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+    immediate = {
+		set_global_flag = FTY_global_flag
+		set_country_flag = FTY_down
+		create_fleet = {
+			name = FTY
+			settings = {
+					can_upgrade = no
+					is_boss = yes #设置是否为boos
+					uses_naval_capacity = no #是否占用海军容量
+					can_change_composition = no #是否改变组成										
+				}
+			effect = {
+				set_owner = root
+					create_ship = {
+						name = FTY
+						design = "NAME_FTY"
+						upgradable = no
+				    effect = {
+					    save_global_event_target_as = FTY_JWDWD_ship_loc #设置舰船位置
+					    set_ship_flag = FTY_JWDWD_ship #设置flag
+				}
+				
+					}
+				set_location = {
+						target = cbjq_is_capital
+						distance = 0
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
+					
+			}
+		}	
+    }
+}
+#复活
+ship_event = {
+    id = FTY_JWDWD.002
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		has_global_flag = FTY_global_flag
+		is_ship_size = FTY_ship
+    }
+
+    immediate = {
+            repair_ship = yes
+            set_disabled = no
+	}
+}
+#月检是否有船
+#country_event = {
+#	id = FTY_JWDWD.003
+#	is_triggered_only = yes
+#	hide_window = yes
+#	trigger = {
+#		has_country_flag = FTY_down
+#		is_ai = no
+#	}
+#	immediate = {
+#		every_owned_ship = {
+#			limit = {
+#				not = {
+#					is_ship_size = FTY_ship
+#				}
+#			}
+#		}
+#		country_event = {id = FTY_JWDWD.001}
+#	}
+#}
+#0.45极致比例
+#复制舰船

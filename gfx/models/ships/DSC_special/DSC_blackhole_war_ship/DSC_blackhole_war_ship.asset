@@ -1,0 +1,439 @@
+#黑洞战舰中央巨型船坞
+entity = {
+    name = "DSC_blackhole_war_ship_part_1_section_entity"
+    pdxmesh = "mega_shipyard_01_stage_1_mesh"
+    locator = { name = "core" }
+    scale = 5
+
+    meshsettings = {
+        name = "Mega_Shipyard021Shape"
+        index = 0
+        texture_diffuse = "mammalian_01_mega_shipyard_diffuse.dds"
+        texture_normal = "mammalian_01_mega_shipyard_normal.dds"
+        texture_specular = "mammalian_01_mega_shipyard_specular.dds"
+        shader = "PdxMeshShip"
+    }
+
+    default_state = "idle"
+    state = { name = "idle" animation = "idle" animation_speed = 0.7
+        event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+        event = { time = 0 node = "station_main" particle = "mega_shipyard_core_effect" keep_particle = yes trigger_once = yes }
+
+        event = { time = 2.0 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+        event = { time = 6.05 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+        event = { time = 10.3 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+        event = { time = 14.5 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+
+        event = { time = 0 node = "exhaust_1" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+
+        event = { trigger_once = yes sound = { soundeffect = "mega_shipyard_idle" } }
+    }
+    state = { name = "death" animation = "death" animation_blend_time = 1 looping = no
+        event = { time = 2.1 node = "explosion_locator_01" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 2.6 node = "explosion_locator_02" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 3.1 node = "explosion_locator_03" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 3.4 node = "explosion_locator_04" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 4.2 node = "explosion_locator_05" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 4.6 node = "explosion_locator_06" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+    }
+
+    attach = { core = "mega_shipyard_01_hangarlights_1_entity" }
+    attach = { gimbal_machine_mid = "mega_shipyard_01_core_effect_entity" }
+    attach = { gimbal_machine_innerY = "mega_shipyard_01_core_effect_light_entity" }
+    attach = { gimbal_machine_mid = "mega_shipyard_01_core_effect_light_2_entity" }
+}
+#黑洞战舰中央超空间中继器
+entity = {
+    name = "DSC_blackhole_war_ship_part_2_section_entity"
+    pdxmesh = "hyper_relay_01_mesh"
+
+    default_state = "idle"
+    state = { name = "idle" animation = "idle"
+        #event = { time = 0 node = "root" particle = "hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "part1" particle = "hyper_relay_orb_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "part2" particle = "hyper_relay_orb_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "part3" particle = "hyper_relay_orb_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "part4" particle = "hyper_relay_orb_effect" keep_particle = yes trigger_once = yes }
+
+        event = { time = 0 node = "effect_1" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "effect_2" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "effect_3" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "effect_4" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "effect_5" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "effect_6" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+
+        event = { trigger_once = yes sound = { soundeffect = "amb_megastructure_hyper_relay_01_idle" } }
+
+    }
+    state = { name = "death" animation = "death" looping = no}
+
+    #attach = { "root" 			= "hyper_relay_01_portal_entity" }
+    #attach = { "root" 			= "hyper_relay_01_portal_spin_entity" }
+    #	attach = { "root" 			= "hyper_relay_01_portal_edge_entity" }
+    attach = { "part1" 			= "hyper_relay_01_orb_entity" }
+    attach = { "part2" 			= "hyper_relay_01_orb_entity" }
+    attach = { "part3" 			= "hyper_relay_01_orb_entity" }
+    attach = { "part4" 			= "hyper_relay_01_orb_entity" }
+
+    meshsettings = {
+        name = "g_bodyShape"
+        index = 0
+        texture_diffuse = "mammalian_01_hyper_relay_diffuse.dds"
+        texture_normal = "mammalian_01_hyper_relay_normal.dds"
+        texture_specular = "mammalian_01_hyper_relay_specular.dds"
+        shader = "PdxMeshShip"
+    }
+}
+#黑洞战舰两边主宰
+entity = {
+    name = "DSC_blackhole_war_ship_part_3_section_entity"
+    pdxmesh = "mammalian_01_juggernaut_mesh"
+    scale = 3
+    default_state = "idle"
+    state = { name = "idle" animation = "idle"
+        event = { time = 0 node = "engine_large_01" particle = "juggernaut_mam_exhaust_idle_l" trigger_once = yes keep_particle = yes }
+        event = { time = 0 node = "engine_large_02" particle = "juggernaut_mam_exhaust_idle_l" trigger_once = yes keep_particle = yes }
+        event = { time = 0 node = "engine_large_03" particle = "juggernaut_mam_exhaust_idle_l" trigger_once = yes keep_particle = yes }
+
+        event = { time = 0 node = "engine_medium_01" particle = "juggernaut_mam_exhaust_idle_m" trigger_once = yes keep_particle = yes }
+        event = { time = 0 node = "engine_medium_02" particle = "juggernaut_mam_exhaust_idle_m" trigger_once = yes keep_particle = yes }
+
+        #event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+        event = { trigger_once = yes sound = { soundeffect = juggernaut_mammalian_idle } }
+    }
+    state = { name = "moving" animation = "idle"
+        event = { time = 0 node = "engine_large_01" particle = "juggernaut_mam_exhaust_moving_2_l" trigger_once = yes keep_particle = yes }
+        event = { time = 0 node = "engine_large_02" particle = "juggernaut_mam_exhaust_moving_l" trigger_once = yes keep_particle = yes }
+        event = { time = 0 node = "engine_large_03" particle = "juggernaut_mam_exhaust_moving_l" trigger_once = yes keep_particle = yes }
+
+        event = { time = 0 node = "engine_medium_01" particle = "juggernaut_mam_exhaust_moving_m" trigger_once = yes keep_particle = yes }
+        event = { time = 0 node = "engine_medium_02" particle = "juggernaut_mam_exhaust_moving_m" trigger_once = yes keep_particle = yes }
+
+        #event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+        event = { sound = { soundeffect = juggernaut_mammalian_move } }
+    }
+    state = { name = "death" animation = "death" looping = no
+        event = { time = 1.1 node = "explosion_locator_01" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 1.8 node = "explosion_locator_02" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 3.1 node = "explosion_locator_03" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 4.4 node = "explosion_locator_04" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 4.7 node = "explosion_locator_05" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 5.2 node = "explosion_locator_06" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 6.5 node = "explosion_locator_07" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+        event = { time = 6.9 node = "explosion_locator_08" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+
+        event = { time = 6.96 node = "big_explosion_locator" particle = "small_2_player_ship_explosion_particle" keep_particle = yes trigger_once = no }
+        event = { time = 6.96 node = "big_explosion_locator" particle = "juggernaut_burn_effect" keep_particle = yes trigger_once = no }
+    }
+
+    #game_data = {
+    #	trail_locators = {
+    #		"engine_large_01" = 		{ width = @large_trail_W 	lenght = @large_trail_L   	}
+    #		"engine_large_02" = 		{ width = @large_trail_W 	lenght = @large_trail_L   	}
+    #		"engine_large_03" = 		{ width = @large_trail_W 	lenght = @large_trail_L   	}
+    #	}
+    #}
+}
+#黑洞战舰两边泰坦
+entity = {
+    name = "DSC_blackhole_war_ship_part_4_section_entity"
+    pdxmesh = "mammalian_01_titan_bow_mesh"
+    locator = { name = "root"				position = { 0	0  0 } }
+    scale = 3
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+        start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    }
+    attach = { "root" = "mammalian_01_titan_glow_effect_mesh_entity" }
+    state = { name = "death" state_time = 5 looping = no }
+}
+#黑洞战舰中部恒星基地
+entity = {
+    name = "DSC_blackhole_war_ship_part_5_section_entity"
+    pdxmesh = "mammalian_01_citadel_mesh"
+    scale = 3
+    #locator = { name = "slot1"				position = { 0	0  0 } }
+
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+        event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_07" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_08" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_09" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { trigger_once = yes sound = { soundeffect = "starbase_hum_stage_01" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "starbase_hum_stage_02" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "starbase_hum_stage_03" } }
+    }
+}
+#黑洞战舰中后部巨像
+entity = {
+    name = "DSC_blackhole_war_ship_part_6_section_entity"
+    pdxmesh = "mammalian_01_colossus_mesh"
+    scale = 3
+    default_state = "idle"
+    # Actual idle state when being in idle/moving.
+    state = { name = "idle" animation = "idle" looping = yes next_state = "idle" animation_blend_time = 0
+        chance = {
+            if_current_state = {
+                "idle" = 100
+                "moving" = 100
+                "death" = 0
+                "working" = 100
+                "working_looping" = 0
+            }
+        }
+        start_event = { trigger_once = yes sound = { soundeffect = "mammalian_colossus_idle" } }
+
+        event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+        #	event = { time = 0 node = "root" particle = "avian_01_colossus_inner_core_effect" keep_particle = yes trigger_once = yes }
+
+        event = { time = 0 node = "large_engine_01" particle = "generic_1_25_exhaust_line_idle" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "large_engine_02" particle = "generic_1_25_exhaust_line_idle" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "large_engine_03" particle = "generic_1_25_exhaust_line_idle" keep_particle = yes trigger_once = yes }
+    }
+    ## Idle state when going from opened state to idle.
+    #state = { name = "idle" animation = "closing" looping = no next_state = "idle"
+    #    chance = {
+    #        if_current_state = {
+    #            "idle" = 0
+    #            "moving" = 0
+    #            "death" = 0
+    #            "working" = 0
+    #            "working_looping" = 100
+    #        }
+    #    }
+    #    event = { trigger_once = yes sound = { soundeffect = "mammalian_colossus_closing" stop_on_state_change = yes } }
+    #
+    #    event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    #	event = { time = 0 node = "root" particle = "avian_01_colossus_inner_core_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    event = { time = 0 node = "large_engine_01" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_02" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_03" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #}
+    ## Actual moving state if going from idle/moving.
+    #state = { name = "moving" animation = "idle" looping = yes next_state = "moving"
+    #    chance = {
+    #        if_current_state = {
+    #            "idle" = 100
+    #            "moving" = 100
+    #            "death" = 0
+    #            "working" = 100
+    #            "working_looping" = 0
+    #        }
+    #    }
+    #    event = { trigger_once = yes sound = { soundeffect = "moving_out_colossus" } }
+    #
+    #    event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    #	event = { time = 0 node = "root" particle = "avian_01_colossus_inner_core_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    event = { time = 0 node = "large_engine_01" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_02" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_03" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #}
+    ## Moving state if going from open/working, uses closing animation.
+    #state = { name = "moving" animation = "closing" looping = no next_state = "moving"
+    #    chance = {
+    #        if_current_state = {
+    #            "idle" = 0
+    #            "moving" = 0
+    #            "death" = 0
+    #            "working" = 0
+    #            "working_looping" = 100
+    #        }
+    #    }
+    #    event = { trigger_once = yes sound = { soundeffect = "mammalian_colossus_closing" stop_on_state_change = yes } }
+    #
+    #    event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    #	event = { time = 0 node = "root" particle = "avian_01_colossus_inner_core_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    event = { time = 0 node = "large_engine_01" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_02" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_03" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #}
+    ## Opened state, going after "working".
+    #state = { name = "working_looping" animation = "open"
+    #    event = { time = 0	id = "beam_start" }
+    #
+    #    event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    event = { time = 0 node = "large_engine_01" particle = "generic_1_25_exhaust_line_idle" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_02" particle = "generic_1_25_exhaust_line_idle" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_03" particle = "generic_1_25_exhaust_line_idle" keep_particle = yes trigger_once = yes }
+    #}
+    ## Opening state, goes into "working_looping" state when done.
+    #state = { name = "working" animation = "opening" looping = no next_state = "working_looping"
+    #    event = { trigger_once = yes sound = { soundeffect = "mammalian_colossus_opening" stop_on_state_change = yes } }
+    #
+    #    event = { time = 1000 id = "beam_start" } #will never fire, but lets the game know that an event with this ID exists
+    #
+    #    event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    #	event = { time = 0 node = "root" particle = "avian_01_colossus_inner_core_effect" keep_particle = yes trigger_once = yes }
+    #
+    #    event = { time = 0 node = "large_engine_01" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_02" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #    event = { time = 0 node = "large_engine_03" particle = "generic_2_5_exhaust_line_moving" keep_particle = yes trigger_once = yes }
+    #
+    #}
+    # Closed death state.
+    state = { name = "death" animation = "idle" looping = no
+        chance = {
+            if_current_state = {
+                "idle" = 100
+                "moving" = 100
+                "death" = 0
+                "working" = 0
+                "working_looping" = 0
+            }
+        }
+        event = { time = 0.0 node = "explosion_locator_01" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 3.0 node = "explosion_locator_02" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 4.0 node = "explosion_locator_03" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 6.0 node = "explosion_locator_04" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 8.0 node = "explosion_locator_05" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+    }
+    # Opened death state.
+    state = { name = "death" animation = "open" looping = no animation_blend_time = 2
+        chance = {
+            if_current_state = {
+                "idle" = 0
+                "moving" = 0
+                "death" = 0
+                "working" = 100
+                "working_looping" = 100
+            }
+        }
+        event = { time = 0.0 node = "explosion_locator_01" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 3.0 node = "explosion_locator_02" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 4.0 node = "explosion_locator_03" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 6.0 node = "explosion_locator_04" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+        event = { time = 8.0 node = "explosion_locator_05" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+    }
+
+    locator = { name = "explosion_locator_01" position = { 3.3 7 5.6 } }
+    locator = { name = "explosion_locator_02" position = { -38 -2 2.5 } }
+    locator = { name = "explosion_locator_03" position = { 4 3 -28 } }
+    locator = { name = "explosion_locator_04" position = { 28 22 -2.5 } }
+    locator = { name = "explosion_locator_05" position = { -6 3.4 -8 } }
+    #locator = { name = "planet_killer_gun_01" position = { 0 0 0 } } # Actual locator in mesh.
+
+    attach = { arms = "mammalian_01_colossus_rings_entity" }
+    attach = { ship_local = "mammalian_01_colossus_sphere_entity" }
+    attach = { ship_local = "mammalian_01_colossus_sphere_contents_entity" }
+}
+#黑洞战舰中央黑洞
+entity = {
+    name = "DSC_blackhole_war_ship_part_7_section_entity"
+    pdxmesh = "black_hole_new_mesh"
+
+    scale = 3
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+        event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+        event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+    }
+    locator = { name = "planet" }
+
+    game_data = {
+        size = 1.0
+        bloom_factor = 5
+    }
+    cull_radius = 700
+}
+
+
+entity = {
+    name = DSC_blackhole_war_ship_frame_entity
+    pdxmesh = DSC_blackhole_war_ship_frame_mesh
+    scale = 0.5
+    attach = { mega_shipyard = "DSC_blackhole_war_ship_part_1_section_entity" }
+    attach = { hyper_rely = "DSC_blackhole_war_ship_part_2_section_entity" }
+    attach = { juggernaut1 = "DSC_blackhole_war_ship_part_3_section_entity" }
+    attach = { juggernaut2 = "DSC_blackhole_war_ship_part_3_section_entity" }
+    attach = { juggernaut3 = "DSC_blackhole_war_ship_part_3_section_entity" }
+    attach = { titan1 = "DSC_blackhole_war_ship_part_4_section_entity" }
+    attach = { titan2 = "DSC_blackhole_war_ship_part_4_section_entity" }
+    attach = { titan3 = "DSC_blackhole_war_ship_part_4_section_entity" }
+    attach = { titan4 = "DSC_blackhole_war_ship_part_4_section_entity" }
+    attach = { starbase = "DSC_blackhole_war_ship_part_5_section_entity" }
+    attach = { coloss1 = "DSC_blackhole_war_ship_part_6_section_entity" }
+    attach = { coloss2 = "DSC_blackhole_war_ship_part_6_section_entity" }
+    attach = { root = "DSC_blackhole_war_ship_part_7_section_entity" }
+}
+
+
+entity = {
+    name = DSC_blackhole_war_ship_stage_1_entity
+    pdxmesh = DSC_blackhole_war_ship_frame_mesh
+    scale = 0.5
+    attach = { mega_shipyard = "DSC_blackhole_war_ship_part_1_section_entity" }
+}
+entity = {
+    name = DSC_blackhole_war_ship_stage_2_entity
+    pdxmesh = DSC_blackhole_war_ship_frame_mesh
+    scale = 0.5
+    attach = { juggernaut1 = "DSC_blackhole_war_ship_part_3_section_entity" }
+    attach = { juggernaut2 = "DSC_blackhole_war_ship_part_3_section_entity" }
+}
+entity = {
+    name = DSC_blackhole_war_ship_stage_3_entity
+    pdxmesh = DSC_blackhole_war_ship_frame_mesh
+    scale = 0.5
+    attach = { titan1 = "DSC_blackhole_war_ship_part_4_section_entity" }
+    attach = { titan2 = "DSC_blackhole_war_ship_part_4_section_entity" }
+    attach = { titan3 = "DSC_blackhole_war_ship_part_4_section_entity" }
+    attach = { titan4 = "DSC_blackhole_war_ship_part_4_section_entity" }
+}
+entity = {
+    name = DSC_blackhole_war_ship_stage_4_entity
+    pdxmesh = DSC_blackhole_war_ship_frame_mesh
+    scale = 0.5
+    attach = { juggernaut3 = "DSC_blackhole_war_ship_part_3_section_entity" }
+    attach = { starbase = "DSC_blackhole_war_ship_part_5_section_entity" }
+}
+entity = {
+    name = DSC_blackhole_war_ship_stage_5_entity
+    pdxmesh = DSC_blackhole_war_ship_frame_mesh
+    scale = 0.5
+    attach = { coloss1 = "DSC_blackhole_war_ship_part_6_section_entity" }
+    attach = { coloss2 = "DSC_blackhole_war_ship_part_6_section_entity" }
+}
+entity = {
+    name = DSC_blackhole_war_ship_stage_6_entity
+    pdxmesh = DSC_blackhole_war_ship_frame_mesh
+    scale = 0.5
+    attach = { hyper_rely = "DSC_blackhole_war_ship_part_2_section_entity" }
+}

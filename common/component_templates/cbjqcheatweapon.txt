@@ -1,0 +1,760 @@
+
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_TC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = titanic #属于哪一个槽位，比如S,M,L,P,H等
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound wtweapon weapontime weapon4d space destory jidian}
+	icon = "GFX_cbjqT" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+	projectile_gfx = "perdition_beam"
+
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_TC"
+
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+	ship_modifier = { custom_tooltip = cbjq_tc_toolip }
+	damage = { #伤害浮动
+		min = 200000000
+		max = 400000000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 1
+	}
+	total_fire_time = 1
+	range = 400 #范围
+	accuracy = 10000 #命中，1=100%
+	tracking = 10000 #追踪，1=100%
+	armor_penetration = 10000
+	shield_penetration = 10000
+	hull_damage = 10000 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_XC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = extra_large #属于哪一个槽位，比如S,M,L,P,H等
+	entity = "invisible_turret_entity"
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound wtweapon weapontime weapon4d destory jidian}
+	icon = "GFX_cbjqX" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_XC"
+
+	projectile_gfx = "kinetic_artillery"
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+	ship_modifier = { custom_tooltip = cbjq_xc_toolip }
+	damage = { #伤害浮动
+		min = 100000000
+		max = 200000000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 1
+	}
+	total_fire_time = 1
+	range = 400 #范围
+	accuracy = 100 #命中，1=100%
+	tracking = 100 #追踪，1=100%
+	armor_penetration = 1000
+	shield_penetration = 1000
+	hull_damage = 10000 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_LC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = large #属于哪一个槽位，比如S,M,L,P,H等
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound destory weapontime weapon4d jidian}
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+	ship_modifier = { custom_tooltip = cbjq_lmsc_toolip }
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_LC"
+	projectile_gfx = "gamma_laser_l"
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+
+	damage = { #伤害浮动
+		min = 100000000
+		max = 200000000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 1
+	}
+	total_fire_time = 1
+	range = 200 #范围
+	accuracy = 100 #命中，1=100%
+	tracking = 100 #追踪，1=100%
+	armor_penetration = 1000
+	shield_penetration = 1000
+	hull_damage = 10000 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+utility_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_AsC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = small #属于哪一个槽位，比如S,M,L,P,H等
+	icon = "GFX_cbjqa" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound sulizi}
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_AsC"
+	modifier = {
+		ship_hull_add = 20000
+		ship_hull_regen_add_static = 20
+		ship_shield_add = 20000
+		ship_shield_regen_add_static = 20
+		ship_armor_add = 20000
+		ship_armor_regen_add_static = 20
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+
+utility_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_AmC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = medium #属于哪一个槽位，比如S,M,L,P,H等
+	icon = "GFX_cbjqa" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound jidian}
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_AmC"
+	modifier = {
+		ship_hull_add = 80000
+		ship_hull_regen_add_static = 20
+		ship_shield_add = 80000
+		ship_shield_regen_add_static = 20
+		ship_armor_add = 80000
+		ship_armor_regen_add_static = 20
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+
+utility_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_AlC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = large #属于哪一个槽位，比如S,M,L,P,H等
+	icon = "GFX_cbjqa" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound jidian}
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_AlC"
+	modifier = {
+		ship_hull_add = 200000
+		ship_hull_regen_add_static = 50
+		ship_shield_add = 200000
+		ship_shield_regen_add_static = 50
+		ship_armor_add = 200000
+		ship_armor_regen_add_static = 50
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+strike_craft_component_template = {
+	key = "cbjq_HC"
+	size = LARGE
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound destory weapontime weapon4d jidian}
+	weapon_type = point_defence
+	projectile_gfx = "strike_craft_laser_3"
+	#面数爆炸
+	#entity = "blackhole_ship2"
+	enity = "attack_ship_entity"
+	prerequisites = { 
+		"cbjq_player_cheat" 
+	}
+	ship_modifier = { custom_tooltip = cbjq_hc_toolip }
+
+	power = 0
+
+	count = 160
+	regeneration_per_day = 32
+	launch_time = 1
+
+	damage = {
+		min = 100000000
+		max = 200000000
+	}
+	cooldown = 1
+	range = 1000
+	engagement_range = 400
+	accuracy = 1000
+	tracking = 1000
+
+	health = 4096000
+	armor = 4096000
+	shield = 4096000
+	evasion = 10
+
+	speed = 16000
+	rotation_speed = 8000
+	acceleration = 8000
+
+	hull_damage = 1
+	shield_penetration = 100
+	armor_penetration = 100
+	ship_behavior = "fighters_behavior"
+	icon = "GFX_cbjqh"
+	icon_frame = 1
+	component_set = "cbjq_HC"
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+strike_craft_component_template = {
+	key = "cbjq_HC2"
+	size = LARGE
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound destory weapontime weapon4d jidian}
+	weapon_type = point_defence
+	projectile_gfx = "strike_craft_laser_3"
+	#面数爆炸
+	entity = "blackhole_ship2"
+	prerequisites = { 
+		"cbjq_player_cheat" 
+	}
+	ship_modifier = { custom_tooltip = cbjq_hc_toolip }
+
+	power = 0
+
+	count = 160
+	regeneration_per_day = 32
+	launch_time = 1
+
+	damage = {
+		min = 100000000
+		max = 200000000
+	}
+	cooldown = 1
+	range = 1000
+	engagement_range = 400
+	accuracy = 1000
+	tracking = 1000
+
+	health = 4096000
+	armor = 4096000
+	shield = 4096000
+	evasion = 10
+
+	speed = 16000
+	rotation_speed = 8000
+	acceleration = 8000
+
+	hull_damage = 1
+	shield_penetration = 100
+	armor_penetration = 100
+	ship_behavior = "fighters_behavior"
+	icon = "GFX_cbjqh"
+	icon_frame = 1
+	component_set = "cbjq_HC2"
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_GC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = torpedo #属于哪一个槽位，比如S,M,L,P,H等
+	type = missile #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	icon = "GFX_XXYS_PHANTOM_ENERGY_WEAPON_504" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound destory weapontime weapon4d}
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_GC"
+	projectile_gfx = "swarmer_missiles_02"
+	ship_modifier = { custom_tooltip = cbjq_gc_toolip }
+
+	damage = { #伤害浮动
+		min = 100000000
+		max = 200000000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 1
+	}
+	total_fire_time = 1
+	missile_speed = 1000 # 375 -- apparently, the game doesn't auto-convert speed for non-vanilla components
+	missile_evasion = 1
+	missile_health = 20
+	missile_retarget_range = 500
+	min_range = 5
+	range = 400 #范围
+	accuracy = 100 #命中，1=100%
+	tracking = 100 #追踪，1=100%
+	hull_damage = 10000 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样	armor_penetration = 100000 #护甲穿透系数
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+weapon_component_template = {
+	key = "cbjq_PC"
+	size = point_defence
+	entity = "invisible_turret_entity"
+	type = point_defence
+	icon = "GFX_XXYS_PHANTOM_ENERGY_WEAPON_304"
+	icon_frame = 1
+	ship_modifier = { custom_tooltip = cbjq_pc_toolip }
+
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound destory weapontime weapon4d}
+	power = -10
+	prerequisites = {
+		 "cbjq_player_cheat"
+		 }
+	component_set = "cbjq_PC"
+	projectile_gfx = "stormfire_auto_cannons_s"
+	damage = { #伤害浮动
+		min = 100000000
+		max = 200000000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 1
+			}
+	total_fire_time = 1
+	min_range = 0
+	range = 200 #范围
+	accuracy = 1 #命中，1=100%
+	tracking = 1 #追踪，1=100%
+	shield_penetration = 1145
+	armor_penetration = 1145
+	hull_damage = 10000
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+
+
+
+utility_component_template = {
+	key = "cbjq_aura"
+	size = large
+	icon = "GFX_cbjqaura"
+	icon_frame = 1
+	power = -1000000
+	tags = { weapon4d weapontime jidian destory wtweapon}
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_aura"
+	
+	hostile_aura = {
+		name = "cbjq_aura"
+		system_wide = yes
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = cbjq_aura
+			priority = 1
+		}
+		
+		modifier = {
+			# ship_disengage_chance_reduction = 10.0
+			# ship_armor_reduction = 1.0
+			# ship_shield_reduction = 1.0
+			# ship_emergency_ftl_min_days_mult = 5.0
+			# ship_armor_penetration_mult = -10.0
+			# ship_shield_penetration_mult = -10.0
+			# ship_weapon_damage = -1.5
+			# ship_evasion_mult = -5.0
+			# ship_tracking_mult = -0.9
+			# ship_accuracy_mult = -0.9
+			# ship_base_speed_mult = -0.9
+			# ship_armor_damage_mult = -0.99
+			# ship_shield_damage_mult = -0.99
+			# ship_hull_damage_mult = -0.99
+
+			ship_disengage_chance_reduction = 1000.0
+			ship_armor_reduction = 1000.0
+			ship_shield_reduction = 1000.0
+			ship_emergency_ftl_min_days_mult = 20000.0
+			ship_armor_penetration_mult = -20000.0
+			ship_shield_penetration_mult = -2000.0
+			ship_weapon_damage = -10000000.0
+			ship_evasion_mult = -1000000.0
+			# ship_tracking_mult = -0.4
+			# ship_accuracy_mult = -0.4
+			ship_base_speed_mult = -100
+			ship_armor_damage_mult = -10000
+			ship_shield_damage_mult = -10000
+			ship_hull_damage_mult = -10000
+		}
+
+		ship_modifier = {
+			# ship_fire_rate_mult = -0.75
+			# ship_weapon_range_mult = -0.5
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+weapon_component_template = {
+	key = "cbjq_pk2"
+	size = planet_killer
+	type = planet_killer
+	use_ship_kill_target = no
+	can_destroy_stars = yes
+
+	prerequisites = {
+		"cbjq_player_cheat"
+		}
+ 
+
+	windup = { min = 0 max = 0 }
+	total_fire_time = 1
+
+	range = 200
+
+	icon = "GFX_cbjqcores"
+	icon_frame = 1
+
+	component_set = "cbjq_pk2"
+
+	planet_destruction_gfx = "qsc_wkr_effect_gfx"
+}
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_SC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = small #属于哪一个槽位，比如S,M,L,P,H等
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound wtweapon weapon4d destory}
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+	projectile_gfx = "perdition_beam"
+	ship_modifier = { custom_tooltip = cbjq_lmsc_toolip }
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_SC"
+
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+
+	damage = { #伤害浮动
+		min = 200000000
+		max = 400000000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 1
+	}
+	total_fire_time = 1
+	range = 400 #范围
+	accuracy = 10000 #命中，1=100%
+	tracking = 10000 #追踪，1=100%
+	armor_penetration = 10000
+	shield_penetration = 10000
+	hull_damage = 10000 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_MC" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = medium #属于哪一个槽位，比如S,M,L,P,H等
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound wtweapon weapon4d destory}
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+	projectile_gfx = "perdition_beam"
+
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_MC"
+	ship_modifier = { custom_tooltip = cbjq_lmsc_toolip }
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+
+	damage = { #伤害浮动
+		min = 200000000
+		max = 400000000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 1
+	}
+	total_fire_time = 1
+	range = 400 #范围
+	accuracy = 10000 #命中，1=100%
+	tracking = 10000 #追踪，1=100%
+	armor_penetration = 10000
+	shield_penetration = 10000
+	hull_damage = 10000 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+utility_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "FTY_KEY" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = large #属于哪一个槽位，比如S,M,L,P,H等
+	icon = "GFX_cbjqa" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_anticompound jidian}
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq"
+	modifier = {
+		ship_hull_add = 1
+		ship_shield_add = 1
+		ship_armor_add = 1
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+utility_component_template = {
+	key = "cbjq_AM1E"
+	size = aux
+	prerequisites = { #所属科技
+	"cbjq_player_cheat"
+}
+	icon = "GFX_cbjqa"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_hull_add = 100000000
+		ship_hull_regen_add_static = 20000
+		ship_shield_add = 100000000
+		ship_shield_regen_add_static = 20000
+		ship_armor_add = 100000000
+		ship_armor_regen_add_static = 20000
+	}
+	prerequisites = { #所属科技
+		"cbjq_player_cheat"
+	}
+	component_set = "cbjq_AM1E"
+	ai_weight = {
+		weight = 0
+	}
+}
+utility_component_template = {
+	key = "cbjq_AURAA"
+	size = large
+	icon = "GFX_cbjqaura"
+	icon_frame = 1
+	power = -1000000
+	tags = { weapon4d weapontime jidian destory wtweapon}
+	component_set = "cbjq_AURAA"
+	
+	hostile_aura = {
+		name = "cbjq_AURAA"
+		system_wide = yes
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = cbjq_aura
+			priority = 1
+		}
+		
+		modifier = {
+			# ship_disengage_chance_reduction = 10.0
+			# ship_armor_reduction = 1.0
+			# ship_shield_reduction = 1.0
+			# ship_emergency_ftl_min_days_mult = 5.0
+			# ship_armor_penetration_mult = -10.0
+			# ship_shield_penetration_mult = -10.0
+			# ship_weapon_damage = -1.5
+			# ship_evasion_mult = -5.0
+			# ship_tracking_mult = -0.9
+			# ship_accuracy_mult = -0.9
+			# ship_base_speed_mult = -0.9
+			# ship_armor_damage_mult = -0.99
+			# ship_shield_damage_mult = -0.99
+			# ship_hull_damage_mult = -0.99
+
+			ship_disengage_chance_reduction = 10000000
+			ship_armor_reduction = 10000000
+			ship_shield_reduction = 10000000
+			ship_emergency_ftl_min_days_mult = 10000000
+			ship_armor_penetration_mult = -10000000
+			ship_shield_penetration_mult = -10000000
+			ship_weapon_damage = -10000000
+			ship_evasion_mult = -10000000
+			ship_tracking_mult = -10000000
+			ship_accuracy_mult = -10000000
+			ship_base_speed_mult = -10000000
+			ship_armor_damage_mult = -10000000
+			ship_shield_damage_mult = -10000000
+			ship_hull_damage_mult = -10000000
+			ship_fire_rate_mult = -10000000
+			ship_weapon_range_mult = -10000000
+			ship_windup_mult = 10000000
+			ship_winddown_mult = 10000000
+			ship_interstellar_speed_mult = -10000000
+			ship_emergency_ftl_mult = 10000000
+			ship_jumpdrive_cooldown_mult = 10000000
+			ship_ftl_jumpdrive_range_mult = -10000000
+			ship_landing_time_mult = -10000000
+		}
+		damage_per_day = {
+			damage = {
+				min = 2147483647
+				max = 2147483647
+			}
+			accuracy = 10000000 #命中，1=100%
+			armor_penetration = 10000000
+			shield_penetration = 10000000
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

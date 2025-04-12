@@ -1,0 +1,51 @@
+cbjq_remove_zdy = {
+	owned_planets_only = yes
+	icon = "GFX_quasarcraft_0_outliner_icon"
+	time = 1
+
+	potential = {
+		From = {
+			is_ai = no
+		}
+		has_planet_flag = cbjq_global_zidonghua_planet
+		has_planet_flag = cbjq_global_zidonghua_fleet
+	}
+
+
+	resources = {
+		category = decisions
+	}
+	ai_weight = {
+		weight = 0
+	}
+	effect = {
+        remove_planet_flag = cbjq_global_zidonghua_planet
+		remove_planet_flag = cbjq_global_zidonghua_fleet
+	}
+}
+cbjq_add_zdy = {
+	owned_planets_only = yes
+	icon = "GFX_quasarcraft_0_outliner_icon"
+	time = 1
+
+	potential = {
+		From = {
+			is_ai = no
+		}
+		has_global_flag = global_cheat_planet_on
+		has_global_flag = global_cheat_planetfleet_on
+	}
+
+
+	resources = {
+		category = decisions
+	}
+	ai_weight = {
+		weight = 0
+	}
+	effect = {
+        planet_event = {
+			id = cbjq_cheat_global.018
+		}
+	}
+}

@@ -1,0 +1,245 @@
+#战列
+entity = {
+    name = DSC_retention_empire_battleship_entity
+    pdxmesh = DSC_retention_empire_battleship_mesh
+}
+entity = {
+    name = DSC_retention_empire_battleship_section_entity
+    pdxmesh = DSC_retention_empire_battleship_section_mesh
+}
+#主宰
+entity = {
+    name = DSC_retention_empire_juggernaut_entity
+    pdxmesh = DSC_retention_empire_juggernaut_mesh
+    scale = 3
+}
+entity = {
+    name = DSC_retention_empire_juggernaut_section_entity
+    pdxmesh = DSC_retention_empire_juggernaut_section_mesh
+}
+#光环
+entity = {
+    name = DSC_retention_empire_aura_entity
+    pdxmesh = DSC_retention_empire_aura_mesh
+}
+entity = {
+    name = DSC_retention_empire_aura_section_entity
+    locator = { name = root }
+}
+#行星战舰
+entity = {
+    name =  DSC_retention_empire_planet_war_ship_entity
+    pdxmesh = DSC_retention_empire_planet_war_ship_mesh
+    scale = 3
+    default_state = "idle"
+    cull_radius = 20000
+
+    state = { name = "idle" state_time = 5 animation = "idle"
+        event = { trigger_once = yes sound = { soundeffect = "amb_megastructure_hyper_relay_01_idle" } }
+        start_event = { node = "tjq" particle = "generic_7_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+    }
+    state = { name = "moving" state_time = 5
+        start_event = { node = "tjq" particle = "generic_15_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name =  DSC_retention_empire_planet_war_ship_section_entity
+    pdxmesh = DSC_retention_empire_planet_war_ship_section_mesh
+    cull_radius = 20000
+    scale = 1
+}
+#宏大型行星战舰
+entity = {
+    name = DSC_retention_empire_large_planet_war_ship_entity
+    pdxmesh = DSC_retention_empire_large_planet_war_ship_mesh
+    cull_radius = 20000
+    scale = 5
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 animation = "idle"
+        start_event = { node = "tjq_1" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_2" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_3" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_4" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_5" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_6" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_7" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_8" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_9" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_10" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_11" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_12" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+
+    }
+    state = { name = "moving" state_time = 5
+
+        start_event = { node = "tjq_1" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_2" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_3" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_4" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_5" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_6" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_7" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_8" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_9" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_10" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_11" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_12" particle = "generic_5_0_exhaust_circle_long_moving" keep_particle = yes trigger_once = yes }
+
+
+        start_event = { node = "tjq_1" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_2" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_3" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_4" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_5" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_6" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_4" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_8" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_9" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_10" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_11" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        start_event = { node = "tjq_12" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name =  DSC_retention_empire_large_planet_war_ship_section_entity
+    pdxmesh = DSC_retention_empire_large_planet_war_ship_section_mesh
+    cull_radius = 20000
+    scale = 1
+}
+#镭射舰
+entity = {
+    name =  DSC_retention_empire_laser_ship_entity
+    pdxmesh = DSC_retention_empire_laser_ship_mesh
+    scale = 0.45
+    default_state = "idle"
+    cull_radius = 20000
+}
+entity = {
+    name =  DSC_retention_empire_laser_ship_section_entity
+    pdxmesh = DSC_retention_empire_laser_ship_section_mesh
+    cull_radius = 20000
+    scale = 1
+}
+#恒星舰
+entity = {
+    name =   DSC_retention_empire_star_war_ship_entity
+    pdxmesh = DSC_retention_empire_star_war_ship_mesh
+    scale = 1.5
+    default_state = "idle"
+    locator = { name = tjq rotation = { 270 270 270 } position = { 0 0 0 } }
+
+    attach = { star_center2 = "XQTD_neutron_star_entity"   }
+
+    state = { name = "idle" state_time = 5 animation = "idle"
+        #event = { time = 0 node = "tjq" particle = matde_black_7hole_effect keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "zhu_1" particle = "hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        #event = { time = 0 node = "coro" particle = "hyper_1relay_portal_effect" keep_particle = yes trigger_once = yes }
+
+        event = { time = 0 node = "zhu_5" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "zhu_3" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "zhu_4" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "zhu_2" particle = "hyper_relay_connector_effect" keep_particle = yes trigger_once = yes }
+
+        event = { trigger_once = yes sound = { soundeffect = "amb_megastructure_hyper_relay_01_idle" } }
+
+        #start_event = { node = "star_center3" particle = "matde_20core_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event={node = "fu.001" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.002" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.003" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.004" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.005" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.006" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.007" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.008" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.009" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.010" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.011" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.012" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.013" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.014" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.015" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.016" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+
+        start_event={node = "gm.001" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.002" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.003" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.004" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.005" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.006" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.007" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.008" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.009" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.010" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.011" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.012" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.013" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.014" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.015" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.016" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.017" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.018" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.019" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.020" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.021" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.022" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.023" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.024" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+    }
+    state = { name = "moving" state_time = 5
+        #event = { time = 0 node = "tjq" particle = matde_black_7hole_effect keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "zhu_1" particle = "hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+
+        start_event={node = "fu.001" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.002" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.003" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.004" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.005" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.006" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.007" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.008" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.009" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.010" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.011" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.012" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.013" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.014" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.015" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "fu.016" particle = "generic_4_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+
+        start_event={node = "gm.001" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.002" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.003" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.004" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.005" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.006" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.007" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.008" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.009" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.010" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.011" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.012" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.013" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.014" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.015" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.016" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.017" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.018" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.019" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.020" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.021" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.022" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.023" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+        start_event={node = "gm.024" particle = "generic_1_0_exhaust_circle_idle" keep_particle = yes trigger_once = yes}
+    }
+    state = { name = "death" state_time = 5 looping = no }
+    cull_radius = 20000
+}
+entity = {
+    name =   DSC_retention_empire_star_war_ship_section_entity
+    pdxmesh =  DSC_retention_empire_star_war_ship_section_mesh
+    cull_radius = 20000
+    scale = 1
+}

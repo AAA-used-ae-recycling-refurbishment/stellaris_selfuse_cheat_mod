@@ -1,0 +1,33 @@
+objectTypes = {
+    pdxmesh = {
+        name = "DSC_retention_empire_starbase_citadel_mesh"
+        file = "gfx/models/ships/starbases/fallen_empire_01_citadel.mesh"
+        scale = 1.0
+
+        animation = { id = "idle"		type = "fallen_empire_01_citadel_idle_animation" }
+
+        meshsettings = {
+            name = "large_finished_MeshShape"
+            index = 0
+            texture_diffuse = DSC_galactic_center_empire_starbase_diff_01.dds
+            texture_normal = DSC_galactic_center_empire_starbase_nor_01.dds
+            texture_specular = DSC_galactic_center_empire_starbase_spe_01.dds
+            shader = "PdxMeshShip"
+        }
+
+    }
+    pdxmesh = {
+        name = "DSC_retention_empire_station_small_mesh"
+        file = "gfx/models/ships/fallen_empire_01/fallen_empire_station_small.mesh"
+        scale = 1.0
+
+        meshsettings = {
+            name = "MeshShape"
+            index = 0
+            texture_diffuse = DSC_galactic_center_empire_starbase_diff_01.dds
+            texture_normal = DSC_galactic_center_empire_starbase_nor_01.dds
+            texture_specular = DSC_galactic_center_empire_starbase_spe_01.dds
+            shader = "PdxMeshShip"
+        }
+    }
+}

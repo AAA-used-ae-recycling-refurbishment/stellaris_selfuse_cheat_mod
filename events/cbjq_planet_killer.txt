@@ -1,0 +1,235 @@
+namespace = cbjq_planet_killer
+planet_event = {
+    id = cbjq_planet_killer.1
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        From.owner = {
+            add_resource = {
+                energy = 114514
+            }
+        }
+        solar_system = {
+            every_system_planet = {
+                if = {
+                    limit = {
+                        is_colony = yes
+                    }
+                    destroy_colony = yes
+                }
+            }
+            every_system_planet = {
+                limit = {
+                    NOT = {
+                        is_star = yes
+                    }
+                }
+                change_pc = pc_Universal_Star_World
+            }
+			every_system_planet = {
+                limit = {
+                    is_star = yes
+                }
+				change_pc = pc_quasar_XXYS
+				set_star_class = pc_quasar_XXYS
+            }
+        }
+    }
+}
+planet_event = {
+    id = cbjq_planet_killer.2
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        From.owner = {
+            add_resource = {
+                energy = 114514
+            }
+        }
+        solar_system = {
+			set_name = "Empty Space"
+            every_system_planet = {
+                if = {
+                    limit = {
+                        is_colony = yes
+                    }
+                    destroy_colony = yes
+                }
+            }
+            every_system_planet = {
+                limit = {
+                    NOT = {
+                        is_star = yes
+                    }
+                }
+                change_pc = empty_space
+            }
+			every_system_planet = {
+                limit = {
+                        is_star = yes
+                }
+                change_pc = empty_space
+				set_star_class = empty_space_cbjq
+            }
+        }
+}
+}
+event = {
+    id = cbjq_planet_killer.3
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_global_flag = global_cheat_rebornspawnship_on
+    }
+    immediate = {
+        every_system = {
+            solar_system = {
+                set_name = "Empty Space"
+                every_system_planet = {
+                    if = {
+                        limit = {
+                            is_colony = yes
+                        }
+                        destroy_colony = yes
+                    }
+                }
+                every_system_planet = {
+                    limit = {
+                        NOT = {
+                            is_star = yes
+                        }
+                    }
+                    change_pc = empty_space
+                }
+                every_system_planet = {
+                    limit = {
+                            is_star = yes
+                    }
+                    change_pc = empty_space
+                    set_star_class = empty_space_cbjq
+                }
+                every_ship_in_system = {
+                    limit = {
+                        owner = {
+                            is_ai = yes
+                        }
+                    
+                    }
+                    destroy_ship = this
+                    delete_ship = this
+                }
+            }
+        }
+        every_country = {
+            limit = {
+                is_ai = yes
+            }
+            destroy_country = yes
+        }
+        every_country = {
+            limit = {
+                is_ai = no
+            }
+            win = yes
+        }
+}
+}
+event = {
+    id = cbjq_planet_killer.4
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_global_flag = global_cheat_rebornspawnship_on
+    }
+    immediate = {
+        every_system = {
+            solar_system = {
+                set_name = "宁静之海"
+                every_system_planet = {
+                    if = {
+                        limit = {
+                            is_colony = yes
+                        }
+                        destroy_colony = yes
+                    }
+                }
+                every_system_planet = {
+                    limit = {
+                        NOT = {
+                            is_star = yes
+                        }
+                    }
+                    change_pc = pc_Universal_Star_World
+                }
+                every_system_planet = {
+                    limit = {
+                            is_star = yes
+                    }
+                    change_pc = pc_quasar_XXYS
+                    set_star_class = pc_quasar_XXYS
+                }
+                every_ship_in_system = {
+                    limit = {
+                        owner = {
+                            is_ai = yes
+                        }
+                    
+                    }
+                    destroy_ship = this
+                    delete_ship = this
+                }
+            }
+        }
+
+        every_country = {
+            limit = {
+                is_ai = yes
+            }
+            destroy_country = yes
+        }
+        every_country = {
+            limit = {
+                is_ai = no
+            }
+            win = yes
+        }
+}
+}
+country_event = {
+    id = cbjq_planet_killer.5
+    title = "cbjq_planet_killer.5.name"
+    desc = "cbjq_planet_killer.5.desc"
+    is_triggered_only = yes
+    trigger = {
+        has_global_flag = global_cheat_rebornspawnship_on
+    }
+    option = {
+        name = "cbjq_planet_killer.5.a"
+    }
+    option = {
+        name = "cbjq_planet_killer.5.b"
+        country_event = {id = cbjq_planet_killer.3}
+    }
+    option = {
+        name = "cbjq_planet_killer.5.c"
+        country_event = {id = cbjq_planet_killer.4}
+    }
+}
+event = {
+    id = cbjq_planet_killer.6
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_global_flag = global_cheat_rebornspawnship_on
+    }
+    immediate = {
+        every_country = {
+            limit = {
+                is_ai = no
+            }
+            country_event = {
+                id = cbjq_planet_killer.5
+            }
+        }
+    }
+}

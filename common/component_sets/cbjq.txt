@@ -1,0 +1,46 @@
+
+component_set = {
+    key = "cbjq_T"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_T2"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_T3"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_As"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_Am"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_Al"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_H"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_g"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_P"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}

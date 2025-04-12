@@ -1,0 +1,67 @@
+entity = {
+    name = "DSC_galactic_center_system_Eternal_system_effect_entity"
+    locator = { name = "root"  rotation = { 0 0 0 } }
+
+    scale = 1
+    erosion_out = 3
+
+    attach = { "root" = "DSC_galactic_center_system_Eternal_system_effect_1_entity" }
+    attach = { "root" = "DSC_galactic_center_system_Eternal_system_effect_2_entity" }
+    attach = { "root" = "DSC_galactic_center_system_Eternal_system_effect_3_entity" }
+
+    cull_radius = 20000
+
+
+    default_state = "idle"
+    state = {
+        name = "idle"
+        start_event = {
+            trigger_once = yes
+            sound = { soundeffect = "sfx_amb_crisis_contingency" }
+        }
+    }
+}
+
+entity = {
+    name = "DSC_galactic_center_system_Eternal_system_effect_1_entity"
+    pdxmesh = "DSC_galactic_center_system_Eternal_system_effect_1_mesh"
+
+    scale = 20
+
+    game_data = {
+        bloom_factor			= 1.1
+        uv_animation_speed 		= 0.1
+        uv_animation_direction 	= { 0 1.0 }
+    }
+
+}
+
+
+
+entity = {
+    name = "DSC_galactic_center_system_Eternal_system_effect_2_entity"
+    pdxmesh = "DSC_galactic_center_system_Eternal_system_effect_2_mesh"
+
+    scale = 20
+
+    game_data = {
+        bloom_factor			= 1
+        uv_animation_speed 		= 0.06
+        uv_animation_direction 	= { 0 1.0 }
+    }
+
+}
+
+entity = {
+    name = "DSC_galactic_center_system_Eternal_system_effect_3_entity"
+    pdxmesh = "DSC_galactic_center_system_Eternal_system_effect_3_mesh"
+
+    scale = 20
+
+    game_data = {
+        bloom_factor			= 0.7
+        uv_animation_speed 		= 0.04
+        uv_animation_direction 	= { 0 1.0 }
+    }
+
+}

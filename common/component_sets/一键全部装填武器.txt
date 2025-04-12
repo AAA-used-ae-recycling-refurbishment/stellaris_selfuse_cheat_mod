@@ -1,0 +1,40 @@
+component_set = {
+    key = "cbjq_TY"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_XY"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_LY"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_HY"
+	icon = "GFX_cbjqh"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_GY"
+	icon = "GFX_cbjqg"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_PY"
+	icon = "GFX_cbjqp"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_SY"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}
+component_set = {
+    key = "cbjq_MY"
+	icon = "GFX_cbjq"
+    icon_frame = 1
+}

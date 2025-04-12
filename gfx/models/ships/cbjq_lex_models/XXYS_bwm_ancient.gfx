@@ -1,0 +1,76 @@
+objectTypes = {
+	pdxmesh = {
+		name = "XXYS_bwm_lex_grave_frame_mesh"
+		file = "gfx/models/ships/XXYS_bwm_ancient/XXYS_bwm_lex_titan_frame.mesh"
+		scale = 1.0
+
+		animation = { id = "idle"		type = "ancient_station_xl_frame_idle_animation" }
+		animation = { id = "death"		type = "ancient_station_xl_frame_death_animation" }
+	}
+	pdxmesh = {
+		name = "XXYS_bwm_lex_ancient_weapon_mesh"
+		file = gfx/models/ships/XXYS_bwm_ancient/XXYS_bwm_lex_ancient_weapon.mesh
+		scale = 2.6
+		
+		# animation = { id = "opened"			type = "bwm_ancient_weapon_open_animation" }
+		animation = { id = "closed"			type = "XXYS_bwm_ancient_weapon_close_animation" }
+		animation = { id = "opening"		type = "XXYS_bwm_ancient_weapon_opening_animation" }
+		animation = { id = "closing"		type = "XXYS_bwm_ancient_weapon_closing_animation" }
+		animation = { id = "idle_1"			type = "XXYS_bwm_ancient_weapon_01_idle_animation" }
+		animation = { id = "idle_2"			type = "XXYS_bwm_ancient_weapon_02_idle_animation" }
+
+		meshsettings = {
+			name = "ragnarokShape"
+			index = 0
+			texture_diffuse = XXYS_bwm_lex_ancient_weapon_s_funnel_diffuse.dds
+			texture_normal = XXYS_bwm_lex_ancient_weapon_s_funnel_normal.dds
+			texture_specular = XXYS_bwm_lex_ancient_weapon_s_funnel_specular.dds
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "ragnarokShape"
+			index = 1
+			texture_diffuse = XXYS_bwm_lex_ancient_weapon_reactor_diffuse.dds
+			texture_normal = XXYS_bwm_lex_ancient_weapon_reactor_normal.dds
+			texture_specular = XXYS_bwm_lex_ancient_weapon_reactor_specular.dds
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "ragnarokShape"
+			index = 2
+			texture_diffuse = XXYS_bwm_lex_ancient_weapon_l_funnel_diffuse.dds
+			texture_normal = XXYS_bwm_lex_ancient_weapon_l_funnel_normal.dds
+			texture_specular = XXYS_bwm_lex_ancient_weapon_l_funnel_specular.dds
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "ragnarokShape"
+			index = 3
+			texture_diffuse = XXYS_bwm_lex_ancient_weapon_mount_diffuse.dds
+			texture_normal = XXYS_bwm_lex_ancient_weapon_mount_normal.dds
+			texture_specular = XXYS_bwm_lex_ancient_weapon_mount_specular.dds
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "ragnarokShape"
+			index = 4
+			texture_diffuse = XXYS_bwm_lex_ancient_weapon_frame_diffuse.dds
+			texture_normal = XXYS_bwm_lex_ancient_weapon_frame_normal.dds
+			texture_specular = XXYS_bwm_lex_ancient_weapon_frame_specular.dds
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "ragnarokShape"
+			index = 5
+			texture_diffuse = XXYS_bwm_lex_ancient_weapon_core_diffuse.dds
+			texture_normal = XXYS_bwm_lex_ancient_weapon_core_normal.dds
+			texture_specular = XXYS_bwm_lex_ancient_weapon_core_specular.dds
+			shader = "PdxMeshShip"
+		}
+	}
+}

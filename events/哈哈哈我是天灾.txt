@@ -1,0 +1,328 @@
+namespace = cbjq_super_killer
+
+#生成天灾
+event = {
+	id = cbjq_super_killer.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		set_variable = {
+			which = cbjq_crises_colonizable_planet_diffcult_counter
+			value = 1
+		 }
+		random_system = {
+			limit = {
+					owner = {
+						NOR = {
+							is_ai = no
+						}
+						
+					}
+				
+				
+			}
+			every_fleet_in_system = {
+				set_mia = mia_return_home
+				set_mia_return_delay = 1
+			}
+			set_star_flag = cbjq_crises_main_system
+			save_event_target_as = cbjq_crises_spwan
+			every_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				change_pc = pc_quasar_XXYS
+			}
+			every_system_planet = {
+				limit = {
+					NAND = {
+						is_star = yes
+						is_colonizable = yes
+					}
+				}
+				change_pc = pc_city
+				change_variable = {
+					which = cbjq_crises_colonizable_planet_counter
+					value = 1
+				}
+			}
+			every_system_planet = {
+				limit = {
+					NAND = {
+						is_star = yes
+						is_colonizable = no
+					}
+				}
+				change_pc = pc_ai
+				change_variable = {
+					which = cbjq_crises_Ncolonizable_planet_counter
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = cbjq_crises_colonizable_planet_counter
+							value = 1
+						}
+					}
+				 }
+				 multiply_variable = {
+					which = cbjq_crises_colonizable_planet_diffcult_counter
+					value = 0.5
+				 }
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = cbjq_crises_Ncolonizable_planet_counter
+							value = 1
+						}
+					}
+				 }
+				 multiply_variable = {
+					which = cbjq_crises_colonizable_planet_diffcult_counter
+					value = 0.5
+				 }
+			}
+			set_variable = {
+				which = half_cbjq_crises_colonizable_planet_counter
+				value = 0.5
+			}
+			multiply_variable = {
+				which = half_cbjq_crises_colonizable_planet_counter
+				value = num_planets
+			}
+			multiply_variable = {
+				which = cbjq_crises_colonizable_planet_diffcult_counter
+				value = half_cbjq_crises_colonizable_planet_counter
+			 }
+			
+			random_system_planet = {
+				spawn_megastructure = {
+					type = cbjq_gtnh_machine_compressor
+				}
+			}
+			create_country = {
+				name = cbjq_crises_name
+				type = cbjq_crises_type
+				name_list = "AI"
+					flag = {
+						background={
+							category="backgrounds"
+							file="circle.dds"
+						}
+						colors={
+							"null"
+							"null"
+							"null"
+							"null"
+						}
+					}
+					effect = {
+						save_global_event_target_as = cbjq_crises_country_target
+						
+						country_event = {
+							id = cbjq_super_killer.2
+							days = 1
+						}
+					}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						which = cbjq_crises_colonizable_planet_diffcult_counter
+						value >= 10
+					}
+					
+				}
+				#不吃国家修正
+				last_created_country = {
+					set_country_flag = cbjq_cirses_high_diffculy
+				}
+			}
+			set_name = cbjq_crises_capital_name
+			every_system_planet = {
+				limit = {
+					is_planet_class = pc_city
+				}
+				set_owner = event_target:cbjq_crises_country_target
+				create_colony = {
+					owner = event_target:cbjq_crises_country_target
+				}
+				while = {
+					count = 100
+					add_building = building_cbjq_groundmega2
+					add_district = district_cbjq_groundmega2
+				}
+				set_planet_flag = cbjq_crises_colony
+			}
+		}
+		event_target:player_country = {
+			begin_event_chain = {
+				event_chain = cbjq_crisis_chain
+			}
+		}
+		every_country = {
+				declare_war = {
+					target = event_target:cbjq_crises_country_target
+					attacker_war_goal = wg_cbjq_crisis
+				}
+		}
+	}
+}
+country_event = {
+	id = cbjq_super_killer.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_global_flag = cbjq_crises_defeated
+		}
+	}
+	immediate = {
+		event_target:cbjq_crises_spwan = {
+			while = {
+				count = num_planets
+				create_fleet = {
+					name = automated_fleet_cbjq
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						can_change_leader = yes
+						uses_naval_capacity = no
+						spawn_debris = no
+					}
+					effect = {  
+						set_owner = event_target:cbjq_crises_country_target
+						while = {
+							count = 20
+							create_ship = {
+								name = The_END
+								design = "NAME_ZDH"
+								effect = {
+									set_disable_at_health = 0.1
+									set_ship_flag = cbjq_crises_ship
+								}
+							}
+						}
+						set_location = {
+							target = event_target:cbjq_zidonghua_fleet_spawn
+							distance = 5
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						queue_actions = {
+							repeat = {
+								find_closest_system = {
+									trigger = {
+										id = cbjq_crises.10002
+										NOT = {
+											has_star_flag = cbjq_crises_comed
+										}
+									}
+									found_system = {
+										move_to = this
+										wait = 10
+										effect = {
+											id = cbjq_crises.10001
+											set_owner = event_target:cbjq_crises_country_target
+											set_star_flag = cbjq_crises_comed
+											create_starbase = {
+												size = starbase_starfortress
+												owner = event_target:cbjq_crises_country_target
+											}
+											every_system_planet = {
+												limit = {
+													is_colony = yes
+													owner = {
+														is_ai = yes
+													}
+												}
+												set_owner = event_target:cbjq_crises_country_target
+												set_planet_flag = cbjq_crises_colony
+											}
+										}
+									 }
+									 failed = {
+										find_closest_fleet = {
+											trigger = {
+												id = cbjq_crises.10003
+												owner = {
+													is_ai = yes
+												}
+											}
+											found_fleet = { 
+												move_to = this
+												wait = 10
+											}
+											
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				
+			}
+			country_event = {
+				id = cbjq_super_killer.2
+				days = 50
+			}     
+		}
+
+	}
+}
+planet_event = {
+	id = cbjq_super_killer.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_planet_flag = cbjq_crises_colony
+	}
+	immediate = {
+				event_target:player_country = {
+					country_event = {
+						id = cbjq_super_killer.4
+						days = 365
+					}
+				}
+				event_target:cbjq_crises_country_target = {
+					country_event = {
+						id = cbjq_super_killer.5
+						days = 365
+					}
+				}
+		
+	}
+}
+country_event = {
+	id = cbjq_super_killer.4
+	is_triggered_only = yes
+	title = "cbjq_super_killer.4.name"
+	desc = "cbjq_super_killer.4.desc"
+	immediate = {
+		set_global_flag = cbjq_crises_defeated
+		add_research_option = cbjq_crises_mega
+	}
+}
+country_event = {
+	id = cbjq_super_killer.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		destroy_country = yes
+		end_event_chain = cbjq_crisis_chain
+	}
+
+}

@@ -1,0 +1,14 @@
+entity = {
+	name = "cbjq_star_destroyer_ship_entity"
+	pdxmesh = "cbjq_star_destroyer_mesh"
+	locator = { name = "root" 	position = { 0 0 0 } }
+
+	game_data = {
+		emissive_recolor_crunch = 0
+	}
+
+	attach = { root_l1 = cbjq_attack_ship_entity }
+	attach = { root_l2 = cbjq_attack_ship_entity }
+	attach = { root_r1 = cbjq_attack_ship_entity }
+	attach = { root_r2 = cbjq_attack_ship_entity }
+}

@@ -1,0 +1,10 @@
+ship_section_template = {
+	key = "test_core"
+	ship_size = test_ship
+	fits_on_slot = "core"
+	entity = "circle_circle_battleship_enity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = { name = "WORLD_KILLER_GUN_01"		template = "invisible_planet_killer_fixed"			locatorname = "coregun" }
+	large_utility_slots = 20
+	aux_utility_slots = 5
+}

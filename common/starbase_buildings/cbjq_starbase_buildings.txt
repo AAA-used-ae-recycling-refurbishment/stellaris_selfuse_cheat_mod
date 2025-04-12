@@ -1,0 +1,60 @@
+cbjq_super_resource_silo = {
+	icon = "GFX_spaceport_module_resource_silo"
+	construction_days = 180
+
+	potential = {
+	}
+
+	possible = {
+		owner = {
+			has_country_flag = country_shelter_flag
+			OR = {
+				has_global_flag = shelter_cheat_all_enable
+				has_global_flag = shelter_cheat_ship_enable
+			}
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50
+		}
+		produces = {
+			energy = 10000
+			minerals = 10000
+			consumer_goods = 10000
+			alloys = 10000
+			food = 10000
+			influence = 10000
+			unity = 10000
+			volatile_motes = 10000
+			exotic_gases = 10000
+			rare_crystals = 10000
+			sr_living_metal = 10000
+			sr_zro = 10000
+			sr_dark_matter = 10000
+			nanites = 10000
+			minor_artifacts = 10000
+			astral_threads = 10000
+			physics_research = 10000
+			society_research = 10000
+			engineering_research = 10000
+			menace = 10000
+		}
+	}
+
+	country_modifier = {
+		country_resource_max_add = 1000000
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			owner = {
+				has_country_flag = country_shelter_flag
+			}
+			weight = 10000
+		}
+	}
+}

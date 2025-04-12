@@ -1,0 +1,42 @@
+empty_space_cbjq = {
+	class = empty_space
+	planet = { key = empty_space }
+	spawn_odds = 0
+	num_planets	= { min = 1 max = 1 }
+
+	is_environmental_hazard = yes
+
+	modifier = {
+		ship_shield_reduction = 1
+		ship_armor_reduction = 1
+		ship_evasion_add = -25
+		ship_accuracy_add = -25
+		ship_weapon_range_mult = -0.25
+	}
+}
+sc_cbjq_star_class = {
+	class = sc_cbjq_star
+	planet = { key = pc_quasar_XXYS }
+	spawn_odds = 0
+	num_planets	= { min = 100 max = 100 }
+	is_environmental_hazard = yes
+	modifier = {
+	}
+}
+sc_jail_cbjq_star_class = {
+	class = sc_cbjq_star
+	planet = { key = pc_quasar_XXYS }
+	spawn_odds = 0
+	num_planets	= { min = 100 max = 100 }
+
+	is_environmental_hazard = yes
+	
+	modifier = {
+		ship_shield_regen_add_static = -9000000
+        ship_armor_regen_add_static = -9000000
+        ship_hull_regen_add_static = -9000000
+		ship_speed_mult = -10000
+		ship_emergency_ftl_mult = 10000000
+		ship_jumpdrive_cooldown_mult = 10000000
+	}
+}

@@ -1,0 +1,190 @@
+
+#护卫舰
+entity = {
+    name = "cbjq_corvette_enity"
+    cull_radius = 3000
+    locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+    attach = { "loc101" = "XXYS_HYZPC_shipyard_stage_0123456789_entity" } 
+    scale = 3
+}
+#战列舰
+entity = {
+    name = "cbjq_battleship_enity"
+    locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+    attach = { "loc101" = "blackhole_war_ship_entity" }
+    scale = 1
+}
+#旗舰
+entity = {
+    name = "flagship_enity"
+    locator = { name = "loc109" position = { 0 0 0 } rotation = { 0 0 0 } }
+    attach = { "loc109" = DSC_blackhole_war_ship_frame_entity }
+    scale = 1.5
+}
+#时空堡垒
+entity = {
+    name = "cbjq_station"
+    cull_radius = 3000
+
+    locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+
+    attach = { "loc101" = "Universal_Star_World_stage_8_entity" }
+    scale = 0.5
+
+}
+#母舰投影
+entity = {
+    name = "cbjq_mothership2_enity"
+    cull_radius = 3000
+
+    locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 90 } }
+    locator = { name = "loc102" position = { 0 50 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc103" position = { 35 35 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc104" position = { -35 35 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc105" position = { 50 0 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc106" position = { -50 0 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc107" position = { 35 -35 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc108" position = { -35 -35 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc109" position = { 0 -50 0 } rotation = { 0 90 0 } }
+    locator = { name = "loc110" position = { 50 50 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc111" position = { -50 50 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc112" position = { 50 -50 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc113" position = { -50 -50 0 } rotation = { 0 0 0 } }
+
+
+    attach = { "loc101" = "XXYS_bwm_ancient_01_bwm_ancient_weapon_hull_entity" }
+    attach = { "loc102" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc103" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc104" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc105" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc106" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc107" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc108" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc109" = "cbjq_Glorious_Barrier_subset_entity2"}
+    attach = { "loc110" = "cbjq_fleet_flagship_ship_entity2"}
+    attach = { "loc111" = "cbjq_fleet_flagship_ship_entity2"}
+    attach = { "loc112" = "cbjq_fleet_flagship_ship_entity2"}
+    attach = { "loc113" = "cbjq_fleet_flagship_ship_entity2"}
+    scale = 1
+
+}
+#母舰
+
+entity = {
+    name = "mothership_enity_part1"
+    cull_radius = 3000
+
+    locator = { name = "loc101" position = { 0 0 200 } rotation = { 270 0 90 } }
+    locator = { name = "loc102" position = { 0 500 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc103" position = { 350 350 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc104" position = { -350 350 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc105" position = { 500 0 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc106" position = { -500 0 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc107" position = { 350 -350 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc108" position = { -350 -350 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc109" position = { 0 -500 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc110" position = { 0 0 200 } rotation = { 0 90 0 } }
+
+    attach = { "loc101" = "cbjq_apocalyptic_pointer_system_entity2" }
+    attach = { "loc102" = "cbjq_mothership2_enity" }
+    attach = { "loc103" = "cbjq_mothership2_enity"}
+    attach = { "loc104" = "cbjq_mothership2_enity"}
+    attach = { "loc105" = "cbjq_mothership2_enity"}
+    attach = { "loc106" = "cbjq_mothership2_enity"}
+    attach = { "loc107" = "cbjq_mothership2_enity"}
+    attach = { "loc108" = "cbjq_mothership2_enity"}
+    attach = { "loc109" = "cbjq_mothership2_enity"}
+    attach = { "loc110" = "cbjq_big_qusar_XXYS_entity"}
+    scale = 1
+
+}
+#大类星体
+entity = {
+    name = "cbjq_big_qusar_XXYS_entity"
+    scale = 3
+    locator = { name = "root" }
+    attach = { "root" = "pc_quasar_shelter_XXYS_entity" }
+}
+#终末
+entity = {
+    name = "end_core"
+    scale = 4
+    locator = { name = "root" }
+    attach = { "root" = "Starfire_Fortress_fortress_entity" }
+}
+entity = {
+    name = "end_core2"
+    scale = 1
+    locator = { name = "root" }
+    attach = { "root" = "Starfire_Fortress_fortress_entity" }
+}
+#便携类星天陨
+entity = {
+    name = "quasi_plant_killer"
+    scale = 2
+    locator = { name = "root" }
+    attach = { "root" = "DSC_Flood_of_material_body_entity" }
+}
+#黑洞战舰群
+entity = {
+    name = "cbjq_battleship_small_enity"
+    locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+    attach = { "loc101" = "YHTT_entity" }
+    scale = 0.01
+}
+entity = {
+    name = "black_hole_warships_fleet"
+    locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc102" position = { -100 100 100 } rotation = { 0 0 0 } }
+    locator = { name = "loc103" position = { 100 100 100 } rotation = { 0 0 0 } }
+    locator = { name = "loc104" position = { -100 -100 100 } rotation = { 0 0 0 } }
+    locator = { name = "loc105" position = { 100 -100 100 } rotation = { 0 0 0 } }
+    locator = { name = "loc106" position = { -200 200 200 } rotation = { 0 0 0 } }
+    locator = { name = "loc107" position = { 200 200 200 } rotation = { 0 0 0 } }
+    locator = { name = "loc108" position = { -200 -200 200 } rotation = { 0 0 0 } }
+    locator = { name = "loc109" position = { 200 -200 200 } rotation = { 0 0 0 } }
+    attach = { "loc101" = DSC_blackhole_war_ship_frame_entity }
+    attach = { "loc102" = "cbjq_battleship_small_enity" }
+    attach = { "loc103" = "cbjq_battleship_small_enity" }
+    attach = { "loc104" = "cbjq_battleship_small_enity" }
+    attach = { "loc105" = "cbjq_battleship_small_enity" }
+    attach = { "loc106" = "end_core2" }
+    attach = { "loc107" = "end_core2" }
+    attach = { "loc108" = "end_core2" }
+    attach = { "loc109" = "end_core2" }
+}
+entity = {
+    name = "mothership_enity"
+    locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+    locator = { name = "loc102" position = { -500 500 500 } rotation = { 0 0 0 } }
+    locator = { name = "loc103" position = { 500 500 500 } rotation = { 0 0 0 } }
+    locator = { name = "loc104" position = { -500 -500 500 } rotation = { 0 0 0 } }
+    locator = { name = "loc105" position = { 500 -500 500 } rotation = { 0 0 0 } }
+    locator = { name = "loc106" position = { 0 0 -1000 } rotation = { 0 270 0 } }
+    locator = { name = "loc107" position = { 0 0 900 } rotation = { 0 90 0 } }
+    locator = { name = "loc108" position = { 0 0 200 } rotation = { 0 0 0 } }
+    locator = { name = "loc109" position = { 0 0 200 } rotation = { 90 0 0 } }
+    attach = { "loc101" = "mothership_enity_part1" }
+    attach = { "loc102" = "black_hole_warships_fleet" }
+    attach = { "loc103" = "black_hole_warships_fleet" }
+    attach = { "loc104" = "black_hole_warships_fleet" }
+    attach = { "loc105" = "black_hole_warships_fleet" }
+    attach = { "loc106" = "Ultimate_Spark_Core_B_entity"}
+    attach = { "loc107" = "cbjq_corvette_enity"}
+    attach = { "loc108" = "DSC_blackhole_war_ship_part_1_section_entity"}
+    attach = { "loc109" = "colossus_rings_entity" }
+}
+entity = {
+    name = "Ultimate_Spark_Core_B_entity" 
+    default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+		start_event = { node = "root" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+	}
+    scale = 15
+}
+entity = {
+    name = "colossus_rings_entity"
+    scale = 5
+    locator = { name = "loc100" position = { 0 0 0 } rotation = { 0 0 0 } }
+    attach = { "loc100" = "mammalian_01_colossus_rings_entity" }
+}

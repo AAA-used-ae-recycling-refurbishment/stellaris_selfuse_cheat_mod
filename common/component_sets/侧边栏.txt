@@ -1,0 +1,40 @@
+
+component_set = {
+	key = "cbjq_components_a"
+
+	required_component_set = yes
+	icon = "GFX_XXYS_INTEGRATION_ARMOR_8"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "cbjq_components_b"
+
+	required_component_set = yes
+	icon = "GFX_XXYS_INTEGRATION_ARMOR_8"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "cbjq_components_c"
+
+	required_component_set = yes
+	icon = "GFX_XXYS_INTEGRATION_ARMOR_8"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "cbjq_components_d"
+
+	required_component_set = yes
+	icon = "GFX_XXYS_INTEGRATION_ARMOR_8"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "cbjq_components_e"
+
+	required_component_set = yes
+	icon = "GFX_XXYS_INTEGRATION_ARMOR_8"
+	icon_frame = 1
+}

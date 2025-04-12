@@ -1,0 +1,128 @@
+
+###############################################################################################################################
+
+ship_section_template = {
+	key = "uf_shipcorepro_key"
+	ship_size = uf_titan_pro,uf_mothership_pro
+	fits_on_slot = "core"
+	entity = "fleet_flagship_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = { name = "WORLD_KILLER_GUN_01"		template = "invisible_planet_killer_fixed"			locatorname = "coregun" }
+	component_slot = { name = "TITANIC_GUN_1"		template = " stealth_titanic_turret"			locatorname = "coregun1" }
+	component_slot = { name = "TITANIC_GUN_2"		template = " stealth_titanic_turret"			locatorname = "coregun2" }
+	component_slot = { name = "TITANIC_GUN_3"		template = " stealth_titanic_turret"			locatorname = "coregun3" }
+	component_slot = { name = "TITANIC_GUN_4"		template = " stealth_titanic_turret"			locatorname = "coregun4" }
+	component_slot = { name = "TITANIC_GUN_5"		template = " stealth_titanic_turret"			locatorname = "coregun5" }
+	component_slot = { name = "TITANIC_GUN_6"		template = " stealth_titanic_turret"			locatorname = "coregun6" }
+	component_slot = { name = "TITANIC_GUN_7"		template = " stealth_titanic_turret"			locatorname = "coregun7" }
+	component_slot = { name = "TITANIC_GUN_8"		template = " stealth_titanic_turret"			locatorname = "coregun8" }
+	component_slot = { name = "TITANIC_GUN_9"		template = " stealth_titanic_turret"			locatorname = "coregun9" }
+	component_slot = { name = "TITANIC_GUN_10"		template = " stealth_titanic_turret"			locatorname = "coregun10" }
+	component_slot = { name = "TITANIC_GUN_11"		template = " stealth_titanic_turret"			locatorname = "coregun11" }
+	component_slot = { name = "TITANIC_GUN_12"		template = " stealth_titanic_turret"			locatorname = "coregun12" }
+	component_slot = { name = "TITANIC_GUN_13"		template = " stealth_titanic_turret"			locatorname = "coregun13" }
+	component_slot = { name = "TITANIC_GUN_14"		template = " stealth_titanic_turret"			locatorname = "coregun14" }
+	component_slot = { name = "TITANIC_GUN_15"		template = " stealth_titanic_turret"			locatorname = "coregun15" }
+	component_slot = { name = "TITANIC_GUN_16"		template = " stealth_titanic_turret"			locatorname = "coregun16" }
+	component_slot = { name = "TITANIC_GUN_17"		template = " stealth_titanic_turret"			locatorname = "coregun17" }
+	component_slot = { name = "TITANIC_GUN_18"		template = " stealth_titanic_turret"			locatorname = "coregun18" }
+	component_slot = { name = "TITANIC_GUN_19"		template = " stealth_titanic_turret"			locatorname = "coregun19" }
+	component_slot = { name = "TITANIC_GUN_20"		template = " stealth_titanic_turret"			locatorname = "coregun20" }
+	component_slot = { name = "TITANIC_GUN_21"		template = " stealth_titanic_turret"			locatorname = "coregun21" }
+	component_slot = { name = "TITANIC_GUN_22"		template = " stealth_titanic_turret"			locatorname = "coregun22" }
+	component_slot = { name = "TITANIC_GUN_23"		template = " stealth_titanic_turret"			locatorname = "coregun23" }
+	component_slot = { name = "TITANIC_GUN_24"		template = " stealth_titanic_turret"			locatorname = "coregun24" }
+	component_slot = { name = "TITANIC_GUN_25"		template = " stealth_titanic_turret"			locatorname = "coregun25" }
+	component_slot = { name = "TITANIC_GUN_26"		template = " stealth_titanic_turret"			locatorname = "coregun26" }
+	component_slot = { name = "TITANIC_GUN_27"		template = " stealth_titanic_turret"			locatorname = "coregun27" }
+	component_slot = { name = "TITANIC_GUN_28"		template = " stealth_titanic_turret"			locatorname = "coregun28" }
+	component_slot = { name = "TITANIC_GUN_29"		template = " stealth_titanic_turret"			locatorname = "coregun29" }
+
+	large_utility_slots = 30
+	aux_utility_slots = 5
+}
+
+ship_section_template = {
+	key = "uf_shippart1pro_key"
+	ship_size = uf_titan_pro,uf_mothership_pro
+	fits_on_slot = "part1"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = { name = "WORLD_KILLER_GUN_01"		template = "invisible_planet_killer_fixed"			locatorname = "coregun" }
+	component_slot = { name = "TITANIC_GUN_1"		template = " stealth_titanic_turret"			locatorname = "coregun1" }
+	component_slot = { name = "TITANIC_GUN_2"		template = " stealth_titanic_turret"			locatorname = "coregun2" }
+	component_slot = { name = "TITANIC_GUN_3"		template = " stealth_titanic_turret"			locatorname = "coregun3" }
+	component_slot = { name = "TITANIC_GUN_4"		template = " stealth_titanic_turret"			locatorname = "coregun4" }
+	component_slot = { name = "TITANIC_GUN_5"		template = " stealth_titanic_turret"			locatorname = "coregun5" }
+	component_slot = { name = "TITANIC_GUN_6"		template = " stealth_titanic_turret"			locatorname = "coregun6" }
+	component_slot = { name = "TITANIC_GUN_7"		template = " stealth_titanic_turret"			locatorname = "coregun7" }
+	component_slot = { name = "TITANIC_GUN_8"		template = " stealth_titanic_turret"			locatorname = "coregun8" }
+	component_slot = { name = "TITANIC_GUN_9"		template = " stealth_titanic_turret"			locatorname = "coregun9" }
+	component_slot = { name = "TITANIC_GUN_10"		template = " stealth_titanic_turret"			locatorname = "coregun10" }
+	component_slot = { name = "TITANIC_GUN_11"		template = " stealth_titanic_turret"			locatorname = "coregun11" }
+	component_slot = { name = "TITANIC_GUN_12"		template = " stealth_titanic_turret"			locatorname = "coregun12" }
+	component_slot = { name = "TITANIC_GUN_13"		template = " stealth_titanic_turret"			locatorname = "coregun13" }
+	component_slot = { name = "TITANIC_GUN_14"		template = " stealth_titanic_turret"			locatorname = "coregun14" }
+	component_slot = { name = "TITANIC_GUN_15"		template = " stealth_titanic_turret"			locatorname = "coregun15" }
+	component_slot = { name = "TITANIC_GUN_16"		template = " stealth_titanic_turret"			locatorname = "coregun16" }
+	component_slot = { name = "TITANIC_GUN_17"		template = " stealth_titanic_turret"			locatorname = "coregun17" }
+	component_slot = { name = "TITANIC_GUN_18"		template = " stealth_titanic_turret"			locatorname = "coregun18" }
+	component_slot = { name = "TITANIC_GUN_19"		template = " stealth_titanic_turret"			locatorname = "coregun19" }
+	component_slot = { name = "TITANIC_GUN_20"		template = " stealth_titanic_turret"			locatorname = "coregun20" }
+	component_slot = { name = "TITANIC_GUN_21"		template = " stealth_titanic_turret"			locatorname = "coregun21" }
+	component_slot = { name = "TITANIC_GUN_22"		template = " stealth_titanic_turret"			locatorname = "coregun22" }
+	component_slot = { name = "TITANIC_GUN_23"		template = " stealth_titanic_turret"			locatorname = "coregun23" }
+	component_slot = { name = "TITANIC_GUN_24"		template = " stealth_titanic_turret"			locatorname = "coregun24" }
+	component_slot = { name = "TITANIC_GUN_25"		template = " stealth_titanic_turret"			locatorname = "coregun25" }
+	component_slot = { name = "TITANIC_GUN_26"		template = " stealth_titanic_turret"			locatorname = "coregun26" }
+	component_slot = { name = "TITANIC_GUN_27"		template = " stealth_titanic_turret"			locatorname = "coregun27" }
+	component_slot = { name = "TITANIC_GUN_28"		template = " stealth_titanic_turret"			locatorname = "coregun28" }
+	component_slot = { name = "TITANIC_GUN_29"		template = " stealth_titanic_turret"			locatorname = "coregun29" }
+
+	large_utility_slots = 30
+	aux_utility_slots = 5
+}
+
+ship_section_template = {
+	key = "uf_shippart2pro_key"
+	ship_size = uf_mothership_pro
+	fits_on_slot = "part2"
+	entity = "qsc_01_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = { name = "WORLD_KILLER_GUN_01"		template = "invisible_planet_killer_fixed"			locatorname = "coregun" }
+	component_slot = { name = "TITANIC_GUN_1"		template = " stealth_titanic_turret"			locatorname = "coregun1" }
+	component_slot = { name = "TITANIC_GUN_2"		template = " stealth_titanic_turret"			locatorname = "coregun2" }
+	component_slot = { name = "TITANIC_GUN_3"		template = " stealth_titanic_turret"			locatorname = "coregun3" }
+	component_slot = { name = "TITANIC_GUN_4"		template = " stealth_titanic_turret"			locatorname = "coregun4" }
+	component_slot = { name = "TITANIC_GUN_5"		template = " stealth_titanic_turret"			locatorname = "coregun5" }
+	component_slot = { name = "TITANIC_GUN_6"		template = " stealth_titanic_turret"			locatorname = "coregun6" }
+	component_slot = { name = "TITANIC_GUN_7"		template = " stealth_titanic_turret"			locatorname = "coregun7" }
+	component_slot = { name = "TITANIC_GUN_8"		template = " stealth_titanic_turret"			locatorname = "coregun8" }
+	component_slot = { name = "TITANIC_GUN_9"		template = " stealth_titanic_turret"			locatorname = "coregun9" }
+	component_slot = { name = "TITANIC_GUN_10"		template = " stealth_titanic_turret"			locatorname = "coregun10" }
+	component_slot = { name = "TITANIC_GUN_11"		template = " stealth_titanic_turret"			locatorname = "coregun11" }
+	component_slot = { name = "TITANIC_GUN_12"		template = " stealth_titanic_turret"			locatorname = "coregun12" }
+	component_slot = { name = "TITANIC_GUN_13"		template = " stealth_titanic_turret"			locatorname = "coregun13" }
+	component_slot = { name = "TITANIC_GUN_14"		template = " stealth_titanic_turret"			locatorname = "coregun14" }
+	component_slot = { name = "TITANIC_GUN_15"		template = " stealth_titanic_turret"			locatorname = "coregun15" }
+	component_slot = { name = "TITANIC_GUN_16"		template = " stealth_titanic_turret"			locatorname = "coregun16" }
+	component_slot = { name = "TITANIC_GUN_17"		template = " stealth_titanic_turret"			locatorname = "coregun17" }
+	component_slot = { name = "TITANIC_GUN_18"		template = " stealth_titanic_turret"			locatorname = "coregun18" }
+	component_slot = { name = "TITANIC_GUN_19"		template = " stealth_titanic_turret"			locatorname = "coregun19" }
+	component_slot = { name = "TITANIC_GUN_20"		template = " stealth_titanic_turret"			locatorname = "coregun20" }
+	component_slot = { name = "TITANIC_GUN_21"		template = " stealth_titanic_turret"			locatorname = "coregun21" }
+	component_slot = { name = "TITANIC_GUN_22"		template = " stealth_titanic_turret"			locatorname = "coregun22" }
+	component_slot = { name = "TITANIC_GUN_23"		template = " stealth_titanic_turret"			locatorname = "coregun23" }
+	component_slot = { name = "TITANIC_GUN_24"		template = " stealth_titanic_turret"			locatorname = "coregun24" }
+	component_slot = { name = "TITANIC_GUN_25"		template = " stealth_titanic_turret"			locatorname = "coregun25" }
+	component_slot = { name = "TITANIC_GUN_26"		template = " stealth_titanic_turret"			locatorname = "coregun26" }
+	component_slot = { name = "TITANIC_GUN_27"		template = " stealth_titanic_turret"			locatorname = "coregun27" }
+	component_slot = { name = "TITANIC_GUN_28"		template = " stealth_titanic_turret"			locatorname = "coregun28" }
+	component_slot = { name = "TITANIC_GUN_29"		template = " stealth_titanic_turret"			locatorname = "coregun29" }
+
+	large_utility_slots = 30
+	aux_utility_slots = 5
+}
+

@@ -1,0 +1,7 @@
+objectTypes = {
+	pdxmesh = {
+		name = "ZXFJ"
+		file = "gfx/models/ships/megastructures/CVB_ZXFJ/ZXFJ.mesh"
+		animation = { id = "idle"						type = "matter_decompressor_01_stage_4_idle_animation" }
+	}
+}

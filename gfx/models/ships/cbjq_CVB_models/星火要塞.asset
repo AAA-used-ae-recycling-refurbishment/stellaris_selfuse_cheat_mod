@@ -1,0 +1,290 @@
+#Starfire Fortress
+#rotation倾斜介绍按照顺序为正反倾斜 前后倾斜 左右倾斜 position顺序 左右 高度 前后
+entity = {
+	name = "Starfire_Fortress_fortress_entity"
+    locator = { name = "root"	position = {	0	0	0	}	}
+    locator = { name = "1" position = { 0 -50 0 } rotation = { 0 0 0 }}
+	locator = { name = "2" position = { 0 50 0 } rotation = { 0 180 0 }}
+	locator = { name = "3" position = { 0 0 0 } rotation = { 0 0 0 }} #帝国巨像
+	locator = { name = "4" position = { 0 0 0 } rotation = { 90 90 0 }} #哺乳巨像
+	attach = { "root" = "Starfire_Fortress_05"} #哺乳空间站
+    attach = { "1" = "Starfire_Fortress_01"} #上方焚天神兵
+	attach = { "2" = "Starfire_Fortress_01"} #下方焚天神兵
+	attach = { "3" = "Starfire_Fortress_03"} #帝国巨像
+	attach = { "4" = "Starfire_Fortress_04"} #哺乳巨像
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+		#start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+	
+		start_event = { node = "root" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "root" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes } 
+		start_event = { node = "root" particle = "dyson_sphere_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+#焚天神兵展开
+entity = {
+	name = "Starfire_Fortress_01"
+	pdxmesh = "star_eater_01_mesh"
+	scale = 0.5
+
+	meshsettings = {
+		name = "star_eater_01_core|g_body|g_bodyShape"
+		index = 0
+		texture_diffuse = "avian_01_star_eater_diffuse.dds"
+		texture_normal = "avian_01_star_eater_normal.dds"
+		texture_specular = "avian_01_star_eater_specular.dds"
+		shader = "PdxMeshShip"
+	}
+
+	locator = {
+	name = "root"
+    }
+
+	default_state = "idle"
+	# Actual idle state when being in idle/moving.
+	state = { name = "idle" animation = "open" looping = yes next_state = "idle" animation_blend_time = 5
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+				"working_looping" = 100
+			}
+		}
+
+		event = { time = 0 node = "light_locator_01" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+
+		event = { time = 0 node = "engine_large_01" particle = "nemesis_01_star_eater_exhaust" keep_particle = yes trigger_once = yes}
+		
+		event = { trigger_once = yes sound = { soundeffect = "sfx_star_eater_closing" stop_on_state_change = no } }
+	}
+	state = { name = "working_looping" animation = "open" 
+		event = { time = 0	id = "beam_start" }
+
+		event = { time = 0 node = "light_locator_01" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_idle_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_idle_pulsating" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_open_energy" stop_on_state_change = yes } }
+		
+	}
+	# Opening state, goes into "working_looping" state when done.
+	state = { name = "working" animation = "opening" looping = no next_state = "working_looping" 
+		event = { trigger_once = yes sound = { soundeffect = "sfx_star_eater_opening" stop_on_state_change = no } }
+		
+
+		event = { time = 0 node = "light_locator_01" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+
+		
+		event = { time = 1000 id = "beam_start" } #will never fire, but lets the game know that an event with this ID exists
+	}
+	# Closed death state.
+	state = { name = "death" animation = "closed_death" looping = no
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 0
+				"working_looping" = 0
+			}
+		}
+
+		event = { time = 0.7 node = "explosion_locator_01" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.3 node = "explosion_locator_02" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 3.5 node = "explosion_locator_03" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 4.4 node = "explosion_locator_05" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.6 node = "explosion_locator_06" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 5.2 node = "explosion_locator_08" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.2 node = "explosion_locator_09" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 4.9 node = "explosion_locator_11" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 5.2 node = "explosion_locator_12" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.4 node = "explosion_locator_14" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 3.4 node = "explosion_locator_16" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.4 node = "explosion_locator_17" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.4 node = "explosion_locator_18" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.2 node = "explosion_locator_19" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 3.2 node = "explosion_locator_21" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 2.5 node = "explosion_locator_22" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 2.7 node = "explosion_locator_24" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 1.6 node = "explosion_locator_26" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }		
+        event = { time = 1.8 node = "explosion_locator_28" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 4.1 node = "explosion_locator_29" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }		
+        event = { time = 3.5 node = "explosion_locator_31" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 1.2 node = "explosion_locator_32" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }		
+        event = { time = 1.4 node = "explosion_locator_34" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.4 node = "explosion_locator_35" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }		
+        event = { time = 2.4 node = "explosion_locator_37" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 4.0 node = "explosion_locator_38" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }		
+        event = { time = 5.1 node = "explosion_locator_40" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.9 node = "explosion_locator_41" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }		
+        event = { time = 1.8 node = "explosion_locator_43" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 3.5 node = "explosion_locator_44" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.2 node = "explosion_locator_46" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+
+	}
+	state = { name = "death" animation = "opened_death" looping = no animation_blend_time = 0.2
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+				"working_looping" = 100
+			}
+		}		
+
+		event = { time = 0.7 node = "explosion_locator_01" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.3 node = "explosion_locator_02" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 3.5 node = "explosion_locator_03" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.2 node = "explosion_locator_04" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 4.4 node = "explosion_locator_05" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 7.6 node = "explosion_locator_06" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 8.1 node = "explosion_locator_07" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 5.2 node = "explosion_locator_08" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 7.2 node = "explosion_locator_09" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 8.4 node = "explosion_locator_10" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 9.9 node = "explosion_locator_11" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 5.2 node = "explosion_locator_12" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 10.4 node = "explosion_locator_13" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 11.4 node = "explosion_locator_14" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 9.4 node = "explosion_locator_15" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 6.4 node = "explosion_locator_16" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 8.4 node = "explosion_locator_17" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 12.4 node = "explosion_locator_18" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 8.2 node = "explosion_locator_19" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 4.1 node = "explosion_locator_20" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 9.2 node = "explosion_locator_21" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 2.5 node = "explosion_locator_22" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 6.7 node = "explosion_locator_23" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 2.7 node = "explosion_locator_24" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 9.2 node = "explosion_locator_25" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 1.6 node = "explosion_locator_26" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 4.7 node = "explosion_locator_27" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 7.8 node = "explosion_locator_28" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 9.1 node = "explosion_locator_29" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 2.1 node = "explosion_locator_30" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 3.5 node = "explosion_locator_31" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 7.2 node = "explosion_locator_32" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 9.4 node = "explosion_locator_33" particle = "nemesis_01_3_ship_explosion_effect"  keep_particle = yes trigger_once = yes }
+		event = { time = 10.4 node = "explosion_locator_34" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.4 node = "explosion_locator_35" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.2 node = "explosion_locator_36" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 6.4 node = "explosion_locator_37" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 9.0 node = "explosion_locator_38" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.4 node = "explosion_locator_39" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 5.1 node = "explosion_locator_40" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1.9 node = "explosion_locator_41" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 6.4 node = "explosion_locator_42" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 9.8 node = "explosion_locator_43" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 6.5 node = "explosion_locator_44" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.4 node = "explosion_locator_45" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 7.2 node = "explosion_locator_46" particle = "nemesis_01_3_ship_explosion_effect" keep_particle = yes trigger_once = yes }
+	}
+}
+#帝国巨象
+entity = {
+	name = "Starfire_Fortress_03"
+	pdxmesh = "nemesis_01_colossus_mesh"
+
+	default_state = "idle"
+	state = { name = "idle" animation = "open" 
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 100
+				"working" = 100
+				"working_looping" = 100
+			}
+		}
+		event = { time = 0	id = "beam_start" }
+	
+		event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_open_energy" stop_on_state_change = yes } }
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_hum" } }
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_distortion" } }
+
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_015" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_016" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_019" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_020" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+#		event = { time = 0 node = "root" particle = "nemesis_colossus_core_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "L_effect_5" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_5" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+	
+		event = { time = 0 node = "L_effect_4" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_4" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "L_effect_3" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_3" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "L_effect_2" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_2" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+
+		event = { time = 0 node = "L_effect_1" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_1" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }		
+	}
+	
+	scale = 0.5
+}
+#哺乳巨象环
+entity = {
+	name = "Starfire_Fortress_04"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 0.5
+	
+	get_state_from_parent = no
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+}
+#哺乳空间站
+entity = {
+	name = "Starfire_Fortress_05"
+	
+	locator = { name = "root"		position = {	0	0	0	}	}
+	locator = { name = "ship"		position = {	0	0	0	}	}
+
+	attach = { ship = "mammalian_01_starbase_citadel_section_entity" }
+	
+	scale = 1
+}
+#终极星火核心
+entity = {
+	name = "Ultimate_Spark_Core_entity"
+	locator = { name = "root"	position = {	0	0	0	}	}
+	locator = { name = "1" position = { 0 90 0 } rotation = { 0 0 0 }}
+	attach = { "1" = "Ultimate_Spark_Core_A_entity"}
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+	    start_event = { node = "root" particle = "dyson_sphere_electricity_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "root" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 50
+}
+#终极星火核心_中心光柱
+entity = {
+	name = "Ultimate_Spark_Core_A_entity"
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+	    start_event = { node = "root" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "root" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "root" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "root" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "root" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 2
+}

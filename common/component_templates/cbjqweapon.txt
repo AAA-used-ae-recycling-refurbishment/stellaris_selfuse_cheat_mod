@@ -1,0 +1,323 @@
+
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_T" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = extra_large #属于哪一个槽位，比如S,M,L,P,H等
+	entity = "invisible_turret_entity"
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_tech"
+	}
+	component_set = "cbjq_T"
+
+	projectile_gfx = "stachyon_lance" #发射时候的武器效果
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+
+	damage = { #伤害浮动
+		min = 100000
+		max = 300000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 30
+		max = 50
+	}
+	total_fire_time = 5
+	range = 400 #范围
+	accuracy = 1 #命中，1=100%
+	tracking = 1 #追踪，1=100%
+	armor_penetration = 1
+	shield_penetration = 1
+	hull_damage = 1 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+
+	ai_weight = {
+		weight = 1145140 #AI权重相关
+	}
+}
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_T2" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = titanic #属于哪一个槽位，比如S,M,L,P,H等
+	entity = "invisible_turret_entity"
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_tech"
+	}
+	component_set = "cbjq_T2"
+
+	projectile_gfx = "stachyon_lance" #发射时候的武器效果
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+
+	damage = { #伤害浮动
+		min = 50000
+		max = 200000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 40
+		max = 80
+	}
+	total_fire_time = 20
+	range = 4000 #范围
+	accuracy = 1 #命中，1=100%
+	tracking = 10 #追踪，1=100%
+	armor_penetration = 1
+	shield_penetration = 1
+	hull_damage = 1.5 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+
+	ai_weight = {
+		weight = 1145140 #AI权重相关
+	}
+}
+
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_T3" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = large #属于哪一个槽位，比如S,M,L,P,H等
+	entity = "invisible_turret_entity"
+	type = instant #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_tech"
+	}
+	component_set = "cbjq_T3"
+
+	projectile_gfx = "stachyon_lance" #发射时候的武器效果
+	ai_tags = { #这个武器的AI
+		weapon_role_artillery
+	}
+
+	damage = { #伤害浮动
+		min = 20000
+		max = 100000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 20
+		max = 50
+	}
+	total_fire_time = 5
+	range = 200 #范围
+	accuracy = 1 #命中，1=100%
+	tracking = 1 #追踪，1=100%
+	armor_penetration = 1
+	shield_penetration = 1
+	hull_damage = 1 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样护甲伤害系数
+	min_range = 5
+	ai_weight = {
+		weight = 1145140 #AI权重相关
+	}
+}
+
+utility_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_As" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = small #属于哪一个槽位，比如S,M,L,P,H等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_tech"
+	}
+	component_set = "cbjq_As"
+	modifier = {
+		ship_hull_add = 20000
+		ship_hull_regen_add_static = 20
+		ship_shield_add = 20000
+		ship_shield_regen_add_static = 20
+		ship_armor_add = 20000
+		ship_armor_regen_add_static = 20
+	}
+
+	ai_weight = {
+		weight = 1145140 #AI权重相关
+	}
+}
+
+
+utility_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_Am" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = medium #属于哪一个槽位，比如S,M,L,P,H等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_tech"
+	}
+	component_set = "cbjq_Am"
+	modifier = {
+		ship_hull_add = 80000
+		ship_hull_regen_add_static = 20
+		ship_shield_add = 80000
+		ship_shield_regen_add_static = 20
+		ship_armor_add = 80000
+		ship_armor_regen_add_static = 20
+	}
+
+	ai_weight = {
+		weight = 1145140 #AI权重相关
+	}
+}
+
+
+utility_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_Al" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = large #属于哪一个槽位，比如S,M,L,P,H等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_tech"
+	}
+	component_set = "cbjq_Al"
+	modifier = {
+		ship_hull_add = 120000
+		ship_hull_regen_add_static = 50
+		ship_shield_add = 120000
+		ship_shield_regen_add_static = 50
+		ship_armor_add = 120000
+		ship_armor_regen_add_static = 50
+	}
+
+	ai_weight = {
+		weight = 1145140 #AI权重相关
+	}
+}
+
+strike_craft_component_template = {
+	key = "cbjq_H"
+	size = LARGE
+
+	weapon_type = point_defence
+	projectile_gfx = "tachyon_lance"
+	prerequisites = { 
+		"cbjq_tech2" 
+	}
+
+	power = 0
+
+	count = 12
+	regeneration_per_day = 16
+	launch_time = 0.125
+
+	damage = {
+		min = 100000
+		max = 200000
+	}
+	cooldown = 1
+	range = 800
+	engagement_range = 800
+	accuracy = 1000
+	tracking = 1000
+
+	health = 10000
+	armor = 10000
+	shield = 10000
+	evasion = 10
+
+	speed = 2000
+	rotation_speed = 1000
+	acceleration = 5
+
+	hull_damage = 1
+	shield_penetration = 100
+	armor_penetration = 100
+
+
+	icon = "GFX_cbjq"
+	icon_frame = 1
+	component_set = "cbjq_H"
+	ai_weight = {
+		weight = 114514 #AI权重相关
+	}
+}
+
+weapon_component_template = { #声明这是什么配件，目前这个是武器部件，utility_component_template是防御组件（盾等），strike_craft_component_template是舰载机类
+	key = "cbjq_g" #ID,这个武器配件在游戏内的独一无二的识别key
+	size = torpedo #属于哪一个槽位，比如S,M,L,P,H等
+	entity = "invisible_turret_entity"
+	type = missile #属于什么类型的武器，instant为直射武器，point_defence是点防御，missile是导弹，planet_killer是巨像等
+	icon = "GFX_cbjq" #图标，原版的在Stellaris\gfx\interface\icons\ship_parts里面，需要用interface进行注册
+	icon_frame = 1
+	power = -10 #正数指生成多少部件能源（不是能量币！）负数指消耗
+
+	prerequisites = { #所属科技
+		"cbjq_tech2"
+	}
+	component_set = "cbjq_g"
+
+	projectile_gfx = "swarmer_missiles_02" #发射时候的武器效果
+
+	damage = { #伤害浮动
+		min = 200000
+		max = 400000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 10
+		max = 20
+	}
+	total_fire_time = 1
+	missile_speed = 1000 # 375 -- apparently, the game doesn't auto-convert speed for non-vanilla components
+	missile_evasion = 1
+	missile_health = 20
+	missile_retarget_range = 500
+	min_range = 5
+	range = 500 #范围
+	accuracy = 1 #命中，1=100%
+	tracking = 1 #追踪，1=100%
+	hull_damage = 0.5 #船体伤害系数 1=正常，2 = +100%，0.5 = -50%，下面的护盾与护甲都一样	armor_penetration = 100000 #护甲穿透系数
+
+	ai_weight = {
+		weight = 114514 #AI权重相关
+	}
+}
+
+weapon_component_template = {
+	key = "cbjq_P"
+	size = point_defence
+	entity = "invisible_turret_entity"
+	type = point_defence
+	icon = "GFX_cbjq"
+	icon_frame = 1
+	power = -10
+	prerequisites = {
+		 "tech_cbjq2"
+		 }
+	component_set = "cbjq_P"
+	projectile_gfx = "stormfire_auto_cannons_s"
+	damage = { #伤害浮动
+		min = 114510
+		max = 500000
+	}
+	windup = { #注意，(windup_min+windup_max）/20+total_fire_time/10 = 实际开火时间，单位为天
+		min = 1
+		max = 5
+	}
+	total_fire_time = 1
+	min_range = 0
+	range = 20 #范围
+	accuracy = 1 #命中，1=100%
+	tracking = 1 #追踪，1=100%
+	shield_penetration = 1
+	armor_penetration = 0.5
+
+	ai_weight = {
+		weight = 114514 #AI权重相关
+	}
+}

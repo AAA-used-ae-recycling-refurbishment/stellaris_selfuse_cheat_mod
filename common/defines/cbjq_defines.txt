@@ -1,0 +1,50 @@
+	NGameplay = {
+		COMMAND_LIMIT_MAX										= 20000		# Max value of Command Limit
+		COMMAND_LIMIT_BASE										= 500		# Base value of Command Limit
+		NAVAL_CAPACITY_MAX										= 10000000	# Max value of Naval Capacity
+		NAVAL_CAPACITY_BASE										= 500		# Base value of Naval Capacity
+		RESOLUTION_VOTE_TIMER										= 360	# number of days a resolution will be on the senate floor before being passed/failed
+		SENATE_RECESS_TIMER										= 180 		# number of days until the next proposed resolution will be put on the floor after the current vote
+		CHANGE_VOTE_COOLDOWN									= 180 		# number of days after voting in a resolution before you can change your vote
+		RESOLUTION_VOTE_PREMATURE_TIMER								= 180	# number of days until the custodian/emperor can prematurely end the senate session
+		CATEGORY_VOTE_COOLDOWN									= 360		# time before another resolution in a given category can proposed again
+		BASE_PLANET_BUILDING_SLOTS									= 10
+		MAX_PLANET_BUILDING_SLOTS									= 200
+		ADVANCED_EMPIRE_EXTRA_WARSHIPS_MIN								= 5		# How many extra war ships do advanced empires start with?
+		ADVANCED_EMPIRE_EXTRA_WARSHIPS_MAX								= 17
+		ORBITAL_BOMBARDMENT_KILL_POP_COOLDOWN							= 0		# Min days between killing pops from bombardment
+		MAX_TRADE_DEAL_LENGTH_YEARS									= 100		# Maximum length of a trade deal in years.
+		HYPERLANE_GEN_REMOVED_MAX_DIST = 15
+		HYPERLANE_GEN_REMOVE_TOO_MANY_EDGES = 5
+		ASCENSION_PERKS_SLOTS				= 512 # Number of ascension perk slots
+		TRADITION_CATEGORIES_MAX	= 369
+		GOVERNMENT_CIVIC_POINTS_BASE		= 10		# Base amount of civic points (to "pay" for government civic costs)
+		LEADER_BASE_SKILL_CAP	= 1000
+		LEADER_MAX_SKILL_CAP	= 1000
+		CLOAKING_ACTIVATION_COOLDOWN				= 0 #days
+		CLOAKING_LEVEL_MAX							= 20 #days
+	}
+	NPop = {
+		MAX_CARRYING_CAPACITY										= 50000
+	}
+	NCamera = {
+		GALAXY_SPACE_SCALE_MULT = 2
+		ZOOM_STEPS_GALAXY 			  	= { 100 200 400 600 1000 1500 2500 3500 }
+		GALAXY_SHOW_FLEETS_ZOOM 			= 2400 								# Camera zoom interval to show fleet icons
+		GALAXY_SHOW_STARNAME_ZOOM 			= 1400 								# Camera zoom interval to show star name
+	}
+	NGraphics = {
+		GALAXY_STAR_ICON_SCALE				= 1.0
+		GALAXY_STAR_ICON_MAX_SCALE 			= 3.0
+	}
+	NAI = {
+		MIN_DISTANCE_TO_JUMP = 1					# Target must be at least this many systems away for AI to want to use jump drive
+		AI_JUMP_DRIVE_BRAVERY = 0.5				# AI will not want to jump into systems unless enemy is this much weaker than them, relatively
+	}
+	NEconomy = {
+		MIN_ECONOMIC_MODIFIER_MULT = -100
+	}
+	NShip = {
+		JUMP_DRIVE_WINDUP					= 1	# Jump drive windup in days
+		JUMP_DRIVE_RANGE					= 100
+	}

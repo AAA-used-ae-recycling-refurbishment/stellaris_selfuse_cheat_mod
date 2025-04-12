@@ -1,0 +1,7 @@
+objectTypes = {
+	pdxmesh = {
+		name = "cbjq_fleet_flagship_ship_mesh"
+		file = "gfx/models/ships/cbjq_AC_models/shelter_fleet_flagship.mesh"
+		scale = 0.125
+	}
+}

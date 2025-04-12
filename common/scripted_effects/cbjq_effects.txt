@@ -1,0 +1,376 @@
+cbjq_delete_ship_modifier_system = {
+    optimize_memory
+    set_variable = { which = $Modifier$_buffer value = 0 }
+	export_modifier_to_variable = { modifier = $Modifier$ variable = $Modifier$_buffer }
+	[[subtract] subtract_variable = { which = $Modifier$_buffer value = $subtract$ }]
+	[[change] change_variable = { which = $Modifier$_buffer value = $change$ }]
+	[[divide] divide_variable = { which = $Modifier$_buffer value = $divide$ }]
+	[[multiply] multiply_variable = { which = $Modifier$_buffer value = $multiply$ }]
+	add_modifier = { modifier = cbjq_$Modifier$_$features$ multiplier = $Modifier$_buffer days = $DAYS$ }
+	clear_variable = $Modifier$_buffer
+}
+
+cbjq_battle_buff_correct_system = {
+    optimize_memory
+    if = {
+        limit = { NOT = { check_modifier_value = { modifier = $Modifier$ value = $NUM$ } } }
+        set_variable = { which = $Modifier$_buffer value = 0 }
+        export_modifier_to_variable = { modifier = $Modifier$ variable = $Modifier$_buffer }
+        multiply_variable = { which = $Modifier$_buffer value = -1 }
+        change_variable = { which = $Modifier$_buffer value = $NUM$ }
+        add_modifier = { modifier = cbjq_$Modifier$_$features$ multiplier = $Modifier$_buffer days = $DAYS$ }
+        clear_variable = $Modifier$_buffer
+    }
+}
+
+# scope=fromfromfrom
+cbjq_curse_the_enemy_fleet = {
+    optimize_memory
+    # 屏蔽穿透
+    cbjq_battle_buff_correct_system = { Modifier = ship_armor_penetration_mult   NUM = -1    DAYS = -1 features = debuff_stable }
+    cbjq_battle_buff_correct_system = { Modifier = ship_shield_penetration_mult  NUM = -1    DAYS = -1 features = debuff_stable }
+    # 伤害压制
+    cbjq_battle_buff_correct_system = { Modifier = ship_shield_damage_mult       NUM = -1 DAYS = -1 features = debuff_stable }
+    cbjq_battle_buff_correct_system = { Modifier = ship_armor_damage_mult        NUM = -1 DAYS = -1 features = debuff_stable }
+    cbjq_battle_buff_correct_system = { Modifier = ship_hull_damage_mult         NUM = -1 DAYS = -1 features = debuff_stable }
+    cbjq_battle_buff_correct_system = { Modifier = ship_weapon_damage            NUM = -1 DAYS = -1 features = debuff_stable }
+    # 防御无效化
+    cbjq_battle_buff_correct_system = { Modifier = ship_shield_reduction         NUM = 1     DAYS = -1 features = debuff_stable }
+    cbjq_battle_buff_correct_system = { Modifier = ship_armor_reduction          NUM = 1     DAYS = -1 features = debuff_stable }
+    # 硬化归零
+    cbjq_battle_buff_correct_system = { Modifier = ship_shield_hardening_add     NUM = -1    DAYS = -1 features = debuff_stable }
+    cbjq_battle_buff_correct_system = { Modifier = ship_armor_hardening_add      NUM = -1    DAYS = -1 features = debuff_stable }
+}
+
+# scope=fromfrom
+cbjq_bless_our_fleet = {
+    optimize_memory
+    # 穿透有效
+    cbjq_battle_buff_correct_system = { Modifier = ship_armor_penetration_mult   NUM = 1     DAYS = -1 features = buff_temp }
+    cbjq_battle_buff_correct_system = { Modifier = ship_shield_penetration_mult  NUM = 1     DAYS = -1 features = buff_temp }
+    # 伤害增幅
+    cbjq_battle_buff_correct_system = { Modifier = ship_shield_damage_mult       NUM = 5     DAYS = -1 features = buff_temp }
+    cbjq_battle_buff_correct_system = { Modifier = ship_armor_damage_mult        NUM = 5     DAYS = -1 features = buff_temp }
+    cbjq_battle_buff_correct_system = { Modifier = ship_hull_damage_mult         NUM = 5     DAYS = -1 features = buff_temp }
+    cbjq_battle_buff_correct_system = { Modifier = ship_weapon_damage            NUM = 5     DAYS = -1 features = buff_temp }
+    # 防御有效化
+    cbjq_battle_buff_correct_system = { Modifier = ship_shield_reduction         NUM = 0     DAYS = -1 features = buff_temp }
+    cbjq_battle_buff_correct_system = { Modifier = ship_armor_reduction          NUM = 0     DAYS = -1 features = buff_temp }
+}
+cbjq_zdh_fleet_find_way = {
+    last_created_fleet = {
+        queue_actions = {
+            repeat = {
+                find_closest_system = {
+                    trigger = {
+                        id = cbjq_zdh.10002
+                        NOT = {
+                            has_star_flag = cbjq_zdhfleet_comed
+                        }
+                        has_global_flag = global_cheat_planetfleetai_on
+                    }
+                    found_system = {
+                        move_to = this
+                        effect = {
+                            id = cbjq_zdh.10001
+                            set_owner = event_target:player_country
+                            set_star_flag = cbjq_zdhfleet_comed
+                            create_starbase = {
+                                size = starbase_starport
+                                owner = event_target:player_country
+                                module = shelter_super_shipyard
+                                module = shelter_super_shipyard
+                                effect = {
+                                    set_disable_at_health = 0.1
+                                }
+                            }
+                            every_system_planet = {
+                                limit = {
+                                    is_colony = yes
+                                    owner = {
+                                        is_ai = yes
+                                    }
+                                }
+                                set_owner = event_target:player_country
+                                planet_event = {
+                                    id = cbjq_cheat_global.018
+                                }
+                                
+                            }
+                            every_system_planet = {
+                                limit = {
+                                    is_star = yes
+                                }
+                                change_pc = pc_quasar_XXYS
+                            }
+                            every_system_planet = {
+                                limit = {
+                                    is_star = no
+                                    is_colony = no
+                                }
+                                change_pc = pc_city
+                            }
+                            set_star_class = sc_quasar_XXYS
+                            subtract_variable = {
+                                which = cbjq_zdhfleet_comed_count
+                                value = -1
+                            }
+                        }
+                     }
+                     failed = {
+                        find_closest_fleet = {
+                            trigger = {
+                                id = cbjq_zdh.10003
+                                owner = {
+                                    is_ai = yes
+                                }
+                                has_global_flag = global_cheat_planetfleetai_on
+                            }
+                            found_fleet = { 
+                                move_to = this
+                                effect = {
+                                    id = cbjq_zdh.10004
+                                    add_modifier = {
+                                        modifier = cbjq_zdhfleet_enemy_buff
+                                        days = -1
+                                    }
+                                }
+                            }
+                            
+                        }
+                        
+                     }
+                }
+            }
+        }
+    
+    }
+}
+cbjq_create_zdh_fleet = {
+    create_fleet = {
+        name = cbjq_spawn_ship_name1
+        settings = {
+            can_upgrade = no
+            can_change_composition = no
+            can_change_leader = yes
+            uses_naval_capacity = no
+            spawn_debris = no
+            is_ultra_boss = yes
+        }
+        effect = {  
+            set_owner = event_target:player_country
+            while = {
+                count = 10
+                create_ship = {
+                    name = The_END
+                    design = "NAME_ZDH"
+                    effect = {
+                        set_disable_at_health = 0.1
+                    }
+                }
+            }
+            set_disable_at_health = 0.1
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+        }
+    }
+}
+cbjq_create_zdh_fleet_with_findway = {
+    create_fleet = {
+        name = cbjq_spawn_ship_name1
+        settings = {
+            can_upgrade = no
+            can_change_composition = no
+            can_change_leader = yes
+            uses_naval_capacity = no
+            spawn_debris = no
+            is_ultra_boss = yes
+        }
+        effect = {  
+            set_owner = event_target:player_country
+            while = {
+                count = 10
+                create_ship = {
+                    name = The_END
+                    design = "NAME_ZDH"
+                    effect = {
+                        set_disable_at_health = 0.1
+                    }
+                }
+            }
+            set_disable_at_health = 0.1
+            set_fleet_stance = aggressive
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            queue_actions = {
+                repeat = {
+                    find_closest_system = {
+                        trigger = {
+                            id = cbjq_zdh.10002
+                            NOT = {
+                                has_star_flag = cbjq_zdhfleet_comed
+                            }
+                            has_global_flag = global_cheat_planetfleetai_on
+                        }
+                        found_system = {
+                            effect = {
+                                id = cbjq_zdh.10001
+                                set_owner = event_target:player_country
+                                set_star_flag = cbjq_zdhfleet_comed
+                                set_star_class = sc_cbjq_star_class
+                                add_modifier = {
+                                    modifier = cbjq_zdhfleet_comed
+                                }
+                                create_starbase = {
+                                    size = starbase_citadel
+                                    module = shipyard
+                                    module = cbjq_super_shipyard
+                                    module = cbjq_starbase_eoh
+                                    module = cbjq_starbase_eoh
+                                    module = cbjq_starbase_eoh
+                                    module = cbjq_starbase_eoh
+                                    building = dreadnaught_yards
+                                    building = grand_yards
+                                    building = titan_yards
+                                    building = colossus_yards
+                                    owner = event_target:player_country
+                                    effect = {
+                                        set_disable_at_health = 0.1
+                                    }
+                                }
+                                every_system_planet = {
+                                    limit = {
+                                        is_colony = yes
+                                        owner = {
+                                            is_ai = yes
+                                        }
+                                    }
+                                    destroy_colony = yes
+                                    
+                                }
+                                every_system_planet = {
+                                    limit = {
+                                        is_star = yes
+                                    }
+                                    change_pc = pc_quasar_XXYS
+                                }
+                                every_system_planet = {
+                                    limit = {
+                                        is_star = no
+                                        is_colony = no
+                                    }
+                                    change_pc = pc_city
+                                }
+                                subtract_variable = {
+                                    which = cbjq_zdhfleet_comed_count
+                                    value = -1
+                                }
+                            }
+                            move_to = this
+                            wait = 5
+                                }
+                                failed = {
+                                    find_closest_fleet = {
+                                        trigger = {
+                                            id = cbjq_zdh.10005
+                                            solar_system = {
+                                                NOT = {
+                                                    has_star_flag = cbjq_zdhfleet_comed
+                                                }
+                                            }
+                                        }
+                                        found_fleet = {
+                                            move_to = this
+                                            wait = 5
+                                        }
+                                    }    
+                            }
+                        }  
+                    }
+                }
+            }
+        }
+    }
+cbjq_create_strom = {
+    optimize_memory
+	add_modifier = { modifier = "cbjq_zdhfleet_comed" }
+    set_star_flag = space_cbjq_system_star_flag
+    inline_script = {
+        script = "cosmic_storms/StormVisuals"
+    }
+    star = {
+        create_ambient_object = {
+            type = "magnetic_storm"  #electric_storm
+            location = this
+        }
+        last_created_ambient_object = {
+            set_ambient_object_flag = cbjq_storm_event_storm_object
+            set_location = {
+                target = prev
+                distance = 0
+                angle = random
+            }
+        }
+        create_ambient_object = {
+            type = "gravity_storm"  #electric_storm
+            location = this
+        }
+        last_created_ambient_object = {
+            set_ambient_object_flag = cbjq_storm_event_storm_object
+            set_location = {
+                target = prev
+                distance = 0
+                angle = random
+            }
+        }
+        create_ambient_object = {
+            type = "electric_storm"  #electric_storm
+            location = this
+        }
+        last_created_ambient_object = {
+            set_ambient_object_flag = cbjq_storm_event_storm_object
+            set_location = {
+                target = prev
+                distance = 0
+                angle = random
+            }
+        }
+        create_ambient_object = {
+            type = "contingency_2"
+            location = this
+        }
+        last_created_ambient_object = {
+            set_ambient_object_flag = cbjq_storm_event_storm_object
+            set_location = {
+                target = prev
+                distance = 0
+                angle = random
+            }
+        }
+        create_ambient_object = {
+            type = "extradimensional_2"
+            location = this
+        }
+        last_created_ambient_object = {
+            set_ambient_object_flag = cbjq_storm_event_storm_object
+            set_location = {
+                target = prev
+                distance = 0
+                angle = random
+            }
+        }
+    }
+}
+cbjq_storm_event_storm_add_storm_remove = {
+    optimize_memory
+	remove_storm_visuals_effect = yes
+    remove_star_flag = space_cbjq_system_star_flag
+	every_system_ambient_object = {
+		limit = {
+			has_ambient_object_flag = cvb_bss_storm_event_storm_object
+		}
+		destroy_ambient_object = this
+	}
+	remove_modifier = cbjq_zdhfleet_comed
+}

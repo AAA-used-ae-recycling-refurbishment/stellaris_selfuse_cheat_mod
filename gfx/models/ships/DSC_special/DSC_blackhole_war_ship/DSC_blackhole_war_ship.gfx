@@ -1,0 +1,6 @@
+objectTypes = {
+    pdxmesh = {
+        name = DSC_blackhole_war_ship_frame_mesh
+        file = gfx/models/ships/DSC_special/DSC_blackhole_war_ship/DSC_blackhole_war_ship_frame.mesh
+    }
+}

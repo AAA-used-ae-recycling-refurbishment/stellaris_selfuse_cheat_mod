@@ -1,0 +1,27 @@
+objectTypes = {
+	#（绿色）
+	pdxparticle = {
+		name = "DSC_galactic_center_perdition_beam_muzzle_windup_effect_red"
+		type = "DSC_galactic_center_perdition_beam_muzzle_windup_effect_red"
+
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "DSC_galactic_center_perdition_beam_hit_effect_red"
+		type = "DSC_galactic_center_perdition_beam_hit_effect_red"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "DSC_galactic_center_perdition_beam_shield_hit_effect_red"
+		type = "DSC_galactic_center_perdition_beam_shield_hit_effect_red"
+
+		scale = 1.0
+	}
+	pdxparticle = {
+		name ="DSC_galactic_center_perdition_beam_muzzle_effect_red"
+		type = "DSC_galactic_center_perdition_beam_muzzle_effect_red"
+
+		scale = 1.0
+	}
+
+}

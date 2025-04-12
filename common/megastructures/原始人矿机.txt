@@ -1,0 +1,22 @@
+super_dirt_drill = {
+	place_entity_on_planet_plane = no
+	build_time = 1
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 1000000
+            energy = 100000000
+		}
+		produces = {
+			alloys = 100000000
+		}
+	}
+
+	country_modifier = {
+		country_resource_max_add = 200000000
+	}
+
+	potential = {
+	}
+	ai_weight = { factor = 0 }
+}

@@ -1,0 +1,31 @@
+entity = {
+    name = "DSC_star_shipyard_stage_1_entity"
+    pdxmesh = "DSC_star_shipyard_stage_1_mesh"
+    scale = 0.5
+}
+entity = {
+    name = "DSC_star_shipyard_stage_2_entity"
+    pdxmesh = "DSC_star_shipyard_stage_2_mesh"
+    scale = 0.5
+}
+entity = {
+    name = "DSC_star_shipyard_stage_3_entity"
+    pdxmesh = "DSC_star_shipyard_stage_3_mesh"
+    scale = 0.5
+}
+entity = {
+    name = "DSC_star_shipyard_entity"
+    pdxmesh = "DSC_star_shipyard_mesh"
+    scale = 0.5
+}
+entity = {
+    name = "DSC_star_shipyard_ruined_entity"
+    pdxmesh = "DSC_star_shipyard_ruined_mesh"
+    scale = 0.5
+}
+
+entity = {
+    name = "DSC_star_shipyard_stage_12_entity"
+    attach = { root = "DSC_star_shipyard_stage_1_entity" }
+    attach = { root = "DSC_star_shipyard_stage_2_entity" }
+}

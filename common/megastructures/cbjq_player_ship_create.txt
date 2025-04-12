@@ -1,0 +1,1454 @@
+create_cbjq_main_fleet = {
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_player_cheat }
+	build_time = 20
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 750000
+		}
+	}
+
+	potential = {
+		has_technology = cbjq_player_cheat
+	}
+
+
+	ai_weight = { factor = 0 }
+
+	on_build_complete = {
+		from = {
+		create_fleet = {
+			name = mianfleet
+			settings = {
+					can_upgrade = no
+					ai_ignore_strength = yes
+						is_boss = yes #设置是否为boos
+					uses_naval_capacity = no #是否占用海军容量
+					can_change_composition = no #是否改变组成										
+				}
+			effect = {
+				set_owner = root
+#小型*20
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+#大型*10
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+#泰坦*5
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+				set_location = {
+						target = fromfrom
+						direction = in_system
+					}
+
+			}
+		}	
+		remove_megastructure = fromfrom
+
+		}
+	
+	}
+}
+
+create_cbjq_flag_fleet = {
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_player_cheat }
+	build_time = 20
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 750000
+		}
+	}
+
+	potential = {
+		has_technology = cbjq_player_cheat
+	}
+
+
+	ai_weight = { factor = 0 }
+
+	on_build_complete = {
+		from = {
+		create_fleet = {
+			name = flagfleet
+			settings = {
+					can_upgrade = no
+					ai_ignore_strength = yes
+						is_boss = yes #设置是否为boos
+					uses_naval_capacity = no #是否占用海军容量
+					can_change_composition = no #是否改变组成										
+				}
+			effect = {
+				set_owner = root
+#小型*20
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+#小型*20
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+#小型*20
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+#小型*20
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+#小型*20
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_corvette
+						upgradable = no
+
+					}
+#大型*10
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+#大型*10
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+#大型*10
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+#大型*10
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+#大型*10
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_battleship
+						upgradable = no
+
+					}
+#泰坦*5
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+#泰坦*5
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+#泰坦*5
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+#泰坦*5
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+#泰坦*5
+
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_flagship
+						upgradable = no
+
+					}
+#生成母舰*5
+                    create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_mothership
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_mothership
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_mothership
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_mothership
+						upgradable = no
+
+					}
+					create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_mothership
+						upgradable = no
+
+					}
+                    
+                    
+				set_location = {
+						target = fromfrom
+						direction = in_system
+					}
+
+			}
+		}	
+		remove_megastructure = fromfrom
+
+		}
+	
+	}
+}
+
+create_cbjq_station_fleet = {
+	place_entity_on_planet_plane = no
+	prerequisites = { cbjq_player_cheat }
+	build_time = 20
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 750000
+		}
+	}
+
+	potential = {
+		has_technology = cbjq_player_cheat
+	}
+
+
+	ai_weight = { factor = 0 }
+
+    on_build_complete = {
+		from = {
+		create_fleet = {
+			name = stationfleet
+			settings = {
+					can_upgrade = no
+					ai_ignore_strength = yes
+						is_boss = no #设置是否为boos
+					uses_naval_capacity = no #是否占用海军容量
+					can_change_composition = no #是否改变组成										
+				}
+			effect = {
+				set_owner = root
+                    create_ship = {
+						name = "The_END"
+						random_existing_design = cbjq_space_station
+						upgradable = no
+
+					}
+					}
+                    
+                    
+				set_location = {
+						target = fromfrom
+						direction = in_system
+					}
+
+			}
+		}	
+		remove_megastructure = fromfrom
+
+		}
+	
+}

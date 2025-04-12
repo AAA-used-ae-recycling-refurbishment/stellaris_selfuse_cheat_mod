@@ -1,0 +1,189 @@
+utility_component_template = {
+	key = "cbjq_components_b"
+	size = small
+	icon = "GFX_cbjq_engine"
+	icon_frame = 1
+	power = -200
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "thruster_components"
+
+	ship_modifier = {
+		ship_speed_mult = 10
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+utility_component_template = {
+	key = "cbjq_components_b"
+	size = extra_large
+	icon = "GFX_cbjq_engine"
+	icon_frame = 1
+	power = -200
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "thruster_components"
+
+	ship_modifier = {
+		ship_speed_mult = 10
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+###
+
+utility_component_template = {
+	key = "cbjq_components_a"
+	size = small
+	icon = "GFX_cbjq_ftl"
+	icon_frame = 1
+	power = -200
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "ftl_components"
+
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_windup_mult = -100000
+		ship_winddown_mult = -10000
+		ship_interstellar_speed_mult = 10000
+		ship_emergency_ftl_mult = -10000
+		ship_jumpdrive_cooldown_mult = -10000
+		ship_ftl_jumpdrive_range_mult = 100
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+utility_component_template = {
+	key = "cbjq_components_a"
+	size = extra_large
+	icon = "GFX_cbjq_ftl"
+	icon_frame = 1
+	power = -200
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "ftl_components"
+
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_windup_mult = -100000
+		ship_winddown_mult = -100000
+		ship_interstellar_speed_mult = 100000
+		ship_emergency_ftl_mult = -100000
+		ship_jumpdrive_cooldown_mult = -100000
+		ship_ftl_jumpdrive_range_mult = 100
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+utility_component_template = {
+	key = "cbjq_components_c"
+	size = small
+	icon = "GFX_cbjq_energy"
+	icon_frame = 1
+	power = 2000000000
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "power_core"
+
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+
+utility_component_template = {
+	key = "cbjq_components_c"
+	size = extra_large
+	icon = "GFX_cbjq_energy"
+	icon_frame = 1
+	power = 2000000000
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "power_core"
+
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+utility_component_template = {
+	key = "cbjq_components_d"
+	size = small
+	icon = "GFX_cbjq_tanceqi"
+	icon_frame = 1
+	power = -10
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "sensor_components"
+
+	sensor_range = 5000
+	hyperlane_range = 5000
+	modifier = {
+		ship_tracking_add = 10000
+		ship_cloaking_detection_add = 10000
+	}
+
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}
+utility_component_template = {
+	key = "cbjq_components_e"
+	size = small
+	icon = "GFX_cbjq_computer"
+	icon_frame = 1
+	power = -10
+	prerequisites = { "cbjq_player_cheat" }
+	component_set = "combat_computers"
+
+	ship_behavior = "combat_computer_ship"
+
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			is_ai = no
+			weight = 2100000000
+		}
+		
+	}
+}

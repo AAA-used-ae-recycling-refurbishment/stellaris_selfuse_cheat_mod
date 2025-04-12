@@ -1,0 +1,412 @@
+#entity = {
+#    name = "DSC_Flood_of_material_entity"
+#
+#    attach = { root = "DSC_Flood_of_material_entity_1" }
+#    locator = { name = entity_2 position = { 0 0 0 } rotation = { 60 0 0 } }
+#    attach = { entity_2 = "DSC_Flood_of_material_entity_2" }
+#
+#    attach = { effect_1 = DSC_natural_wormhole_entity }
+#    #attach = { effect_2 = natural_wormhole_entity }
+#}
+entity = {
+    name = "DSC_Flood_of_material_entity_1"
+    pdxmesh = "DSC_Flood_of_material_mesh"
+    scale = 2.5
+    default_state = "idle"
+    state = { name = "idle" animation = "idle"
+        start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "starhole_beam_1" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_2" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_3" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_1" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_2" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_3" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "loder_beam_1" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_2" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_3" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_4" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_5" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_6" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_7" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_8" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_9" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_10" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_11" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_12" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_13" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_14" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_15" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+
+
+        start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "inner_beam_1" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_2" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_3" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "platform_beam_1" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_2" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_3" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_pulse" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_conveyor" } }
+    }
+
+    attach = { starhole_beam_1 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_2 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_3 = DSC_Flood_of_material_black_hole_entity }
+
+    attach = { effect_1 = DSC_natural_wormhole_entity }
+    #attach = { effect_2 = natural_wormhole_entity }
+}
+entity = {
+    name = "DSC_Flood_of_material_entity_2"
+    pdxmesh = "DSC_Flood_of_material_mesh"
+    scale = 2.5
+    default_state = "idle"
+    state = { name = "idle" animation = "idle"
+        start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "starhole_beam_1" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_2" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_3" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_1" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_2" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_3" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "loder_beam_1" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_2" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_3" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_4" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_5" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_6" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_7" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_8" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_9" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_10" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_11" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_12" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_13" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_14" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_15" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+
+
+        start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "inner_beam_1" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_2" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_3" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "platform_beam_1" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_2" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_3" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_pulse" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_conveyor" } }
+    }
+
+    attach = { starhole_beam_1 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_2 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_3 = DSC_Flood_of_material_black_hole_entity }
+
+    attach = { effect_1 = DSC_natural_wormhole_entity }
+    #attach = { effect_2 = natural_wormhole_entity }
+}
+entity = {
+    name = "DSC_Flood_of_material_black_hole_entity"
+    pdxmesh = "black_hole_new_mesh"
+
+    scale = 0.4
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+        event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+        event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+    }
+    locator = { name = "planet" }
+
+    game_data = {
+        size = 1.0
+        bloom_factor = 5
+    }
+    cull_radius = 700
+}
+entity = {
+    name = "DSC_natural_wormhole_entity"
+    pdxmesh = "wormhole_rings_mesh"
+
+    #locator = { name = "root" position = { 0 0 0 } }
+
+    default_state = "start"
+    state = { name = "start" state_time = 5 looping = no next_state = start2
+        event = { time = 0.0 node = "effect_locator" particle = "wormhole_idle_particle"  keep_particle = yes trigger_once = yes }
+        event = { trigger_once = yes sound = { soundeffect = "amb_natural_wormhole" } }
+        event = { trigger_once = yes sound = { soundeffect = "amb_natural_wormhole_thunder" } }
+    }
+
+    scale = 2.0
+
+    game_data = {
+        uv_animation_speed   = -0.05
+        uv_animation_direction  = { 0.4 0.4 }
+        bloom_factor = 0.8
+    }
+
+    attach = { root = "natural_wormhole_stretched_ring_entity" }
+
+
+}
+
+
+
+entity = {
+    name = "DSC_Flood_of_material_part_01_entity"
+    pdxmesh = "DSC_Flood_of_material_stage_01_mesh"
+    scale = 2.5
+}
+entity = {
+    name = "DSC_Flood_of_material_part_02_entity"
+    pdxmesh = "DSC_Flood_of_material_stage_02_mesh"
+    scale = 2.5
+}
+entity = {
+    name = "DSC_Flood_of_material_part_03_entity"
+    pdxmesh = "DSC_Flood_of_material_stage_03_mesh"
+    scale = 2.5
+}
+entity = {
+    name = "DSC_Flood_of_material_part_04_entity"
+    pdxmesh = "DSC_Flood_of_material_stage_04_mesh"
+    scale = 2.5
+}
+entity = {
+    name = "DSC_Flood_of_material_part_05_entity"
+    pdxmesh = "DSC_Flood_of_material_stage_05_mesh"
+    scale = 2.5
+}
+
+
+entity = {
+    name = "DSC_Flood_of_material_stage_01_entity"
+    attach = { root = "DSC_Flood_of_material_part_01_entity" }
+}
+entity = {
+    name = "DSC_Flood_of_material_stage_02_entity"
+    attach = { root = "DSC_Flood_of_material_part_01_entity" }
+    attach = { root = "DSC_Flood_of_material_part_02_entity" }
+}
+entity = {
+    name = "DSC_Flood_of_material_stage_03_entity"
+    attach = { root = "DSC_Flood_of_material_part_01_entity" }
+    attach = { root = "DSC_Flood_of_material_part_02_entity" }
+    attach = { root = "DSC_Flood_of_material_part_03_entity" }
+}
+entity = {
+    name = "DSC_Flood_of_material_stage_04_entity"
+    attach = { root = "DSC_Flood_of_material_part_01_entity" }
+    attach = { root = "DSC_Flood_of_material_part_02_entity" }
+    attach = { root = "DSC_Flood_of_material_part_03_entity" }
+    attach = { root = "DSC_Flood_of_material_part_04_entity" }
+}
+entity = {
+    name = "DSC_Flood_of_material_stage_05_entity"
+    attach = { root = "DSC_Flood_of_material_part_01_entity" }
+    attach = { root = "DSC_Flood_of_material_part_02_entity" }
+    attach = { root = "DSC_Flood_of_material_part_03_entity" }
+    attach = { root = "DSC_Flood_of_material_part_04_entity" }
+    attach = { root = "DSC_Flood_of_material_part_05_entity" }
+}
+
+
+
+#发射环
+animation = {
+    name = DSC_Flood_of_material_small_fire_ring
+    file = DSC_Flood_of_material_small_fire_ring.anim
+}
+entity = {
+    name = "DSC_Flood_of_material_small_fire_ring_entity"
+    pdxmesh = "DSC_Flood_of_material_small_fire_ring_mesh"
+    scale = 2.5
+    default_state = idle
+    state = {
+        name = idle animation = DSC_Flood_of_material_small_fire_ring
+        start_event = { node = "loder_beam_1" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_4" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_7" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_10" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_13" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "loder_beam_1" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+    }
+}
+#主体
+entity = {
+    name = "DSC_Flood_of_material_body_entity"
+    pdxmesh = "DSC_Flood_of_material_body_mesh"
+    scale = 2.5
+    default_state = "idle"
+    state = { name = "idle" animation = "idle"
+        start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "starhole_beam_1" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_2" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_3" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_4" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_5" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "starhole_beam_6" particle = "DSC_hyper_relay_portal_effect" keep_particle = yes trigger_once = yes }
+
+        #start_event = { node = "loder_beam_1" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_2" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_3" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+        #start_event = { node = "loder_beam_1" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_2" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_3" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_4" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_5" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_6" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_7" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_8" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_9" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_10" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_11" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_12" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_13" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_14" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "loder_beam_15" particle = "DSC_matde_platform_beam_effect" keep_particle = yes trigger_once = yes }
+
+
+        start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "inner_beam_1" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_2" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_3" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_4" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_5" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "inner_beam_6" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { node = "platform_beam_1" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_2" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_3" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_4" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_5" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+        start_event = { node = "platform_beam_6" particle = "matde_platform_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+        #start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+        #start_event = { node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_pulse" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_conveyor" } }
+    }
+
+    attach = { starhole_beam_1 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_2 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_3 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_4 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_5 = DSC_Flood_of_material_black_hole_entity }
+    attach = { starhole_beam_6 = DSC_Flood_of_material_black_hole_entity }
+
+    attach = { effect_1 = DSC_natural_wormhole_entity }
+    #attach = { effect_2 = natural_wormhole_entity }
+}
+#大型发射环
+animation = {
+    name = DSC_Flood_of_material_large_fire_ring_1
+    file = DSC_Flood_of_material_large_fire_ring_1.anim
+}
+animation = {
+    name = DSC_Flood_of_material_large_fire_ring_2
+    file = DSC_Flood_of_material_large_fire_ring_2.anim
+}
+animation = {
+    name = DSC_Flood_of_material_large_fire_ring_3
+    file = DSC_Flood_of_material_large_fire_ring_3.anim
+}
+entity = {
+    name = "DSC_Flood_of_material_large_fire_ring_1_entity"
+    pdxmesh = "DSC_Flood_of_material_large_fire_ring_1_mesh"
+    scale = 2.5
+    default_state = idle
+    state = {
+        name = idle animation = DSC_Flood_of_material_large_fire_ring_1
+    }
+}
+entity = {
+    name = "DSC_Flood_of_material_large_fire_ring_2_entity"
+    pdxmesh = "DSC_Flood_of_material_large_fire_ring_2_mesh"
+    scale = 2.5
+    default_state = idle
+    state = {
+        name = idle animation = DSC_Flood_of_material_large_fire_ring_2
+    }
+}
+entity = {
+    name = "DSC_Flood_of_material_large_fire_ring_3_entity"
+    pdxmesh = "DSC_Flood_of_material_large_fire_ring_3_mesh"
+    scale = 2.5
+    default_state = idle
+    state = {
+        name = idle animation = DSC_Flood_of_material_large_fire_ring_3
+    }
+}
+#跨星系巨构
+entity = {
+    name = "DSC_Flood_of_material_entity"
+    locator = { name = entity_1 position = { 0 0 0 } rotation = { 0 0 0 } }
+    locator = { name = entity_2 position = { 0 0 0 } rotation = { 60 0 0 } }
+    locator = { name = entity_3 position = { 0 0 0 } rotation = { 120 0 0 } }
+    locator = { name = entity_4 position = { 0 0 0 } rotation = { 180 0 0 } }
+    locator = { name = entity_5 position = { 0 0 0 } rotation = { 240 0 0 } }
+    locator = { name = entity_6 position = { 0 0 0 } rotation = { 300 0 0 } }
+    locator = { name = entity_7 position = { 0 30 0 } rotation = { 0 0 0 } }
+    locator = { name = entity_8 position = { 0 60 0 } rotation = { 0 0 0 } }
+    locator = { name = entity_9 position = { 0 90 0 } rotation = { 0 0 0 } }
+
+    attach = { entity_1 = "DSC_Flood_of_material_small_fire_ring_entity" }
+    attach = { entity_2 = "DSC_Flood_of_material_small_fire_ring_entity" }
+    attach = { entity_3 = "DSC_Flood_of_material_small_fire_ring_entity" }
+    attach = { entity_4 = "DSC_Flood_of_material_small_fire_ring_entity" }
+    attach = { entity_5 = "DSC_Flood_of_material_small_fire_ring_entity" }
+    attach = { entity_6 = "DSC_Flood_of_material_small_fire_ring_entity" }
+
+    attach = { root = "DSC_Flood_of_material_body_entity" }
+
+    attach = { root = "DSC_Flood_of_material_large_fire_ring_1_entity" }
+    attach = { root = "DSC_Flood_of_material_large_fire_ring_2_entity" }
+    attach = { root = "DSC_Flood_of_material_large_fire_ring_3_entity" }
+    attach = { entity_7 = "DSC_Flood_of_material_large_fire_ring_2_entity" }
+    attach = { entity_7 = "DSC_Flood_of_material_large_fire_ring_3_entity" }
+    attach = { entity_8 = "DSC_Flood_of_material_large_fire_ring_3_entity" }
+    attach = { entity_9 = "DSC_Flood_of_material_large_fire_ring_3_entity" }
+}

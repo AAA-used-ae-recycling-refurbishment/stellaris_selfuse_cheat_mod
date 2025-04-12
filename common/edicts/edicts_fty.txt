@@ -1,0 +1,104 @@
+fty_ed={
+	length = -1
+	icon = "edicts_shelter"
+	resources = {   #消耗的资源
+		category = edicts   #消耗的类型为法令
+		cost = {
+			influence = 0
+		}
+	}
+
+	potential = { #限制，满足这里的条件则可以被使用，如果为否则无法被看见，哪怕allow语句满足也不行。
+		is_ai = no
+	}
+
+	modifier={# 军事
+		ship_speed_mult = 10 #移速
+		command_limit_add = 20000 #指挥上限
+		country_naval_cap_add = 10000000 #太空军上限
+		starbase_shipyard_build_speed_mult = 100000 #舰船建造速度
+		starbase_shipyard_build_cost_mult = -10 #舰船建造消耗
+		ships_upkeep_mult = -10 #舰船维护消耗
+		armies_upkeep_mult = -10 #陆军维护消耗
+		ship_evasion_mult = 1000 #舰队闪避
+		planet_orbital_bombardment_damage = -1
+		starbase_defense_platform_capacity_add = 256
+		ship_windup_mult = -1000
+		ship_winddown_mult = -1000
+		ship_interstellar_speed_mult = 1000
+		ship_emergency_ftl_mult = -1000
+		ship_jumpdrive_cooldown_mult = -1000
+		ship_ftl_jumpdrive_range_mult = 1000
+		starbase_upgrade_cost_mult = -10 #哨站升级消耗
+		starbase_upgrade_time_mult = -1 #哨站升级时间
+		planet_buildings_cost_mult = -10 #行星建筑物建造花费
+		planet_building_build_speed_mult = 1000 #行星建筑物建造速度
+		planet_max_buildings_add = 200 #建筑槽
+		megastructure_build_speed_mult = 100000
+		shipsize_military_station_small_build_speed_mult = 10000000
+		ship_military_station_small_cost_mult = -1
+		shipclass_starbase_build_speed_mult = 100000 #哨站建造速度
+		starbases_upkeep_mult = -10 #哨站维护消耗
+		starbase_modules_cost_mult = -10 #哨站建造模块消耗
+		starbase_module_build_time_mult = -1 #哨站建造模块时间
+		starbase_buildings_cost_mult = -1 #哨站建造建筑消耗
+		starbase_building_build_time_mult = -1 #哨站建造建筑时间
+		planet_colony_development_speed_mult = 100 #殖民地发展速度
+		PLANET_CLEAR_BLOCKER_TIME_MULT = -10 #行星清除障碍物时间
+		pop_happiness = 100
+		PLANET_CRIME_ADD = -1000
+		pop_housing_usage_mult = -1
+		ascension_perks_add = 4096
+		ship_base_speed_mult = 100
+	}
+
+	ai_weight = {	   #AI使用这个法令的权重
+		weight = 0
+	}
+}
+jizhicontrol = {
+	icon = "GFX_giga_menu_icon"
+	length = 0
+	resources = { category = edicts }
+	ai_weight = { weight = 0 }
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		country_event = {
+			id = cbjq_cheat_global.002
+		}
+	}
+}
+jizhimoren = {
+	icon = "GFX_giga_menu_icon"
+	length = 0
+	resources = { category = edicts }
+	ai_weight = { weight = 0 }
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		country_event = {
+			id = cbjq_cheat_global.001
+		}
+	}
+}
+closeulvtier = {
+	icon = "GFX_giga_menu_icon"
+	length = 0
+	resources = { category = edicts }
+	ai_weight = { weight = 0 }
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		remove_modifier = zhengqi_level_modifier
+	}
+}

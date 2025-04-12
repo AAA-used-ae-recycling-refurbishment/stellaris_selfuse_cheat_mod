@@ -1,0 +1,58 @@
+
+#远古红色主炮
+entity = {
+    name = "DSC_galactic_center_perdition_beam_hit_red_entity"
+    cull_radius = 1.0
+
+    default_state = "idle"
+    state = { name = "idle" state_time = 2 looping = no
+        start_event = { particle = "DSC_galactic_center_perdition_beam_hit_effect_red" keep_particle = yes sound = { soundeffect = "perdition_beam_hit" } }
+        start_event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_hit" } }
+    }
+    state = { name = "stop" state_time = 0.5 looping = no }
+}
+entity = {
+    name = "DSC_galactic_center_perdition_beam_shield_hit_red_entity"
+    cull_radius = 1.0
+
+    default_state = "idle"
+    state = { name = "idle"
+        start_event = { particle = "DSC_galactic_center_perdition_beam_hit_effect_red" sound = { soundeffect = "shield_hit" } }
+        start_event = { particle = "DSC_galactic_center_perdition_beam_shield_hit_effect_red" }
+        start_event = { trigger_once = yes sound = { soundeffect = "distance_shield_hit" } }
+    }
+    state = { name = "stop" state_time = 0.5 looping = no }
+}
+entity = {
+    name = "DSC_galactic_center_perdition_beam_muzzle_red_entity"
+    cull_radius = 1.0
+
+    default_state = "idle"
+    state = { name = "idle" state_time = 7.0 looping = no
+        event = { time = 0 particle = "DSC_galactic_center_perdition_beam_muzzle_effect_red" keep_particle = yes }
+
+        event = { trigger_once = yes sound = { soundeffect = "perdition_beam_fire_layer_01" } }
+        event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_fire_layer_01" } }
+
+        event = { trigger_once = yes sound = { soundeffect = "perdition_beam_fire_layer_02" } }
+        event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_fire_layer_02" } }
+
+        event = { trigger_once = yes sound = { soundeffect = "perdition_beam_fire_layer_03" } }
+        event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_fire_layer_03" } }
+    }
+}
+entity = {
+    name = "DSC_galactic_center_perdition_beam_windup_red_entity"
+    scale = 1
+    default_state = "attack"
+    get_state_from_parent = no
+    state = {
+        name = "attack" looping = yes state_time = 0.8
+        event = { trigger_once = yes sound = { soundeffect = "perdition_beam_windup_layer_01" } }
+        event = { trigger_once = yes sound = { soundeffect = "perdition_beam_windup_layer_02" } }
+
+        #	event = { time = 0.0 use_parent_nodes = yes node = "titan_windup_16" particle = "perdition_beam_windup_effect" keep_particle = yes }
+
+        event = { time = 0.0 use_parent_nodes = yes node = "xl_gun_01" particle = "DSC_galactic_center_perdition_beam_muzzle_windup_effect_red" trigger_once = yes keep_particle = yes }
+    }
+}

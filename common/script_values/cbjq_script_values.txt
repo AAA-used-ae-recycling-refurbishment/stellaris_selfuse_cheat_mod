@@ -1,0 +1,8 @@
+#计算船体值
+cbjq_reduce_hp_value = {
+	base = 0
+	add = trigger:has_hp #添加船体值
+	subtract = 1 #减去
+	min = 0
+	floor = yes
+}
